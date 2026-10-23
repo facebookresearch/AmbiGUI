@@ -1,0 +1,13 @@
+# Copyright (c) Meta Platforms, Inc. and affiliates.
+# All rights reserved.
+#
+# This source code is licensed under the license found in the
+# LICENSE file in the root directory of this source tree.
+
+key: os-atlas-pro-7b
+hf_path: OS-Copilot/OS-Atlas-Pro-7B
+vision: true
+max_image_dim: 768
+max_tokens: 512
+description: |
+  A grounding-focused GUI model, trained to name the element rather than to plan, which is the column this benchmark finds hardest. Emits a bare call and needs no reasoning room.

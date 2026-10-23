@@ -1,0 +1,16 @@
+# Copyright (c) Meta Platforms, Inc. and affiliates.
+# All rights reserved.
+#
+# This source code is licensed under the license found in the
+# LICENSE file in the root directory of this source tree.
+
+key: phi-4-multimodal-instruct
+hf_path: microsoft/Phi-4-multimodal-instruct
+vision: true
+max_image_dim: 768
+max_tokens: 512
+description: |
+  Answers with the tool call directly, writing no deliberation first, so the budget only
+  has to cover the call itself, and 512 leaves ample room for a verbose one. Note that
+  this model cannot batch screenshots of differing shape: a pass that attaches them must
+  send one request at a time, or the server aborts the whole batch.

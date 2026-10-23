@@ -1,0 +1,14 @@
+.DS_Store
+__pycache__/
+*.pyc
+.venv/
+runs/
+outputs/
+*.png
+*.jpg
+*.parquet
+.env
+weights/
+*.egg-info/
+build/
+dist/

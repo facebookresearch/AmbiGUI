@@ -1,0 +1,82 @@
+# Copyright (c) Meta Platforms, Inc. and affiliates.
+# All rights reserved.
+#
+# This source code is licensed under the license found in the
+# LICENSE file in the root directory of this source tree.
+
+# Exact package versions for the frozen-weight ICL baseline: pip install -r requirements/icl.lock
+# Python 3.12. Resolved from pyproject.toml [icl] in a clean virtual environment; the ICL tests, the
+# replay check and the stand-in sample were run in an environment installed from this file.
+# The browser itself (Chromium 125) comes from: PLAYWRIGHT_DOWNLOAD_HOST=https://cdn.playwright.dev python -m playwright install --with-deps chromium
+# vLLM for serving the frozen policy is separate: pip install -e ".[icl-serve]" (often its own environment).
+annotated-doc==0.0.5
+annotated-types==0.8.0
+anyio==4.15.1
+attrs==26.1.0
+beautifulsoup4==4.15.0
+browsergym-core==0.14.3
+certifi==2026.10.19
+cffi==2.1.1
+charset-normalizer==3.5.2
+click==8.5.0
+cloudpickle==3.1.2
+cryptography==50.0.2
+Farama-Notifications==0.0.6
+filelock==4.2.4
+fsspec==2026.9.0
+greenlet==3.0.3
+gymnasium==1.4.0
+h11==0.16.0
+hf-xet==1.7.0
+httpcore==1.0.9
+httpcore2==2.16.0
+httpx==0.28.1
+httpx2==2.16.0
+huggingface_hub==1.25.1
+idna==3.20
+Jinja2==3.1.6
+jiter==0.17.0
+jsonschema==4.26.0
+jsonschema-specifications==2025.9.1
+lxml==5.4.0
+markdown-it-py==4.2.0
+MarkupSafe==3.0.4
+mcp==2.3.0
+mcp-types==2.3.0
+mdurl==0.1.2
+numpy==2.5.4
+openai==3.35.1
+opentelemetry-api==1.45.1
+packaging==26.3
+pillow==13.0.0
+playwright==1.44.0
+pycparser==3.12
+pydantic==2.14.1
+pydantic_core==2.50.1
+pyee==11.1.0
+Pygments==2.21.0
+PyJWT==2.15.1
+pyparsing==3.3.3
+python-dotenv==1.2.4
+python-multipart==0.0.32
+PyYAML==6.0.3
+referencing==0.37.0
+regex==2026.9.29
+requests==2.34.2
+rich==15.0.0
+rpds-py==2026.9.1
+safetensors==0.8.0
+shellingham==1.5.4
+sniffio==1.3.1
+soupsieve==3.0.4
+sse-starlette==3.5.0
+starlette==1.9.0
+tokenizers==0.22.2
+tqdm==4.70.1
+transformers==5.14.1
+truststore==0.10.5
+typer==0.27.3
+typing_extensions==4.16.0
+typing-inspection==0.4.4
+urllib3==2.8.0
+uvicorn==0.54.0

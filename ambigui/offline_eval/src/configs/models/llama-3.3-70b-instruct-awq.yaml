@@ -1,0 +1,13 @@
+# Copyright (c) Meta Platforms, Inc. and affiliates.
+# All rights reserved.
+#
+# This source code is licensed under the license found in the
+# LICENSE file in the root directory of this source tree.
+
+key: llama-3.3-70b-instruct-awq
+hf_path: casperhansen/llama-3.3-70b-instruct-awq
+vision: false
+max_image_dim: 768
+max_tokens: 2048
+description: |
+  A text-only model, so no screenshot is ever attached and it is scored on the instruction and history alone. Quantised to fit one card. It writes at length, so it gets the larger budget.

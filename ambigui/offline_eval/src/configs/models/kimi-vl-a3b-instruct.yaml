@@ -1,0 +1,13 @@
+# Copyright (c) Meta Platforms, Inc. and affiliates.
+# All rights reserved.
+#
+# This source code is licensed under the license found in the
+# LICENSE file in the root directory of this source tree.
+
+key: kimi-vl-a3b-instruct
+hf_path: moonshotai/Kimi-VL-A3B-Instruct
+vision: true
+max_image_dim: 768
+max_tokens: 512
+description: |
+  A mixture-of-experts vision model with a small active parameter count, included to test whether sparsity costs anything here. The instruct variant answers without a reasoning block.

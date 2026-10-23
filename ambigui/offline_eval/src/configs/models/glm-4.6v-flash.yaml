@@ -1,0 +1,13 @@
+# Copyright (c) Meta Platforms, Inc. and affiliates.
+# All rights reserved.
+#
+# This source code is licensed under the license found in the
+# LICENSE file in the root directory of this source tree.
+
+key: glm-4.6v-flash
+hf_path: zai-org/GLM-4.6V-Flash
+vision: true
+max_image_dim: 768
+max_tokens: 2048
+description: |
+  The small GLM vision model, which writes a reasoning block before its answer. A call-sized budget would cut that block off and the row would read as a formatting failure rather than a wrong answer.

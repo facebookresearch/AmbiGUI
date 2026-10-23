@@ -1,0 +1,13 @@
+# Copyright (c) Meta Platforms, Inc. and affiliates.
+# All rights reserved.
+#
+# This source code is licensed under the license found in the
+# LICENSE file in the root directory of this source tree.
+
+key: deepseek-vl2
+hf_path: deepseek-ai/deepseek-vl2
+vision: true
+max_image_dim: 768
+max_tokens: 512
+description: |
+  The DeepSeek vision model, a further model family in the comparison. It answers directly, so the call-sized budget is sufficient and buys no truncation risk.

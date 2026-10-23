@@ -1,0 +1,2855 @@
+# Copyright (c) Meta Platforms, Inc. and affiliates.
+# All rights reserved.
+#
+# This source code is licensed under the license found in the
+# LICENSE file in the root directory of this source tree.
+
+# Field-by-field classification of the gold files: POINTER | OURS | DERIVED-FROM-SOURCE | MODEL-GENERATED.
+# The producer and the release decision of every field are in label_provenance.yaml; where a note
+# here disagrees, label_provenance.yaml wins. `evidence: internal build code` means the field was
+# made by the internal research code; exact paths are kept in an internal copy of this file.
+# `release` says what the public annotation files carry for it:
+#   literal   = shipped as is (ours);
+#   templated = every source-derived span replaced by a pointer template (build.py docstring);
+#   pointer   = numbers shipped as {"$src": atom};  variable = internal path root replaced by a build-time variable.
+# `stats` are measured over all rows of the internal files this release was made from, before the release
+# edits (for example 3,248 recorded steps, including the OSWorld steps that do not ship); the counts of the
+# released files are in manifest/trace_stats.json. Stats fields:
+#   leaves, literal, templated_whole (value is one source span), templated_mixed (our words + source spans),
+#   source_char_share (share of characters of templated leaves that come from the source).
+# This file covers the three gold files. The fields of ambigui_online_benchmark.jsonl are listed, with their
+# producers, in label_provenance.yaml only (most are the same fields as in the gold files).
+# OSWorld rows ship no recorded trajectory and no click coordinates (OSWorld has its own grounding and
+# environment). Row source values are mind2web, meta-gui and osworld.
+
+gold_eval_set.jsonl:
+  all_types:
+    class: OURS
+    evidence: internal build code
+    note: Human labels (label_provenance=human_annotated).
+    release: literal
+    stats:
+      leaves: 298
+      literal: 298
+      templated_whole: 0
+      templated_mixed: 0
+    producer: 'see label_provenance.yaml: human_gold'
+  ambiguity:
+    class: OURS
+    evidence: internal build code
+    note: Human labels (label_provenance=human_annotated).
+    release: literal
+    stats:
+      leaves: 298
+      literal: 298
+      templated_whole: 0
+      templated_mixed: 0
+    producer: 'see label_provenance.yaml: human_gold'
+  ambiguity_type:
+    class: OURS
+    evidence: internal build code
+    note: Human labels (label_provenance=human_annotated).
+    release: literal
+    stats:
+      leaves: 298
+      literal: 298
+      templated_whole: 0
+      templated_mixed: 0
+    producer: 'see label_provenance.yaml: human_gold'
+  annotator_notes.Looking back at the end.Completion strategy:
+    class: OURS
+    evidence: internal build code
+    note: Annotator free text. Quotes of source >=12 chars templated.
+    release: literal + templated
+    stats:
+      leaves: 298
+      literal: 104
+      templated_whole: 0
+      templated_mixed: 194
+      source_char_share: 0.114
+    producer: 'see label_provenance.yaml: human_gold'
+  annotator_notes.Looking back at the end.Decisions supported:
+    class: OURS
+    evidence: internal build code
+    note: Annotator free text. Quotes of source >=12 chars templated.
+    release: literal + templated
+    stats:
+      leaves: 298
+      literal: 87
+      templated_whole: 6
+      templated_mixed: 205
+      source_char_share: 0.16
+    producer: 'see label_provenance.yaml: human_gold'
+  annotator_notes.Looking back at the end.Options unresolved:
+    class: OURS
+    evidence: internal build code
+    note: Annotator free text. Quotes of source >=12 chars templated.
+    release: literal + templated
+    stats:
+      leaves: 298
+      literal: 156
+      templated_whole: 0
+      templated_mixed: 142
+      source_char_share: 0.098
+    producer: 'see label_provenance.yaml: human_gold'
+  annotator_notes.Looking back at the end.Step:
+    class: OURS
+    evidence: internal build code
+    note: Annotator free text. Quotes of source >=12 chars templated.
+    release: literal
+    stats:
+      leaves: 298
+      literal: 298
+      templated_whole: 0
+      templated_mixed: 0
+    producer: 'see label_provenance.yaml: human_gold'
+  annotator_notes.While annotating.Edge cases:
+    class: OURS
+    evidence: internal build code
+    note: Annotator free text. Quotes of source >=12 chars templated.
+    release: literal + templated
+    stats:
+      leaves: 83
+      literal: 60
+      templated_whole: 0
+      templated_mixed: 23
+      source_char_share: 0.111
+    producer: 'see label_provenance.yaml: human_gold'
+  annotator_notes.While annotating.Fatigue:
+    class: OURS
+    evidence: internal build code
+    note: Annotator free text. Quotes of source >=12 chars templated.
+    release: literal + templated
+    stats:
+      leaves: 41
+      literal: 40
+      templated_whole: 0
+      templated_mixed: 1
+      source_char_share: 0.289
+    producer: 'see label_provenance.yaml: human_gold'
+  annotator_notes.While annotating.Process uncertainty:
+    class: OURS
+    evidence: internal build code
+    note: Annotator free text. Quotes of source >=12 chars templated.
+    release: literal + templated
+    stats:
+      leaves: 70
+      literal: 58
+      templated_whole: 0
+      templated_mixed: 12
+      source_char_share: 0.084
+    producer: 'see label_provenance.yaml: human_gold'
+  ask_by:
+    class: OURS
+    evidence: internal build code
+    note: Derived by our code from annotator commitment steps.
+    release: literal
+    stats:
+      leaves: 136
+      literal: 136
+      templated_whole: 0
+      templated_mixed: 0
+    producer: 'see label_provenance.yaml: human_gold_code'
+  ask_by.earliest_recorded_ask_before_step:
+    class: OURS
+    evidence: internal build code
+    note: Derived by our code from annotator commitment steps.
+    release: literal
+    stats:
+      leaves: 162
+      literal: 162
+      templated_whole: 0
+      templated_mixed: 0
+    producer: 'see label_provenance.yaml: human_gold_code'
+  ask_by.first_commitment.id:
+    class: OURS
+    evidence: internal build code
+    note: Derived by our code from annotator commitment steps.
+    release: literal
+    stats:
+      leaves: 162
+      literal: 162
+      templated_whole: 0
+      templated_mixed: 0
+    producer: 'see label_provenance.yaml: human_gold_code'
+  ask_by.first_commitment.kind:
+    class: OURS
+    evidence: internal build code
+    note: Derived by our code from annotator commitment steps.
+    release: literal
+    stats:
+      leaves: 162
+      literal: 162
+      templated_whole: 0
+      templated_mixed: 0
+    producer: 'see label_provenance.yaml: human_gold_code'
+  ask_by.first_commitment.step:
+    class: OURS
+    evidence: internal build code
+    note: Derived by our code from annotator commitment steps.
+    release: literal
+    stats:
+      leaves: 162
+      literal: 162
+      templated_whole: 0
+      templated_mixed: 0
+    producer: 'see label_provenance.yaml: human_gold_code'
+  ask_by.no_recorded_deadline_is_earlier:
+    class: OURS
+    evidence: internal build code
+    note: Derived by our code from annotator commitment steps.
+    release: literal
+    stats:
+      leaves: 162
+      literal: 162
+      templated_whole: 0
+      templated_mixed: 0
+    producer: 'see label_provenance.yaml: human_gold_code'
+  ask_by.step:
+    class: OURS
+    evidence: internal build code
+    note: Derived by our code from annotator commitment steps.
+    release: literal
+    stats:
+      leaves: 162
+      literal: 162
+      templated_whole: 0
+      templated_mixed: 0
+    producer: 'see label_provenance.yaml: human_gold_code'
+  decisions[].Ask or guess:
+    class: OURS
+    evidence: internal build code
+    note: Annotator decision-point text. Source quotes >=12 chars, and whole values that are source spans (e.g.
+      a typed value as "Best assumption"), templated.
+    release: literal
+    stats:
+      leaves: 375
+      literal: 375
+      templated_whole: 0
+      templated_mixed: 0
+    producer: 'see label_provenance.yaml: human_gold'
+  decisions[].Best assumption:
+    class: OURS
+    evidence: internal build code
+    note: Annotator decision-point text. Source quotes >=12 chars, and whole values that are source spans (e.g.
+      a typed value as "Best assumption"), templated.
+    release: literal + templated
+    stats:
+      leaves: 375
+      literal: 231
+      templated_whole: 73
+      templated_mixed: 71
+      source_char_share: 0.641
+    producer: 'see label_provenance.yaml: human_gold'
+  decisions[].Clarifying question:
+    class: OURS
+    evidence: internal build code
+    note: Annotator decision-point text. Source quotes >=12 chars, and whole values that are source spans (e.g.
+      a typed value as "Best assumption"), templated.
+    release: literal + templated
+    stats:
+      leaves: 168
+      literal: 73
+      templated_whole: 33
+      templated_mixed: 62
+      source_char_share: 0.467
+    producer: 'see label_provenance.yaml: human_gold'
+  decisions[].Cost of the others:
+    class: OURS
+    evidence: internal build code
+    note: Annotator decision-point text. Source quotes >=12 chars, and whole values that are source spans (e.g.
+      a typed value as "Best assumption"), templated.
+    release: literal + templated
+    stats:
+      leaves: 196
+      literal: 144
+      templated_whole: 1
+      templated_mixed: 51
+      source_char_share: 0.118
+    producer: 'see label_provenance.yaml: human_gold'
+  decisions[].Evidence on screen:
+    class: OURS
+    evidence: internal build code
+    note: Annotator decision-point text. Source quotes >=12 chars, and whole values that are source spans (e.g.
+      a typed value as "Best assumption"), templated.
+    release: literal + templated
+    stats:
+      leaves: 196
+      literal: 76
+      templated_whole: 0
+      templated_mixed: 120
+      source_char_share: 0.205
+    producer: 'see label_provenance.yaml: human_gold'
+  decisions[].How it was resolved:
+    class: OURS
+    evidence: internal build code
+    note: Annotator decision-point text. Source quotes >=12 chars, and whole values that are source spans (e.g.
+      a typed value as "Best assumption"), templated.
+    release: literal
+    stats:
+      leaves: 375
+      literal: 375
+      templated_whole: 0
+      templated_mixed: 0
+    producer: 'see label_provenance.yaml: human_gold'
+  decisions[].Option locked in:
+    class: OURS
+    evidence: internal build code
+    note: Annotator decision-point text. Source quotes >=12 chars, and whole values that are source spans (e.g.
+      a typed value as "Best assumption"), templated.
+    release: literal + templated
+    stats:
+      leaves: 196
+      literal: 112
+      templated_whole: 21
+      templated_mixed: 63
+      source_char_share: 0.501
+    producer: 'see label_provenance.yaml: human_gold'
+  decisions[].Options open:
+    class: OURS
+    evidence: internal build code
+    note: Annotator decision-point text. Source quotes >=12 chars, and whole values that are source spans (e.g.
+      a typed value as "Best assumption"), templated.
+    release: literal + templated
+    stats:
+      leaves: 375
+      literal: 214
+      templated_whole: 1
+      templated_mixed: 160
+      source_char_share: 0.342
+    producer: 'see label_provenance.yaml: human_gold'
+  decisions[].Random guess:
+    class: OURS
+    evidence: internal build code
+    note: Annotator decision-point text. Source quotes >=12 chars, and whole values that are source spans (e.g.
+      a typed value as "Best assumption"), templated.
+    release: literal
+    stats:
+      leaves: 375
+      literal: 375
+      templated_whole: 0
+      templated_mixed: 0
+    producer: 'see label_provenance.yaml: human_gold'
+  decisions[].Steps it spans (as written):
+    class: OURS
+    evidence: internal build code
+    note: Annotator decision-point text. Source quotes >=12 chars, and whole values that are source spans (e.g.
+      a typed value as "Best assumption"), templated.
+    release: literal + templated
+    stats:
+      leaves: 375
+      literal: 245
+      templated_whole: 0
+      templated_mixed: 130
+      source_char_share: 0.237
+    producer: 'see label_provenance.yaml: human_gold'
+  decisions[].Why that assumption:
+    class: OURS
+    evidence: internal build code
+    note: Annotator decision-point text. Source quotes >=12 chars, and whole values that are source spans (e.g.
+      a typed value as "Best assumption"), templated.
+    release: literal + templated
+    stats:
+      leaves: 375
+      literal: 184
+      templated_whole: 0
+      templated_mixed: 191
+      source_char_share: 0.161
+    producer: 'see label_provenance.yaml: human_gold'
+  decisions[].Why that is the risk:
+    class: OURS
+    evidence: internal build code
+    note: Annotator decision-point text. Source quotes >=12 chars, and whole values that are source spans (e.g.
+      a typed value as "Best assumption"), templated.
+    release: literal + templated
+    stats:
+      leaves: 196
+      literal: 154
+      templated_whole: 0
+      templated_mixed: 42
+      source_char_share: 0.087
+    producer: 'see label_provenance.yaml: human_gold'
+  decisions[].ask_by_is_after_the_commit:
+    class: OURS
+    evidence: internal build code
+    release: literal
+    stats:
+      leaves: 375
+      literal: 375
+      templated_whole: 0
+      templated_mixed: 0
+    producer: 'see label_provenance.yaml: human_gold_code'
+  decisions[].classification:
+    class: OURS
+    evidence: internal build code
+    release: literal
+    stats:
+      leaves: 375
+      literal: 375
+      templated_whole: 0
+      templated_mixed: 0
+    producer: 'see label_provenance.yaml: human_gold'
+  decisions[].commits_at_step:
+    class: OURS
+    evidence: internal build code
+    release: literal
+    stats:
+      leaves: 375
+      literal: 375
+      templated_whole: 0
+      templated_mixed: 0
+    producer: 'see label_provenance.yaml: human_gold'
+  decisions[].derived_ask_by_step:
+    class: OURS
+    evidence: internal build code
+    release: literal
+    stats:
+      leaves: 375
+      literal: 375
+      templated_whole: 0
+      templated_mixed: 0
+    producer: 'see label_provenance.yaml: human_gold_code'
+  decisions[].earliest_step:
+    class: OURS
+    evidence: internal build code
+    release: literal
+    stats:
+      leaves: 375
+      literal: 375
+      templated_whole: 0
+      templated_mixed: 0
+    producer: 'see label_provenance.yaml: human_gold'
+  decisions[].id:
+    class: OURS
+    evidence: internal build code
+    release: literal
+    stats:
+      leaves: 375
+      literal: 375
+      templated_whole: 0
+      templated_mixed: 0
+    producer: 'see label_provenance.yaml: human_gold'
+  decisions[].interval_runs_backwards:
+    class: OURS
+    evidence: internal build code
+    release: literal
+    stats:
+      leaves: 375
+      literal: 375
+      templated_whole: 0
+      templated_mixed: 0
+    producer: 'see label_provenance.yaml: human_gold_code'
+  decisions[].question:
+    class: OURS
+    evidence: internal build code
+    note: Annotator decision-point text. Source quotes >=12 chars, and whole values that are source spans (e.g.
+      a typed value as "Best assumption"), templated.
+    release: literal + templated
+    stats:
+      leaves: 375
+      literal: 193
+      templated_whole: 1
+      templated_mixed: 181
+      source_char_share: 0.304
+    producer: 'see label_provenance.yaml: human_gold'
+  decisions[].recorded_ask_before_step:
+    class: OURS
+    evidence: internal build code
+    release: literal
+    stats:
+      leaves: 375
+      literal: 375
+      templated_whole: 0
+      templated_mixed: 0
+    producer: 'see label_provenance.yaml: human_gold'
+  domain:
+    class: DERIVED-FROM-SOURCE
+    evidence: internal build code
+    note: Mind2Web `domain`, META-GUI category.txt, OSWorld domain directory. Templated {{domain}}/{{category}}.
+    release: templated
+    stats:
+      leaves: 298
+      literal: 0
+      templated_whole: 298
+      templated_mixed: 0
+      source_char_share: 1.0
+    producer: 'see label_provenance.yaml: source'
+  flags[]:
+    class: OURS
+    evidence: internal build code
+    release: flag 'The initial judgement disagrees with the row label' dropped with initial_judgement (owner, 2026-10-23)
+    stats:
+      leaves: 121
+      literal: 121
+      templated_whole: 0
+      templated_mixed: 0
+    producer: 'see label_provenance.yaml: human_gold_code'
+  initial_judgement.agrees_with_the_label:
+    class: OURS
+    evidence: internal build code
+    note: Written by human research participants, including the rows marked synthetic=true (owner statement,
+      2026-10-23). Dropped; never ships.
+    release: 'dropped: owner, only final labels ship (2026-10-23)'
+    stats:
+      leaves: 298
+      literal: 298
+      templated_whole: 0
+      templated_mixed: 0
+    producer: 'see label_provenance.yaml: initial_judgement'
+  initial_judgement.judgement:
+    class: OURS
+    evidence: internal build code
+    note: Written by human research participants, including the rows marked synthetic=true (owner statement,
+      2026-10-23). Dropped; never ships.
+    release: 'dropped: owner, only final labels ship (2026-10-23)'
+    stats:
+      leaves: 298
+      literal: 298
+      templated_whole: 0
+      templated_mixed: 0
+    producer: 'see label_provenance.yaml: initial_judgement'
+  initial_judgement.rationale:
+    class: OURS
+    evidence: internal build code
+    note: Written by human research participants, including the rows marked synthetic=true (owner statement,
+      2026-10-23). Dropped; never ships.
+    release: 'dropped: owner, only final labels ship (2026-10-23)'
+    stats:
+      leaves: 298
+      literal: 163
+      templated_whole: 0
+      templated_mixed: 135
+      source_char_share: 0.123
+    producer: 'see label_provenance.yaml: initial_judgement'
+  initial_judgement.synthetic:
+    class: OURS
+    evidence: internal build code
+    note: Written by human research participants, including the rows marked synthetic=true (owner statement,
+      2026-10-23). Dropped; never ships.
+    release: 'dropped: owner, only final labels ship (2026-10-23)'
+    stats:
+      leaves: 298
+      literal: 298
+      templated_whole: 0
+      templated_mixed: 0
+    producer: 'see label_provenance.yaml: initial_judgement'
+  initial_judgement.turn:
+    class: OURS
+    evidence: internal build code
+    note: Written by human research participants, including the rows marked synthetic=true (owner statement,
+      2026-10-23). Dropped; never ships.
+    release: 'dropped: owner, only final labels ship (2026-10-23)'
+    stats:
+      leaves: 298
+      literal: 298
+      templated_whole: 0
+      templated_mixed: 0
+    producer: 'see label_provenance.yaml: initial_judgement'
+  instruction:
+    class: DERIVED-FROM-SOURCE
+    evidence: internal build code
+    note: 'Verbatim source text on all 298 rows: Mind2Web confirmed_task (150), OSWorld instruction (33; read from
+      OSWorld), META-GUI a user turn (115; first user turn on 112, the first user turn after a greeting on 3: a065deec,
+      cb9a689b, dbf75c9b). Templated, never shipped.'
+    release: templated
+    stats:
+      leaves: 298
+      literal: 0
+      templated_whole: 298
+      templated_mixed: 0
+      source_char_share: 1.0
+    producer: 'see label_provenance.yaml: source'
+  items_from_decision_points[].answer:
+    class: OURS
+    evidence: internal build code
+    note: Re-presentation of annotator decisions; whole-value source spans and >=12-char quotes templated.
+    release: literal + templated
+    stats:
+      leaves: 362
+      literal: 230
+      templated_whole: 64
+      templated_mixed: 68
+      source_char_share: 0.605
+    producer: 'see label_provenance.yaml: human_gold_code'
+  items_from_decision_points[].detail.Ask or guess:
+    class: OURS
+    evidence: internal build code
+    note: Re-presentation of annotator decisions; whole-value source spans and >=12-char quotes templated.
+    release: literal
+    stats:
+      leaves: 362
+      literal: 362
+      templated_whole: 0
+      templated_mixed: 0
+    producer: 'see label_provenance.yaml: human_gold_code'
+  items_from_decision_points[].detail.Clarifying question:
+    class: OURS
+    evidence: internal build code
+    note: Re-presentation of annotator decisions; whole-value source spans and >=12-char quotes templated.
+    release: literal + templated
+    stats:
+      leaves: 167
+      literal: 72
+      templated_whole: 33
+      templated_mixed: 62
+      source_char_share: 0.467
+    producer: 'see label_provenance.yaml: human_gold_code'
+  items_from_decision_points[].detail.How it was resolved:
+    class: OURS
+    evidence: internal build code
+    note: Re-presentation of annotator decisions; whole-value source spans and >=12-char quotes templated.
+    release: literal
+    stats:
+      leaves: 362
+      literal: 362
+      templated_whole: 0
+      templated_mixed: 0
+    producer: 'see label_provenance.yaml: human_gold_code'
+  items_from_decision_points[].detail.Options open:
+    class: OURS
+    evidence: internal build code
+    note: Re-presentation of annotator decisions; whole-value source spans and >=12-char quotes templated.
+    release: literal + templated
+    stats:
+      leaves: 362
+      literal: 211
+      templated_whole: 1
+      templated_mixed: 150
+      source_char_share: 0.333
+    producer: 'see label_provenance.yaml: human_gold_code'
+  items_from_decision_points[].detail.What the agent did:
+    class: OURS
+    evidence: internal build code
+    note: Re-presentation of annotator decisions; whole-value source spans and >=12-char quotes templated.
+    release: literal + templated
+    stats:
+      leaves: 165
+      literal: 52
+      templated_whole: 1
+      templated_mixed: 112
+      source_char_share: 0.128
+    producer: 'see label_provenance.yaml: human_gold_code'
+  items_from_decision_points[].detail.Why that assumption:
+    class: OURS
+    evidence: internal build code
+    note: Re-presentation of annotator decisions; whole-value source spans and >=12-char quotes templated.
+    release: literal + templated
+    stats:
+      leaves: 362
+      literal: 174
+      templated_whole: 0
+      templated_mixed: 188
+      source_char_share: 0.161
+    producer: 'see label_provenance.yaml: human_gold_code'
+  items_from_decision_points[].name:
+    class: OURS
+    evidence: internal build code
+    note: Re-presentation of annotator decisions; whole-value source spans and >=12-char quotes templated.
+    release: literal
+    stats:
+      leaves: 362
+      literal: 362
+      templated_whole: 0
+      templated_mixed: 0
+    producer: 'see label_provenance.yaml: human_gold_code'
+  items_from_decision_points[].origin:
+    class: OURS
+    evidence: internal build code
+    note: Re-presentation of annotator decisions; whole-value source spans and >=12-char quotes templated.
+    release: 'dropped: owner, provenance stays in the manifests (2026-10-23)'
+    stats:
+      leaves: 362
+      literal: 362
+      templated_whole: 0
+      templated_mixed: 0
+    producer: 'see label_provenance.yaml: human_gold_code'
+  items_from_decision_points[].question:
+    class: OURS
+    evidence: internal build code
+    note: Re-presentation of annotator decisions; whole-value source spans and >=12-char quotes templated.
+    release: literal + templated
+    stats:
+      leaves: 362
+      literal: 180
+      templated_whole: 1
+      templated_mixed: 181
+      source_char_share: 0.304
+    producer: 'see label_provenance.yaml: human_gold_code'
+  items_from_decision_points[].window.basis:
+    class: OURS
+    evidence: internal build code
+    note: Computed by our code from annotator commitment steps (source=derived).
+    release: literal
+    stats:
+      leaves: 362
+      literal: 362
+      templated_whole: 0
+      templated_mixed: 0
+    producer: 'see label_provenance.yaml: human_gold_code'
+  items_from_decision_points[].window.closed_before_the_run:
+    class: OURS
+    evidence: internal build code
+    note: Computed by our code from annotator commitment steps (source=derived).
+    release: literal
+    stats:
+      leaves: 362
+      literal: 362
+      templated_whole: 0
+      templated_mixed: 0
+    producer: 'see label_provenance.yaml: human_gold_code'
+  items_from_decision_points[].window.determined:
+    class: OURS
+    evidence: internal build code
+    note: Computed by our code from annotator commitment steps (source=derived).
+    release: 'dropped: unused constant (owner, 2026-10-23); the offline and online stages give identical outputs
+      without it'
+    stats:
+      leaves: 362
+      literal: 362
+      templated_whole: 0
+      templated_mixed: 0
+    producer: 'see label_provenance.yaml: human_gold_code'
+  items_from_decision_points[].window.earliest_step:
+    class: OURS
+    evidence: internal build code
+    note: Computed by our code from annotator commitment steps (source=derived).
+    release: literal
+    stats:
+      leaves: 362
+      literal: 362
+      templated_whole: 0
+      templated_mixed: 0
+    producer: 'see label_provenance.yaml: human_gold_code'
+  items_from_decision_points[].window.latest_step:
+    class: OURS
+    evidence: internal build code
+    note: Computed by our code from annotator commitment steps (source=derived).
+    release: literal
+    stats:
+      leaves: 362
+      literal: 362
+      templated_whole: 0
+      templated_mixed: 0
+    producer: 'see label_provenance.yaml: human_gold_code'
+  items_from_decision_points[].window.never_committed:
+    class: OURS
+    evidence: internal build code
+    note: Computed by our code from annotator commitment steps (source=derived).
+    release: literal
+    stats:
+      leaves: 362
+      literal: 362
+      templated_whole: 0
+      templated_mixed: 0
+    producer: 'see label_provenance.yaml: human_gold_code'
+  items_from_decision_points[].window.opens_at_a_recorded_step:
+    class: OURS
+    evidence: internal build code
+    note: Computed by our code from annotator commitment steps (source=derived).
+    release: literal
+    stats:
+      leaves: 362
+      literal: 362
+      templated_whole: 0
+      templated_mixed: 0
+    producer: 'see label_provenance.yaml: human_gold_code'
+  items_from_decision_points[].window.source:
+    class: OURS
+    evidence: internal build code
+    note: Computed by our code from annotator commitment steps (source=derived).
+    release: literal
+    stats:
+      leaves: 362
+      literal: 362
+      templated_whole: 0
+      templated_mixed: 0
+    producer: 'see label_provenance.yaml: human_gold_code'
+  label_provenance:
+    class: OURS
+    evidence: internal build code
+    release: 'dropped: unused constant (owner, 2026-10-23); the offline and online stages give identical outputs
+      without it'
+    stats:
+      leaves: 298
+      literal: 298
+      templated_whole: 0
+      templated_mixed: 0
+    producer: 'see label_provenance.yaml: script_meta'
+  n_steps:
+    class: OURS
+    evidence: internal build code
+    note: Count of our steps (string in gold_eval_set, int in targets file). Equals source step count except 4 Mind2Web
+      rows truncated by the internal screenshot-exists filter.
+    release: null on OSWorld rows (no recorded trajectory ships; owner, 2026-10-23)
+    stats:
+      leaves: 298
+      literal: 298
+      templated_whole: 0
+      templated_mixed: 0
+    producer: 'see label_provenance.yaml: script_meta'
+  open_items[].answer:
+    class: MODEL-GENERATED (Gemma-4-31B, approved producer)
+    evidence: internal build code
+    note: Open item written by Gemma-4-31B (owner statement, 2026-10-23; label_provenance.yaml -> open_items). 88 answers
+      are verbatim source spans and are templated.
+    release: literal + templated
+    stats:
+      leaves: 313
+      literal: 219
+      templated_whole: 88
+      templated_mixed: 6
+      source_char_share: 0.938
+    producer: 'see label_provenance.yaml: open_items'
+  open_items[].name:
+    class: MODEL-GENERATED (Gemma-4-31B, approved producer)
+    evidence: internal build code
+    note: Short name of the open item, written by Gemma-4-31B with the item (label_provenance.yaml -> open_items).
+    release: literal
+    stats:
+      leaves: 313
+      literal: 313
+      templated_whole: 0
+      templated_mixed: 0
+    producer: 'see label_provenance.yaml: open_items'
+  open_items[].origin:
+    class: MODEL-GENERATED (Gemma-4-31B, approved producer)
+    evidence: internal build code
+    release: 'dropped: owner, provenance stays in the manifests (2026-10-23)'
+    stats:
+      leaves: 313
+      literal: 313
+      templated_whole: 0
+      templated_mixed: 0
+    producer: 'see label_provenance.yaml: open_items'
+  open_items[].question:
+    class: MODEL-GENERATED (Gemma-4-31B, approved producer)
+    evidence: internal build code
+    note: Open item written by Gemma-4-31B (owner statement, 2026-10-23; label_provenance.yaml -> open_items). Quoted
+      source spans are templated.
+    release: literal + templated
+    stats:
+      leaves: 313
+      literal: 215
+      templated_whole: 32
+      templated_mixed: 66
+      source_char_share: 0.391
+    producer: 'see label_provenance.yaml: open_items'
+  open_items[].window.basis:
+    class: MODEL-GENERATED (Gemma-4-31B, approved producer)
+    evidence: internal build code
+    note: Evidence text Gemma-4-31B wrote for each window with source=proposed (owner statement, 2026-10-23;
+      label_provenance.yaml -> windows); empty on the 12 hand-written windows with source=recorded. Quotes of source action
+      strings >=12 chars are templated.
+    release: literal + templated
+    stats:
+      leaves: 313
+      literal: 138
+      templated_whole: 0
+      templated_mixed: 175
+      source_char_share: 0.141
+    producer: 'see label_provenance.yaml: windows'
+  open_items[].window.closed_before_the_run:
+    class: MODEL-GENERATED (Gemma-4-31B; window.source = proposed, 301) / OURS (written by hand by the owner and annotators; window.source = recorded, 12)
+    note: Ask window. Proposed windows (301) by Gemma-4-31B; recorded windows (12) written by hand by the owner and
+      annotators (owner statement, 2026-10-23; label_provenance.yaml -> windows, windows_recorded).
+    evidence: internal build code
+    release: 'dropped: unused constant (owner, 2026-10-23); the offline and online stages give identical outputs
+      without it'
+    stats:
+      leaves: 313
+      literal: 313
+      templated_whole: 0
+      templated_mixed: 0
+    producer: 'see label_provenance.yaml: windows'
+  open_items[].window.determined:
+    class: MODEL-GENERATED (Gemma-4-31B; window.source = proposed, 301) / OURS (written by hand by the owner and annotators; window.source = recorded, 12)
+    note: Ask window. Proposed windows (301) by Gemma-4-31B; recorded windows (12) written by hand by the owner and
+      annotators (owner statement, 2026-10-23; label_provenance.yaml -> windows, windows_recorded).
+    evidence: internal build code
+    release: 'dropped: unused constant (owner, 2026-10-23); the offline and online stages give identical outputs
+      without it'
+    stats:
+      leaves: 313
+      literal: 313
+      templated_whole: 0
+      templated_mixed: 0
+    producer: 'see label_provenance.yaml: windows'
+  open_items[].window.earliest_step:
+    class: MODEL-GENERATED (Gemma-4-31B; window.source = proposed, 301) / OURS (written by hand by the owner and annotators; window.source = recorded, 12)
+    note: Ask window. Proposed windows (301) by Gemma-4-31B; recorded windows (12) written by hand by the owner and
+      annotators (owner statement, 2026-10-23; label_provenance.yaml -> windows, windows_recorded).
+    evidence: internal build code
+    release: 'dropped: unused constant (owner, 2026-10-23); the offline and online stages give identical outputs
+      without it'
+    stats:
+      leaves: 313
+      literal: 313
+      templated_whole: 0
+      templated_mixed: 0
+    producer: 'see label_provenance.yaml: windows'
+  open_items[].window.latest_step:
+    class: MODEL-GENERATED (Gemma-4-31B; window.source = proposed, 301) / OURS (written by hand by the owner and annotators; window.source = recorded, 12)
+    note: Ask window. Proposed windows (301) by Gemma-4-31B; recorded windows (12) written by hand by the owner and
+      annotators (owner statement, 2026-10-23; label_provenance.yaml -> windows, windows_recorded).
+    evidence: internal build code
+    release: literal
+    stats:
+      leaves: 313
+      literal: 313
+      templated_whole: 0
+      templated_mixed: 0
+    producer: 'see label_provenance.yaml: windows'
+  open_items[].window.never_committed:
+    class: MODEL-GENERATED (Gemma-4-31B; window.source = proposed, 301) / OURS (written by hand by the owner and annotators; window.source = recorded, 12)
+    note: Ask window. Proposed windows (301) by Gemma-4-31B; recorded windows (12) written by hand by the owner and
+      annotators (owner statement, 2026-10-23; label_provenance.yaml -> windows, windows_recorded).
+    evidence: internal build code
+    release: literal
+    stats:
+      leaves: 313
+      literal: 313
+      templated_whole: 0
+      templated_mixed: 0
+    producer: 'see label_provenance.yaml: windows'
+  open_items[].window.opens_at_a_recorded_step:
+    class: MODEL-GENERATED (Gemma-4-31B; window.source = proposed, 301) / OURS (written by hand by the owner and annotators; window.source = recorded, 12)
+    note: Ask window. Proposed windows (301) by Gemma-4-31B; recorded windows (12) written by hand by the owner and
+      annotators (owner statement, 2026-10-23; label_provenance.yaml -> windows, windows_recorded).
+    evidence: internal build code
+    release: 'dropped: unused constant (owner, 2026-10-23); the offline and online stages give identical outputs
+      without it'
+    stats:
+      leaves: 313
+      literal: 313
+      templated_whole: 0
+      templated_mixed: 0
+    producer: 'see label_provenance.yaml: windows'
+  open_items[].window.source:
+    class: MODEL-GENERATED (Gemma-4-31B; window.source = proposed, 301) / OURS (written by hand by the owner and annotators; window.source = recorded, 12)
+    note: Ask window. Proposed windows (301) by Gemma-4-31B; recorded windows (12) written by hand by the owner and
+      annotators (owner statement, 2026-10-23; label_provenance.yaml -> windows, windows_recorded).
+    evidence: internal build code
+    release: literal
+    stats:
+      leaves: 313
+      literal: 313
+      templated_whole: 0
+      templated_mixed: 0
+    producer: 'see label_provenance.yaml: windows'
+  risk:
+    class: OURS
+    evidence: internal build code
+    note: Human labels (label_provenance=human_annotated).
+    release: literal
+    stats:
+      leaves: 298
+      literal: 298
+      templated_whole: 0
+      templated_mixed: 0
+    producer: 'see label_provenance.yaml: human_gold'
+  sample_id:
+    class: POINTER
+    evidence: internal build code
+    note: 'Source-native id: Mind2Web annotation_id / META-GUI dialog_id (dialog_id.txt) / OSWorld task id. Verified
+      for all 298 rows (pointers.jsonl). Not a UUID we minted.'
+    release: literal
+    stats:
+      leaves: 298
+      literal: 298
+      templated_whole: 0
+      templated_mixed: 0
+    producer: 'see label_provenance.yaml: pointer'
+  severity:
+    class: OURS
+    evidence: internal build code
+    note: Human labels (label_provenance=human_annotated).
+    release: literal
+    stats:
+      leaves: 298
+      literal: 298
+      templated_whole: 0
+      templated_mixed: 0
+    producer: 'see label_provenance.yaml: human_gold'
+  site:
+    class: DERIVED-FROM-SOURCE
+    evidence: internal build code
+    note: '"<website> / <subdomain>" (Mind2Web) or "META-GUI app: <category>" / "OSWorld app: <domain>": source
+      names in our wording. Templated.'
+    release: templated
+    stats:
+      leaves: 298
+      literal: 0
+      templated_whole: 0
+      templated_mixed: 298
+      source_char_share: 0.59
+    producer: 'see label_provenance.yaml: source'
+  source:
+    class: POINTER
+    evidence: internal build code
+    note: Source dataset name.
+    release: literal
+    stats:
+      leaves: 298
+      literal: 298
+      templated_whole: 0
+      templated_mixed: 0
+    producer: 'see label_provenance.yaml: pointer'
+  split:
+    class: POINTER
+    evidence: internal build code
+    note: Mind2Web official split (test_task/test_website/test_domain); META-GUI "test" = the test.tar split; OSWorld
+      "cross_domain" is OURS (eval-only tag).
+    release: literal
+    stats:
+      leaves: 298
+      literal: 298
+      templated_whole: 0
+      templated_mixed: 0
+    producer: 'see label_provenance.yaml: pointer'
+  steps[].action:
+    class: DERIVED-FROM-SOURCE
+    evidence: internal build code
+    note: 'Our rendering `<op> "<payload>" into "<element>"` of source values: element and payload are templated,
+      op word and quotes stay literal.'
+    release: 'not shipped on OSWorld rows: they use OSWorld''s own environment and grounding (owner, 2026-10-23)'
+    stats:
+      leaves: 3248
+      literal: 665
+      templated_whole: 0
+      templated_mixed: 2583
+      source_char_share: 0.609
+    producer: 'see label_provenance.yaml: source, osworld_steps'
+  steps[].annotations[].affected_options:
+    class: OURS
+    evidence: internal build code
+    note: Copies of the gold block anchored to steps (stringified). Same templating as the gold block.
+    release: 'not shipped on OSWorld rows: they use OSWorld''s own environment and grounding (owner, 2026-10-23)'
+    stats:
+      leaves: 375
+      literal: 228
+      templated_whole: 1
+      templated_mixed: 146
+      source_char_share: 0.217
+    producer: 'see label_provenance.yaml: human_gold, osworld_steps'
+  steps[].annotations[].affordance:
+    class: OURS
+    evidence: internal build code
+    note: Copies of the gold block anchored to steps (stringified). Same templating as the gold block.
+    release: 'not shipped on OSWorld rows: they use OSWorld''s own environment and grounding (owner, 2026-10-23)'
+    stats:
+      leaves: 19
+      literal: 10
+      templated_whole: 0
+      templated_mixed: 9
+      source_char_share: 0.291
+    producer: 'see label_provenance.yaml: human_gold, osworld_steps'
+  steps[].annotations[].anchored_on:
+    class: OURS
+    evidence: internal build code
+    note: Copies of the gold block anchored to steps (stringified). Same templating as the gold block.
+    release: 'not shipped on OSWorld rows: they use OSWorld''s own environment and grounding (owner, 2026-10-23)'
+    stats:
+      leaves: 4378
+      literal: 4378
+      templated_whole: 0
+      templated_mixed: 0
+    producer: 'see label_provenance.yaml: human_gold, osworld_steps'
+  steps[].annotations[].answer:
+    class: OURS
+    evidence: internal build code
+    note: Copies of the gold block anchored to steps (stringified). Same templating as the gold block.
+    release: 'not shipped on OSWorld rows: they use OSWorld''s own environment and grounding (owner, 2026-10-23)'
+    stats:
+      leaves: 3248
+      literal: 3248
+      templated_whole: 0
+      templated_mixed: 0
+    producer: 'see label_provenance.yaml: human_gold, osworld_steps'
+  steps[].annotations[].ask_before_step:
+    class: OURS
+    evidence: internal build code
+    note: Copies of the gold block anchored to steps (stringified). Same templating as the gold block.
+    release: 'not shipped on OSWorld rows: they use OSWorld''s own environment and grounding (owner, 2026-10-23)'
+    stats:
+      leaves: 375
+      literal: 375
+      templated_whole: 0
+      templated_mixed: 0
+    producer: 'see label_provenance.yaml: human_gold, osworld_steps'
+  steps[].annotations[].ask_or_guess:
+    class: OURS
+    evidence: internal build code
+    note: Copies of the gold block anchored to steps (stringified). Same templating as the gold block.
+    release: 'not shipped on OSWorld rows: they use OSWorld''s own environment and grounding (owner, 2026-10-23)'
+    stats:
+      leaves: 375
+      literal: 375
+      templated_whole: 0
+      templated_mixed: 0
+    producer: 'see label_provenance.yaml: human_gold, osworld_steps'
+  steps[].annotations[].basis:
+    class: OURS
+    evidence: internal build code
+    note: Copies of the gold block anchored to steps (stringified). Same templating as the gold block.
+    release: 'not shipped on OSWorld rows: they use OSWorld''s own environment and grounding (owner, 2026-10-23)'
+    stats:
+      leaves: 196
+      literal: 76
+      templated_whole: 0
+      templated_mixed: 120
+      source_char_share: 0.205
+    producer: 'see label_provenance.yaml: human_gold, osworld_steps'
+  steps[].annotations[].best_assumption:
+    class: OURS
+    evidence: internal build code
+    note: Copies of the gold block anchored to steps (stringified). Same templating as the gold block.
+    release: 'not shipped on OSWorld rows: they use OSWorld''s own environment and grounding (owner, 2026-10-23)'
+    stats:
+      leaves: 375
+      literal: 231
+      templated_whole: 73
+      templated_mixed: 71
+      source_char_share: 0.641
+    producer: 'see label_provenance.yaml: human_gold, osworld_steps'
+  steps[].annotations[].best_assumption_reason:
+    class: OURS
+    evidence: internal build code
+    note: Copies of the gold block anchored to steps (stringified). Same templating as the gold block.
+    release: 'not shipped on OSWorld rows: they use OSWorld''s own environment and grounding (owner, 2026-10-23)'
+    stats:
+      leaves: 375
+      literal: 184
+      templated_whole: 0
+      templated_mixed: 191
+      source_char_share: 0.161
+    producer: 'see label_provenance.yaml: human_gold, osworld_steps'
+  steps[].annotations[].clarification_question:
+    class: OURS
+    evidence: internal build code
+    note: Copies of the gold block anchored to steps (stringified). Same templating as the gold block.
+    release: 'not shipped on OSWorld rows: they use OSWorld''s own environment and grounding (owner, 2026-10-23)'
+    stats:
+      leaves: 375
+      literal: 280
+      templated_whole: 33
+      templated_mixed: 62
+      source_char_share: 0.467
+    producer: 'see label_provenance.yaml: human_gold, osworld_steps'
+  steps[].annotations[].classification:
+    class: OURS
+    evidence: internal build code
+    note: Copies of the gold block anchored to steps (stringified). Same templating as the gold block.
+    release: 'not shipped on OSWorld rows: they use OSWorld''s own environment and grounding (owner, 2026-10-23)'
+    stats:
+      leaves: 375
+      literal: 375
+      templated_whole: 0
+      templated_mixed: 0
+    producer: 'see label_provenance.yaml: human_gold, osworld_steps'
+  steps[].annotations[].creates_assumption:
+    class: OURS
+    evidence: internal build code
+    note: Copies of the gold block anchored to steps (stringified). Same templating as the gold block.
+    release: 'not shipped on OSWorld rows: they use OSWorld''s own environment and grounding (owner, 2026-10-23)'
+    stats:
+      leaves: 3248
+      literal: 3248
+      templated_whole: 0
+      templated_mixed: 0
+    producer: 'see label_provenance.yaml: human_gold, osworld_steps'
+  steps[].annotations[].creates_cross_modal:
+    class: OURS
+    evidence: internal build code
+    note: Copies of the gold block anchored to steps (stringified). Same templating as the gold block.
+    release: 'not shipped on OSWorld rows: they use OSWorld''s own environment and grounding (owner, 2026-10-23)'
+    stats:
+      leaves: 3248
+      literal: 3248
+      templated_whole: 0
+      templated_mixed: 0
+    producer: 'see label_provenance.yaml: human_gold, osworld_steps'
+  steps[].annotations[].creates_decision:
+    class: OURS
+    evidence: internal build code
+    note: Copies of the gold block anchored to steps (stringified). Same templating as the gold block.
+    release: 'not shipped on OSWorld rows: they use OSWorld''s own environment and grounding (owner, 2026-10-23)'
+    stats:
+      leaves: 3248
+      literal: 3248
+      templated_whole: 0
+      templated_mixed: 0
+    producer: 'see label_provenance.yaml: human_gold, osworld_steps'
+  steps[].annotations[].decision_step:
+    class: OURS
+    evidence: internal build code
+    note: Copies of the gold block anchored to steps (stringified). Same templating as the gold block.
+    release: 'not shipped on OSWorld rows: they use OSWorld''s own environment and grounding (owner, 2026-10-23)'
+    stats:
+      leaves: 196
+      literal: 196
+      templated_whole: 0
+      templated_mixed: 0
+    producer: 'see label_provenance.yaml: human_gold, osworld_steps'
+  steps[].annotations[].discovery_answer:
+    class: OURS
+    evidence: internal build code
+    note: Copies of the gold block anchored to steps (stringified). Same templating as the gold block.
+    release: 'not shipped on OSWorld rows: they use OSWorld''s own environment and grounding (owner, 2026-10-23)'
+    stats:
+      leaves: 946
+      literal: 946
+      templated_whole: 0
+      templated_mixed: 0
+    producer: 'see label_provenance.yaml: human_gold, osworld_steps'
+  steps[].annotations[].earliest_step:
+    class: OURS
+    evidence: internal build code
+    note: Copies of the gold block anchored to steps (stringified). Same templating as the gold block.
+    release: 'not shipped on OSWorld rows: they use OSWorld''s own environment and grounding (owner, 2026-10-23)'
+    stats:
+      leaves: 196
+      literal: 196
+      templated_whole: 0
+      templated_mixed: 0
+    producer: 'see label_provenance.yaml: human_gold, osworld_steps'
+  steps[].annotations[].evidence_and_reason:
+    class: OURS
+    evidence: internal build code
+    note: Copies of the gold block anchored to steps (stringified). Same templating as the gold block.
+    release: 'not shipped on OSWorld rows: they use OSWorld''s own environment and grounding (owner, 2026-10-23)'
+    stats:
+      leaves: 375
+      literal: 134
+      templated_whole: 0
+      templated_mixed: 241
+      source_char_share: 0.151
+    producer: 'see label_provenance.yaml: human_gold, osworld_steps'
+  steps[].annotations[].explanation:
+    class: OURS
+    evidence: internal build code
+    note: Copies of the gold block anchored to steps (stringified). Same templating as the gold block.
+    release: 'not shipped on OSWorld rows: they use OSWorld''s own environment and grounding (owner, 2026-10-23)'
+    stats:
+      leaves: 19
+      literal: 12
+      templated_whole: 0
+      templated_mixed: 7
+      source_char_share: 0.121
+    producer: 'see label_provenance.yaml: human_gold, osworld_steps'
+  steps[].annotations[].id:
+    class: OURS
+    evidence: internal build code
+    note: Copies of the gold block anchored to steps (stringified). Same templating as the gold block.
+    release: 'not shipped on OSWorld rows: they use OSWorld''s own environment and grounding (owner, 2026-10-23)'
+    stats:
+      leaves: 1130
+      literal: 1130
+      templated_whole: 0
+      templated_mixed: 0
+    producer: 'see label_provenance.yaml: human_gold, osworld_steps'
+  steps[].annotations[].information_source:
+    class: OURS
+    evidence: internal build code
+    note: Copies of the gold block anchored to steps (stringified). Same templating as the gold block.
+    release: 'not shipped on OSWorld rows: they use OSWorld''s own environment and grounding (owner, 2026-10-23)'
+    stats:
+      leaves: 375
+      literal: 375
+      templated_whole: 0
+      templated_mixed: 0
+    producer: 'see label_provenance.yaml: human_gold, osworld_steps'
+  steps[].annotations[].instruction_required:
+    class: OURS
+    evidence: internal build code
+    note: Copies of the gold block anchored to steps (stringified). Same templating as the gold block.
+    release: 'not shipped on OSWorld rows: they use OSWorld''s own environment and grounding (owner, 2026-10-23)'
+    stats:
+      leaves: 19
+      literal: 9
+      templated_whole: 0
+      templated_mixed: 10
+      source_char_share: 0.274
+    producer: 'see label_provenance.yaml: human_gold, osworld_steps'
+  steps[].annotations[].is_random_guess:
+    class: OURS
+    evidence: internal build code
+    note: Copies of the gold block anchored to steps (stringified). Same templating as the gold block.
+    release: 'not shipped on OSWorld rows: they use OSWorld''s own environment and grounding (owner, 2026-10-23)'
+    stats:
+      leaves: 375
+      literal: 375
+      templated_whole: 0
+      templated_mixed: 0
+    producer: 'see label_provenance.yaml: human_gold, osworld_steps'
+  steps[].annotations[].kind:
+    class: OURS
+    evidence: internal build code
+    note: Copies of the gold block anchored to steps (stringified). Same templating as the gold block.
+    release: 'not shipped on OSWorld rows: they use OSWorld''s own environment and grounding (owner, 2026-10-23)'
+    stats:
+      leaves: 4378
+      literal: 4378
+      templated_whole: 0
+      templated_mixed: 0
+    producer: 'see label_provenance.yaml: human_gold, osworld_steps'
+  steps[].annotations[].locked_option:
+    class: OURS
+    evidence: internal build code
+    note: Copies of the gold block anchored to steps (stringified). Same templating as the gold block.
+    release: 'not shipped on OSWorld rows: they use OSWorld''s own environment and grounding (owner, 2026-10-23)'
+    stats:
+      leaves: 196
+      literal: 112
+      templated_whole: 21
+      templated_mixed: 63
+      source_char_share: 0.501
+    producer: 'see label_provenance.yaml: human_gold, osworld_steps'
+  steps[].annotations[].observed:
+    class: OURS
+    evidence: internal build code
+    note: Copies of the gold block anchored to steps (stringified). Same templating as the gold block.
+    release: 'not shipped on OSWorld rows: they use OSWorld''s own environment and grounding (owner, 2026-10-23)'
+    stats:
+      leaves: 165
+      literal: 52
+      templated_whole: 1
+      templated_mixed: 112
+      source_char_share: 0.128
+    producer: 'see label_provenance.yaml: human_gold, osworld_steps'
+  steps[].annotations[].options:
+    class: OURS
+    evidence: internal build code
+    note: Copies of the gold block anchored to steps (stringified). Same templating as the gold block.
+    release: 'not shipped on OSWorld rows: they use OSWorld''s own environment and grounding (owner, 2026-10-23)'
+    stats:
+      leaves: 375
+      literal: 214
+      templated_whole: 1
+      templated_mixed: 160
+      source_char_share: 0.342
+    producer: 'see label_provenance.yaml: human_gold, osworld_steps'
+  steps[].annotations[].other_options_cost:
+    class: OURS
+    evidence: internal build code
+    note: Copies of the gold block anchored to steps (stringified). Same templating as the gold block.
+    release: 'not shipped on OSWorld rows: they use OSWorld''s own environment and grounding (owner, 2026-10-23)'
+    stats:
+      leaves: 196
+      literal: 144
+      templated_whole: 1
+      templated_mixed: 51
+      source_char_share: 0.118
+    producer: 'see label_provenance.yaml: human_gold, osworld_steps'
+  steps[].annotations[].proceeded_past_gap:
+    class: OURS
+    evidence: internal build code
+    note: Copies of the gold block anchored to steps (stringified). Same templating as the gold block.
+    release: 'not shipped on OSWorld rows: they use OSWorld''s own environment and grounding (owner, 2026-10-23)'
+    stats:
+      leaves: 19
+      literal: 19
+      templated_whole: 0
+      templated_mixed: 0
+    producer: 'see label_provenance.yaml: human_gold, osworld_steps'
+  steps[].annotations[].question:
+    class: OURS
+    evidence: internal build code
+    note: Copies of the gold block anchored to steps (stringified). Same templating as the gold block.
+    release: 'not shipped on OSWorld rows: they use OSWorld''s own environment and grounding (owner, 2026-10-23)'
+    stats:
+      leaves: 375
+      literal: 193
+      templated_whole: 1
+      templated_mixed: 181
+      source_char_share: 0.304
+    producer: 'see label_provenance.yaml: human_gold, osworld_steps'
+  steps[].annotations[].reasoning:
+    class: OURS
+    evidence: internal build code
+    note: Copies of the gold block anchored to steps (stringified). Same templating as the gold block.
+    release: 'not shipped on OSWorld rows: they use OSWorld''s own environment and grounding (owner, 2026-10-23)'
+    stats:
+      leaves: 196
+      literal: 154
+      templated_whole: 0
+      templated_mixed: 42
+      source_char_share: 0.087
+    producer: 'see label_provenance.yaml: human_gold, osworld_steps'
+  steps[].annotations[].screen_exposed:
+    class: OURS
+    evidence: internal build code
+    note: Copies of the gold block anchored to steps (stringified). Same templating as the gold block.
+    release: 'not shipped on OSWorld rows: they use OSWorld''s own environment and grounding (owner, 2026-10-23)'
+    stats:
+      leaves: 19
+      literal: 10
+      templated_whole: 0
+      templated_mixed: 9
+      source_char_share: 0.164
+    producer: 'see label_provenance.yaml: human_gold, osworld_steps'
+  steps[].annotations[].shared_steps:
+    class: OURS
+    evidence: internal build code
+    note: Copies of the gold block anchored to steps (stringified). Same templating as the gold block.
+    release: 'not shipped on OSWorld rows: they use OSWorld''s own environment and grounding (owner, 2026-10-23)'
+    stats:
+      leaves: 375
+      literal: 245
+      templated_whole: 0
+      templated_mixed: 130
+      source_char_share: 0.237
+    producer: 'see label_provenance.yaml: human_gold, osworld_steps'
+  steps[].annotations[].step:
+    class: OURS
+    evidence: internal build code
+    note: Copies of the gold block anchored to steps (stringified). Same templating as the gold block.
+    release: 'not shipped on OSWorld rows: they use OSWorld''s own environment and grounding (owner, 2026-10-23)'
+    stats:
+      leaves: 4182
+      literal: 4182
+      templated_whole: 0
+      templated_mixed: 0
+    producer: 'see label_provenance.yaml: human_gold, osworld_steps'
+  steps[].element_source:
+    class: OURS
+    evidence: internal build code
+    note: Our label for where the element name came from.
+    release: 'not shipped on OSWorld rows: they use OSWorld''s own environment and grounding (owner, 2026-10-23)'
+    stats:
+      leaves: 3248
+      literal: 3248
+      templated_whole: 0
+      templated_mixed: 0
+    producer: 'see label_provenance.yaml: script_meta, osworld_steps'
+  steps[].image_path:
+    class: OURS
+    evidence: internal build code
+    note: Our screenshot pool path pattern <source>/screenshots/<sample_id>/step_NN.png; internal root replaced
+      by build-time variable {{$pool_root}}. Screenshots never ship.
+    release: 'not shipped on OSWorld rows: they use OSWorld''s own environment and grounding (owner, 2026-10-23)'
+    stats:
+      leaves: 3248
+      literal: 3248
+      templated_whole: 0
+      templated_mixed: 0
+    producer: 'see label_provenance.yaml: script_meta, osworld_steps'
+  steps[].step_index:
+    class: POINTER
+    evidence: internal build code
+    note: Our step index; pointers.jsonl maps it to action_uid / (turn dir, action key) / single-action index.
+    release: 'not shipped on OSWorld rows: they use OSWorld''s own environment and grounding (owner, 2026-10-23)'
+    stats:
+      leaves: 3248
+      literal: 3248
+      templated_whole: 0
+      templated_mixed: 0
+    producer: 'see label_provenance.yaml: pointer, osworld_steps'
+  steps[].turn_index:
+    class: POINTER
+    evidence: internal build code
+    note: Position of the META-GUI turn_<n> dir (verified == pointer turn_dir order on all 2,083 steps); null for
+      single-turn sources.
+    release: 'not shipped on OSWorld rows: they use OSWorld''s own environment and grounding (owner, 2026-10-23)'
+    stats:
+      leaves: 3248
+      literal: 3248
+      templated_whole: 0
+      templated_mixed: 0
+    producer: 'see label_provenance.yaml: pointer, osworld_steps'
+  substrate:
+    class: OURS
+    evidence: internal build code
+    note: web/mobile/desktop, assigned per source.
+    release: literal
+    stats:
+      leaves: 298
+      literal: 298
+      templated_whole: 0
+      templated_mixed: 0
+    producer: 'see label_provenance.yaml: script_meta'
+  turns[].classification:
+    class: OURS
+    evidence: internal build code
+    note: turn = dialogue index (POINTER into dialog.json); classification = annotator turn class; visible_from_step
+      computed.
+    release: literal
+    stats:
+      leaves: 956
+      literal: 956
+      templated_whole: 0
+      templated_mixed: 0
+    producer: 'see label_provenance.yaml: human_gold'
+  turns[].role:
+    class: OURS
+    evidence: internal build code
+    note: Our heuristic role tag (task / clarifying_question = system turn ending in "?" / clarifying_answer / followup
+      / reply), a fixed punctuation rule (no model; label_provenance.yaml -> role_heuristic).
+    release: literal
+    stats:
+      leaves: 956
+      literal: 956
+      templated_whole: 0
+      templated_mixed: 0
+    producer: 'see label_provenance.yaml: role_heuristic'
+  turns[].speaker:
+    class: DERIVED-FROM-SOURCE (normalised)
+    evidence: internal build code
+    note: user/system from META-GUI isUser; shipped as our literal word.
+    release: literal
+    stats:
+      leaves: 956
+      literal: 956
+      templated_whole: 0
+      templated_mixed: 0
+    producer: 'see label_provenance.yaml: source'
+  turns[].text:
+    class: DERIVED-FROM-SOURCE
+    evidence: internal build code
+    note: META-GUI dialog.json `text` verbatim (954 of 956 turns; 2 turns U+00A0->space). Templated.
+    release: templated
+    stats:
+      leaves: 956
+      literal: 0
+      templated_whole: 956
+      templated_mixed: 0
+      source_char_share: 1.0
+    producer: 'see label_provenance.yaml: source'
+  turns[].turn:
+    class: OURS
+    evidence: internal build code
+    note: turn = dialogue index (POINTER into dialog.json); classification = annotator turn class; visible_from_step
+      computed.
+    release: literal
+    stats:
+      leaves: 956
+      literal: 956
+      templated_whole: 0
+      templated_mixed: 0
+    producer: 'see label_provenance.yaml: script_meta'
+  turns[].visible_from_step:
+    class: OURS
+    evidence: internal build code
+    note: turn = dialogue index (POINTER into dialog.json); classification = annotator turn class; visible_from_step
+      computed.
+    release: literal
+    stats:
+      leaves: 956
+      literal: 956
+      templated_whole: 0
+      templated_mixed: 0
+    producer: 'see label_provenance.yaml: script_meta'
+gold_benchmark_with_targets.jsonl:
+  ambiguity:
+    class: OURS
+    evidence: internal build code
+    note: Human labels (label_provenance=human_annotated).
+    release: literal
+    stats:
+      leaves: 298
+      literal: 298
+      templated_whole: 0
+      templated_mixed: 0
+    producer: 'see label_provenance.yaml: human_gold'
+  ambiguity_type:
+    class: OURS
+    evidence: internal build code
+    note: Human labels (label_provenance=human_annotated).
+    release: literal
+    stats:
+      leaves: 298
+      literal: 298
+      templated_whole: 0
+      templated_mixed: 0
+    producer: 'see label_provenance.yaml: human_gold'
+  ambiguity_types_all[]:
+    class: OURS
+    evidence: internal build code
+    note: Human labels (label_provenance=human_annotated).
+    release: literal
+    stats:
+      leaves: 295
+      literal: 295
+      templated_whole: 0
+      templated_mixed: 0
+    producer: 'see label_provenance.yaml: human_gold'
+  benchmark:
+    class: OURS
+    evidence: internal build code
+    release: literal
+    stats:
+      leaves: 298
+      literal: 298
+      templated_whole: 0
+      templated_mixed: 0
+    producer: 'see label_provenance.yaml: script_meta'
+  canonical_instruction:
+    class: MODEL-GENERATED
+    evidence: internal build code
+    note: Model rewrite of source user turns on 96 of 115 META-GUI rows by Gemma-4-31B (owner statement, 2026-10-23;
+      label_provenance.yaml); equal to a source span on the other 19.
+    release: 'null on 9 rows: model reasoning with no final instruction (owner rule, 2026-10-23)'
+    stats:
+      leaves: 115
+      literal: 1
+      templated_whole: 18
+      templated_mixed: 96
+      source_char_share: 0.391
+    producer: 'see label_provenance.yaml: canonical_rewrite'
+  canonical_instruction_raw:
+    class: DERIVED-FROM-SOURCE
+    evidence: internal build code
+    note: Join of the META-GUI user turns listed in canonical_turn_indices (space-joined; 5 rows whitespace-collapsed).
+      Templated.
+    release: templated
+    stats:
+      leaves: 115
+      literal: 0
+      templated_whole: 51
+      templated_mixed: 64
+      source_char_share: 0.991
+    producer: 'see label_provenance.yaml: canonical_turns'
+  canonical_turn_indices[]:
+    class: OURS
+    evidence: internal build code
+    note: Equals the turns the annotator classed Original instruction / Later task instruction on 115/115 rows (label_provenance.yaml);
+      not the model panel.
+    release: literal
+    stats:
+      leaves: 247
+      literal: 247
+      templated_whole: 0
+      templated_mixed: 0
+    producer: 'see label_provenance.yaml: canonical_turns'
+  domain:
+    class: DERIVED-FROM-SOURCE
+    evidence: internal build code
+    note: Mind2Web `domain`, META-GUI category.txt, OSWorld domain directory. Templated {{domain}}/{{category}}.
+    release: templated
+    stats:
+      leaves: 298
+      literal: 0
+      templated_whole: 298
+      templated_mixed: 0
+      source_char_share: 1.0
+    producer: 'see label_provenance.yaml: source'
+  gold.assumptions[].id:
+    class: OURS
+    evidence: internal build code
+    note: Annotator gold block (human_annotated). Source quotes >=12 chars and whole-value source spans templated.
+    release: literal
+    stats:
+      leaves: 165
+      literal: 165
+      templated_whole: 0
+      templated_mixed: 0
+    producer: 'see label_provenance.yaml: human_gold'
+  gold.assumptions[].observed:
+    class: OURS
+    evidence: internal build code
+    note: Annotator gold block (human_annotated). Source quotes >=12 chars and whole-value source spans templated.
+    release: literal + templated
+    stats:
+      leaves: 165
+      literal: 52
+      templated_whole: 1
+      templated_mixed: 112
+      source_char_share: 0.128
+    producer: 'see label_provenance.yaml: human_gold'
+  gold.assumptions[].step:
+    class: OURS
+    evidence: internal build code
+    note: Annotator gold block (human_annotated). Source quotes >=12 chars and whole-value source spans templated.
+    release: literal
+    stats:
+      leaves: 165
+      literal: 165
+      templated_whole: 0
+      templated_mixed: 0
+    producer: 'see label_provenance.yaml: human_gold'
+  gold.compounding_roots[].basis:
+    class: OURS
+    evidence: internal build code
+    note: Annotator gold block (human_annotated). Source quotes >=12 chars and whole-value source spans templated.
+    release: literal + templated
+    stats:
+      leaves: 196
+      literal: 76
+      templated_whole: 0
+      templated_mixed: 120
+      source_char_share: 0.205
+    producer: 'see label_provenance.yaml: human_gold'
+  gold.compounding_roots[].decision_step:
+    class: OURS
+    evidence: internal build code
+    note: Annotator gold block (human_annotated). Source quotes >=12 chars and whole-value source spans templated.
+    release: literal
+    stats:
+      leaves: 196
+      literal: 196
+      templated_whole: 0
+      templated_mixed: 0
+    producer: 'see label_provenance.yaml: human_gold'
+  gold.compounding_roots[].discovery_answer:
+    class: OURS
+    evidence: internal build code
+    note: Annotator gold block (human_annotated). Source quotes >=12 chars and whole-value source spans templated.
+    release: literal
+    stats:
+      leaves: 196
+      literal: 196
+      templated_whole: 0
+      templated_mixed: 0
+    producer: 'see label_provenance.yaml: human_gold'
+  gold.compounding_roots[].earliest_step:
+    class: OURS
+    evidence: internal build code
+    note: Annotator gold block (human_annotated). Source quotes >=12 chars and whole-value source spans templated.
+    release: literal
+    stats:
+      leaves: 196
+      literal: 196
+      templated_whole: 0
+      templated_mixed: 0
+    producer: 'see label_provenance.yaml: human_gold'
+  gold.compounding_roots[].id:
+    class: OURS
+    evidence: internal build code
+    note: Annotator gold block (human_annotated). Source quotes >=12 chars and whole-value source spans templated.
+    release: literal
+    stats:
+      leaves: 196
+      literal: 196
+      templated_whole: 0
+      templated_mixed: 0
+    producer: 'see label_provenance.yaml: human_gold'
+  gold.compounding_roots[].locked_option:
+    class: OURS
+    evidence: internal build code
+    note: Annotator gold block (human_annotated). Source quotes >=12 chars and whole-value source spans templated.
+    release: literal + templated
+    stats:
+      leaves: 196
+      literal: 112
+      templated_whole: 21
+      templated_mixed: 63
+      source_char_share: 0.501
+    producer: 'see label_provenance.yaml: human_gold'
+  gold.compounding_roots[].other_options_cost:
+    class: OURS
+    evidence: internal build code
+    note: Annotator gold block (human_annotated). Source quotes >=12 chars and whole-value source spans templated.
+    release: literal + templated
+    stats:
+      leaves: 196
+      literal: 144
+      templated_whole: 1
+      templated_mixed: 51
+      source_char_share: 0.118
+    producer: 'see label_provenance.yaml: human_gold'
+  gold.compounding_roots[].reasoning:
+    class: OURS
+    evidence: internal build code
+    note: Annotator gold block (human_annotated). Source quotes >=12 chars and whole-value source spans templated.
+    release: literal + templated
+    stats:
+      leaves: 196
+      literal: 154
+      templated_whole: 0
+      templated_mixed: 42
+      source_char_share: 0.087
+    producer: 'see label_provenance.yaml: human_gold'
+  gold.cross_modal_gaps[].affordance:
+    class: OURS
+    evidence: internal build code
+    note: Annotator gold block (human_annotated). Source quotes >=12 chars and whole-value source spans templated.
+    release: literal + templated
+    stats:
+      leaves: 19
+      literal: 10
+      templated_whole: 0
+      templated_mixed: 9
+      source_char_share: 0.291
+    producer: 'see label_provenance.yaml: human_gold'
+  gold.cross_modal_gaps[].explanation:
+    class: OURS
+    evidence: internal build code
+    note: Annotator gold block (human_annotated). Source quotes >=12 chars and whole-value source spans templated.
+    release: literal + templated
+    stats:
+      leaves: 19
+      literal: 12
+      templated_whole: 0
+      templated_mixed: 7
+      source_char_share: 0.121
+    producer: 'see label_provenance.yaml: human_gold'
+  gold.cross_modal_gaps[].id:
+    class: OURS
+    evidence: internal build code
+    note: Annotator gold block (human_annotated). Source quotes >=12 chars and whole-value source spans templated.
+    release: literal
+    stats:
+      leaves: 19
+      literal: 19
+      templated_whole: 0
+      templated_mixed: 0
+    producer: 'see label_provenance.yaml: human_gold'
+  gold.cross_modal_gaps[].instruction_required:
+    class: OURS
+    evidence: internal build code
+    note: Annotator gold block (human_annotated). Source quotes >=12 chars and whole-value source spans templated.
+    release: literal + templated
+    stats:
+      leaves: 19
+      literal: 9
+      templated_whole: 0
+      templated_mixed: 10
+      source_char_share: 0.274
+    producer: 'see label_provenance.yaml: human_gold'
+  gold.cross_modal_gaps[].proceeded_past_gap:
+    class: OURS
+    evidence: internal build code
+    note: Annotator gold block (human_annotated). Source quotes >=12 chars and whole-value source spans templated.
+    release: literal
+    stats:
+      leaves: 19
+      literal: 19
+      templated_whole: 0
+      templated_mixed: 0
+    producer: 'see label_provenance.yaml: human_gold'
+  gold.cross_modal_gaps[].screen_exposed:
+    class: OURS
+    evidence: internal build code
+    note: Annotator gold block (human_annotated). Source quotes >=12 chars and whole-value source spans templated.
+    release: literal + templated
+    stats:
+      leaves: 19
+      literal: 10
+      templated_whole: 0
+      templated_mixed: 9
+      source_char_share: 0.164
+    producer: 'see label_provenance.yaml: human_gold'
+  gold.cross_modal_gaps[].step:
+    class: OURS
+    evidence: internal build code
+    note: Annotator gold block (human_annotated). Source quotes >=12 chars and whole-value source spans templated.
+    release: literal
+    stats:
+      leaves: 19
+      literal: 19
+      templated_whole: 0
+      templated_mixed: 0
+    producer: 'see label_provenance.yaml: human_gold'
+  gold.decisions[].ask_before_step:
+    class: OURS
+    evidence: internal build code
+    note: Annotator gold block (human_annotated). Source quotes >=12 chars and whole-value source spans templated.
+    release: literal
+    stats:
+      leaves: 375
+      literal: 375
+      templated_whole: 0
+      templated_mixed: 0
+    producer: 'see label_provenance.yaml: human_gold'
+  gold.decisions[].ask_or_guess:
+    class: OURS
+    evidence: internal build code
+    note: Annotator gold block (human_annotated). Source quotes >=12 chars and whole-value source spans templated.
+    release: literal
+    stats:
+      leaves: 375
+      literal: 375
+      templated_whole: 0
+      templated_mixed: 0
+    producer: 'see label_provenance.yaml: human_gold'
+  gold.decisions[].best_assumption:
+    class: OURS
+    evidence: internal build code
+    note: Annotator gold block (human_annotated). Source quotes >=12 chars and whole-value source spans templated.
+    release: literal + templated
+    stats:
+      leaves: 375
+      literal: 231
+      templated_whole: 73
+      templated_mixed: 71
+      source_char_share: 0.641
+    producer: 'see label_provenance.yaml: human_gold'
+  gold.decisions[].best_assumption_reason:
+    class: OURS
+    evidence: internal build code
+    note: Annotator gold block (human_annotated). Source quotes >=12 chars and whole-value source spans templated.
+    release: literal + templated
+    stats:
+      leaves: 375
+      literal: 184
+      templated_whole: 0
+      templated_mixed: 191
+      source_char_share: 0.161
+    producer: 'see label_provenance.yaml: human_gold'
+  gold.decisions[].clarification_question:
+    class: OURS
+    evidence: internal build code
+    note: Annotator gold block (human_annotated). Source quotes >=12 chars and whole-value source spans templated.
+    release: literal + templated
+    stats:
+      leaves: 375
+      literal: 280
+      templated_whole: 33
+      templated_mixed: 62
+      source_char_share: 0.467
+    producer: 'see label_provenance.yaml: human_gold'
+  gold.decisions[].classification:
+    class: OURS
+    evidence: internal build code
+    note: Annotator gold block (human_annotated). Source quotes >=12 chars and whole-value source spans templated.
+    release: literal
+    stats:
+      leaves: 375
+      literal: 375
+      templated_whole: 0
+      templated_mixed: 0
+    producer: 'see label_provenance.yaml: human_gold'
+  gold.decisions[].discovery_answer:
+    class: OURS
+    evidence: internal build code
+    note: Annotator gold block (human_annotated). Source quotes >=12 chars and whole-value source spans templated.
+    release: literal
+    stats:
+      leaves: 375
+      literal: 375
+      templated_whole: 0
+      templated_mixed: 0
+    producer: 'see label_provenance.yaml: human_gold'
+  gold.decisions[].id:
+    class: OURS
+    evidence: internal build code
+    note: Annotator gold block (human_annotated). Source quotes >=12 chars and whole-value source spans templated.
+    release: literal
+    stats:
+      leaves: 375
+      literal: 375
+      templated_whole: 0
+      templated_mixed: 0
+    producer: 'see label_provenance.yaml: human_gold'
+  gold.decisions[].is_random_guess:
+    class: OURS
+    evidence: internal build code
+    note: Annotator gold block (human_annotated). Source quotes >=12 chars and whole-value source spans templated.
+    release: literal
+    stats:
+      leaves: 375
+      literal: 375
+      templated_whole: 0
+      templated_mixed: 0
+    producer: 'see label_provenance.yaml: human_gold'
+  gold.decisions[].options[]:
+    class: OURS
+    evidence: internal build code
+    note: Annotator gold block (human_annotated). Source quotes >=12 chars and whole-value source spans templated.
+    release: literal + templated
+    stats:
+      leaves: 1046
+      literal: 759
+      templated_whole: 122
+      templated_mixed: 165
+      source_char_share: 0.561
+    producer: 'see label_provenance.yaml: human_gold'
+  gold.decisions[].question:
+    class: OURS
+    evidence: internal build code
+    note: Annotator gold block (human_annotated). Source quotes >=12 chars and whole-value source spans templated.
+    release: literal + templated
+    stats:
+      leaves: 375
+      literal: 193
+      templated_whole: 1
+      templated_mixed: 181
+      source_char_share: 0.304
+    producer: 'see label_provenance.yaml: human_gold'
+  gold.decisions[].shared_steps:
+    class: OURS
+    evidence: internal build code
+    note: Annotator gold block (human_annotated). Source quotes >=12 chars and whole-value source spans templated.
+    release: literal + templated
+    stats:
+      leaves: 375
+      literal: 245
+      templated_whole: 0
+      templated_mixed: 130
+      source_char_share: 0.237
+    producer: 'see label_provenance.yaml: human_gold'
+  gold.decisions[].step:
+    class: OURS
+    evidence: internal build code
+    note: Annotator gold block (human_annotated). Source quotes >=12 chars and whole-value source spans templated.
+    release: literal
+    stats:
+      leaves: 375
+      literal: 375
+      templated_whole: 0
+      templated_mixed: 0
+    producer: 'see label_provenance.yaml: human_gold'
+  gold.dialogue_json[].i:
+    class: POINTER
+    evidence: internal build code
+    note: Index into dialog.json.
+    release: literal
+    stats:
+      leaves: 956
+      literal: 956
+      templated_whole: 0
+      templated_mixed: 0
+    producer: 'see label_provenance.yaml: pointer'
+  gold.dialogue_json[].role:
+    class: OURS
+    evidence: internal build code
+    release: literal
+    stats:
+      leaves: 956
+      literal: 956
+      templated_whole: 0
+      templated_mixed: 0
+    producer: 'see label_provenance.yaml: role_heuristic'
+  gold.dialogue_json[].speaker:
+    class: DERIVED-FROM-SOURCE (normalised)
+    evidence: internal build code
+    release: literal
+    stats:
+      leaves: 956
+      literal: 956
+      templated_whole: 0
+      templated_mixed: 0
+    producer: 'see label_provenance.yaml: source'
+  gold.dialogue_json[].text:
+    class: DERIVED-FROM-SOURCE
+    evidence: internal build code
+    note: META-GUI dialog.json text verbatim (2 turns U+00A0->space). Templated.
+    release: templated
+    stats:
+      leaves: 956
+      literal: 0
+      templated_whole: 956
+      templated_mixed: 0
+      source_char_share: 1.0
+    producer: 'see label_provenance.yaml: source'
+  gold.initial_judgements[].judgement:
+    class: OURS
+    evidence: internal build code
+    note: Written by human research participants, including the rows marked synthetic=true (owner statement,
+      2026-10-23). Dropped; never ships.
+    release: 'dropped: owner, only final labels ship (2026-10-23)'
+    stats:
+      leaves: 298
+      literal: 298
+      templated_whole: 0
+      templated_mixed: 0
+    producer: 'see label_provenance.yaml: initial_judgement'
+  gold.initial_judgements[].rationale:
+    class: OURS
+    evidence: internal build code
+    note: Written by human research participants, including the rows marked synthetic=true (owner statement,
+      2026-10-23). Dropped; never ships.
+    release: 'dropped: owner, only final labels ship (2026-10-23)'
+    stats:
+      leaves: 298
+      literal: 163
+      templated_whole: 0
+      templated_mixed: 135
+      source_char_share: 0.123
+    producer: 'see label_provenance.yaml: initial_judgement'
+  gold.initial_judgements[].synthetic:
+    class: OURS
+    evidence: internal build code
+    note: Written by human research participants, including the rows marked synthetic=true (owner statement,
+      2026-10-23). Dropped; never ships.
+    release: 'dropped: owner, only final labels ship (2026-10-23)'
+    stats:
+      leaves: 298
+      literal: 298
+      templated_whole: 0
+      templated_mixed: 0
+    producer: 'see label_provenance.yaml: initial_judgement'
+  gold.initial_judgements[].turn:
+    class: OURS
+    evidence: internal build code
+    note: Written by human research participants, including the rows marked synthetic=true (owner statement,
+      2026-10-23). Dropped; never ships.
+    release: 'dropped: owner, only final labels ship (2026-10-23)'
+    stats:
+      leaves: 298
+      literal: 298
+      templated_whole: 0
+      templated_mixed: 0
+    producer: 'see label_provenance.yaml: initial_judgement'
+  gold.notes.edge_cases:
+    class: OURS
+    evidence: internal build code
+    note: Annotator free text (same content as annotator_notes in gold_eval_set). Quotes >=12 chars templated.
+    release: literal + templated
+    stats:
+      leaves: 298
+      literal: 275
+      templated_whole: 0
+      templated_mixed: 23
+      source_char_share: 0.111
+    producer: 'see label_provenance.yaml: human_gold'
+  gold.notes.fatigue:
+    class: OURS
+    evidence: internal build code
+    note: Annotator free text (same content as annotator_notes in gold_eval_set). Quotes >=12 chars templated.
+    release: literal + templated
+    stats:
+      leaves: 298
+      literal: 297
+      templated_whole: 0
+      templated_mixed: 1
+      source_char_share: 0.289
+    producer: 'see label_provenance.yaml: human_gold'
+  gold.notes.process_uncertainty:
+    class: OURS
+    evidence: internal build code
+    note: Annotator free text (same content as annotator_notes in gold_eval_set). Quotes >=12 chars templated.
+    release: literal + templated
+    stats:
+      leaves: 298
+      literal: 286
+      templated_whole: 0
+      templated_mixed: 12
+      source_char_share: 0.084
+    producer: 'see label_provenance.yaml: human_gold'
+  gold.step_discovery[].answer:
+    class: OURS
+    evidence: internal build code
+    note: Annotator gold block (human_annotated). Source quotes >=12 chars and whole-value source spans templated.
+    release: literal
+    stats:
+      leaves: 3248
+      literal: 3248
+      templated_whole: 0
+      templated_mixed: 0
+    producer: 'see label_provenance.yaml: human_gold'
+  gold.step_discovery[].creates_assumption:
+    class: OURS
+    evidence: internal build code
+    note: Annotator gold block (human_annotated). Source quotes >=12 chars and whole-value source spans templated.
+    release: literal
+    stats:
+      leaves: 3248
+      literal: 3248
+      templated_whole: 0
+      templated_mixed: 0
+    producer: 'see label_provenance.yaml: human_gold'
+  gold.step_discovery[].creates_cross_modal:
+    class: OURS
+    evidence: internal build code
+    note: Annotator gold block (human_annotated). Source quotes >=12 chars and whole-value source spans templated.
+    release: literal
+    stats:
+      leaves: 3248
+      literal: 3248
+      templated_whole: 0
+      templated_mixed: 0
+    producer: 'see label_provenance.yaml: human_gold'
+  gold.step_discovery[].creates_decision:
+    class: OURS
+    evidence: internal build code
+    note: Annotator gold block (human_annotated). Source quotes >=12 chars and whole-value source spans templated.
+    release: literal
+    stats:
+      leaves: 3248
+      literal: 3248
+      templated_whole: 0
+      templated_mixed: 0
+    producer: 'see label_provenance.yaml: human_gold'
+  gold.step_discovery[].step:
+    class: OURS
+    evidence: internal build code
+    note: Annotator gold block (human_annotated). Source quotes >=12 chars and whole-value source spans templated.
+    release: literal
+    stats:
+      leaves: 3248
+      literal: 3248
+      templated_whole: 0
+      templated_mixed: 0
+    producer: 'see label_provenance.yaml: human_gold'
+  gold.step_tracking[].affected_options:
+    class: OURS
+    evidence: internal build code
+    note: Annotator gold block (human_annotated). Source quotes >=12 chars and whole-value source spans templated.
+    release: literal + templated
+    stats:
+      leaves: 375
+      literal: 228
+      templated_whole: 1
+      templated_mixed: 146
+      source_char_share: 0.217
+    producer: 'see label_provenance.yaml: human_gold'
+  gold.step_tracking[].discovery_answer:
+    class: OURS
+    evidence: internal build code
+    note: Annotator gold block (human_annotated). Source quotes >=12 chars and whole-value source spans templated.
+    release: literal
+    stats:
+      leaves: 375
+      literal: 375
+      templated_whole: 0
+      templated_mixed: 0
+    producer: 'see label_provenance.yaml: human_gold'
+  gold.step_tracking[].evidence_and_reason:
+    class: OURS
+    evidence: internal build code
+    note: Annotator gold block (human_annotated). Source quotes >=12 chars and whole-value source spans templated.
+    release: literal + templated
+    stats:
+      leaves: 375
+      literal: 134
+      templated_whole: 0
+      templated_mixed: 241
+      source_char_share: 0.151
+    producer: 'see label_provenance.yaml: human_gold'
+  gold.step_tracking[].id:
+    class: OURS
+    evidence: internal build code
+    note: Annotator gold block (human_annotated). Source quotes >=12 chars and whole-value source spans templated.
+    release: literal
+    stats:
+      leaves: 375
+      literal: 375
+      templated_whole: 0
+      templated_mixed: 0
+    producer: 'see label_provenance.yaml: human_gold'
+  gold.step_tracking[].information_source:
+    class: OURS
+    evidence: internal build code
+    note: Annotator gold block (human_annotated). Source quotes >=12 chars and whole-value source spans templated.
+    release: literal
+    stats:
+      leaves: 375
+      literal: 375
+      templated_whole: 0
+      templated_mixed: 0
+    producer: 'see label_provenance.yaml: human_gold'
+  gold.step_tracking[].step:
+    class: OURS
+    evidence: internal build code
+    note: Annotator gold block (human_annotated). Source quotes >=12 chars and whole-value source spans templated.
+    release: literal
+    stats:
+      leaves: 375
+      literal: 375
+      templated_whole: 0
+      templated_mixed: 0
+    producer: 'see label_provenance.yaml: human_gold'
+  gold.steps_json[].action:
+    class: DERIVED-FROM-SOURCE
+    evidence: internal build code
+    note: Older action rendering shown to annotators (element-less for META-GUI taps); templated like steps[].action_repr.
+    release: 'not shipped on OSWorld rows: they use OSWorld''s own environment and grounding (owner, 2026-10-23)'
+    stats:
+      leaves: 3248
+      literal: 1979
+      templated_whole: 0
+      templated_mixed: 1269
+      source_char_share: 0.633
+    producer: 'see label_provenance.yaml: source, osworld_steps'
+  gold.steps_json[].i:
+    class: POINTER
+    evidence: internal build code
+    release: 'not shipped on OSWorld rows: they use OSWorld''s own environment and grounding (owner, 2026-10-23)'
+    stats:
+      leaves: 3248
+      literal: 3248
+      templated_whole: 0
+      templated_mixed: 0
+    producer: 'see label_provenance.yaml: pointer, osworld_steps'
+  gold.steps_json[].img:
+    class: OURS
+    evidence: internal build code
+    note: Annotation-package path pattern; internal bucket prefix replaced by {{$package_root}}.
+    release: 'not shipped on OSWorld rows: they use OSWorld''s own environment and grounding (owner, 2026-10-23)'
+    stats:
+      leaves: 3248
+      literal: 0
+      templated_whole: 0
+      templated_mixed: 0
+      variable_prefix: 3248
+    producer: 'see label_provenance.yaml: script_meta, osworld_steps'
+  gold.steps_json[].turn:
+    class: POINTER
+    evidence: internal build code
+    release: 'not shipped on OSWorld rows: they use OSWorld''s own environment and grounding (owner, 2026-10-23)'
+    stats:
+      leaves: 2083
+      literal: 2083
+      templated_whole: 0
+      templated_mixed: 0
+    producer: 'see label_provenance.yaml: pointer, osworld_steps'
+  gold.terminal_review.completion_strategy:
+    class: OURS
+    evidence: internal build code
+    note: Annotator free text (same content as annotator_notes in gold_eval_set). Quotes >=12 chars templated.
+    release: literal + templated
+    stats:
+      leaves: 298
+      literal: 104
+      templated_whole: 0
+      templated_mixed: 194
+      source_char_share: 0.114
+    producer: 'see label_provenance.yaml: human_gold'
+  gold.terminal_review.decisions_supported:
+    class: OURS
+    evidence: internal build code
+    note: Annotator free text (same content as annotator_notes in gold_eval_set). Quotes >=12 chars templated.
+    release: literal + templated
+    stats:
+      leaves: 298
+      literal: 87
+      templated_whole: 6
+      templated_mixed: 205
+      source_char_share: 0.16
+    producer: 'see label_provenance.yaml: human_gold'
+  gold.terminal_review.options_unresolved:
+    class: OURS
+    evidence: internal build code
+    note: Annotator free text (same content as annotator_notes in gold_eval_set). Quotes >=12 chars templated.
+    release: literal + templated
+    stats:
+      leaves: 298
+      literal: 156
+      templated_whole: 0
+      templated_mixed: 142
+      source_char_share: 0.098
+    producer: 'see label_provenance.yaml: human_gold'
+  gold.terminal_review.step:
+    class: OURS
+    evidence: internal build code
+    note: Annotator free text (same content as annotator_notes in gold_eval_set). Quotes >=12 chars templated.
+    release: literal
+    stats:
+      leaves: 298
+      literal: 298
+      templated_whole: 0
+      templated_mixed: 0
+    producer: 'see label_provenance.yaml: human_gold'
+  gold.trajectory_familiarity:
+    class: OURS
+    evidence: internal build code
+    release: literal
+    stats:
+      leaves: 298
+      literal: 298
+      templated_whole: 0
+      templated_mixed: 0
+    producer: 'see label_provenance.yaml: human_gold'
+  gold.turn_classifications[].classification:
+    class: OURS
+    evidence: internal build code
+    note: Annotator class of each user turn; turn = index into dialog.json.
+    release: literal
+    stats:
+      leaves: 478
+      literal: 478
+      templated_whole: 0
+      templated_mixed: 0
+    producer: 'see label_provenance.yaml: human_gold'
+  gold.turn_classifications[].speaker:
+    class: DERIVED-FROM-SOURCE (normalised)
+    evidence: internal build code
+    release: literal
+    stats:
+      leaves: 478
+      literal: 478
+      templated_whole: 0
+      templated_mixed: 0
+    producer: 'see label_provenance.yaml: source'
+  gold.turn_classifications[].text:
+    class: DERIVED-FROM-SOURCE
+    evidence: internal build code
+    note: 'User turn text as stored by the labelling tool: verbatim on 443, whitespace-trimmed/collapsed on 34,
+      U+00A0 on 1. Templated.'
+    release: templated
+    stats:
+      leaves: 478
+      literal: 0
+      templated_whole: 478
+      templated_mixed: 0
+      source_char_share: 1.0
+    producer: 'see label_provenance.yaml: source'
+  gold.turn_classifications[].turn:
+    class: OURS
+    evidence: internal build code
+    note: Annotator class of each user turn; turn = index into dialog.json.
+    release: literal
+    stats:
+      leaves: 478
+      literal: 478
+      templated_whole: 0
+      templated_mixed: 0
+    producer: 'see label_provenance.yaml: human_gold'
+  gold.type_mode:
+    class: OURS
+    evidence: internal build code
+    release: literal
+    stats:
+      leaves: 298
+      literal: 298
+      templated_whole: 0
+      templated_mixed: 0
+    producer: 'see label_provenance.yaml: human_gold'
+  instruction:
+    class: DERIVED-FROM-SOURCE
+    evidence: internal build code
+    note: 'Verbatim source text on all 298 rows: Mind2Web confirmed_task (150), OSWorld instruction (33; read from
+      OSWorld), META-GUI a user turn (115; first user turn on 112, the first user turn after a greeting on 3: a065deec,
+      cb9a689b, dbf75c9b). Templated, never shipped.'
+    release: templated
+    stats:
+      leaves: 298
+      literal: 0
+      templated_whole: 298
+      templated_mixed: 0
+      source_char_share: 1.0
+    producer: 'see label_provenance.yaml: source'
+  label_provenance:
+    class: OURS
+    evidence: internal build code
+    release: 'dropped: unused constant (owner, 2026-10-23); the offline and online stages give identical outputs
+      without it'
+    stats:
+      leaves: 298
+      literal: 298
+      templated_whole: 0
+      templated_mixed: 0
+    producer: 'see label_provenance.yaml: script_meta'
+  n_steps:
+    class: OURS
+    evidence: internal build code
+    note: Count of our steps (string in gold_eval_set, int in targets file). Equals source step count except 4 Mind2Web
+      rows truncated by the internal screenshot-exists filter.
+    release: null on OSWorld rows (no recorded trajectory ships; owner, 2026-10-23)
+    stats:
+      leaves: 298
+      literal: 298
+      templated_whole: 0
+      templated_mixed: 0
+    producer: 'see label_provenance.yaml: script_meta'
+  review_handle.label:
+    class: DERIVED-FROM-SOURCE
+    evidence: internal build code
+    note: '"<website> / <subdomain>" (Mind2Web) or "META-GUI app: <category>" / "OSWorld app: <domain>": source
+      names in our wording. Templated.'
+    release: templated
+    stats:
+      leaves: 298
+      literal: 0
+      templated_whole: 0
+      templated_mixed: 298
+      source_char_share: 0.59
+    producer: 'see label_provenance.yaml: source'
+  review_handle.raw_website:
+    class: DERIVED-FROM-SOURCE
+    evidence: internal build code
+    note: Mind2Web `website` verbatim (150 rows); null otherwise.
+    release: literal + templated
+    stats:
+      leaves: 298
+      literal: 148
+      templated_whole: 150
+      templated_mixed: 0
+      source_char_share: 1.0
+    producer: 'see label_provenance.yaml: source'
+  review_handle.substrate:
+    class: OURS
+    evidence: internal build code
+    note: web/mobile/desktop, assigned per source.
+    release: literal
+    stats:
+      leaves: 298
+      literal: 298
+      templated_whole: 0
+      templated_mixed: 0
+    producer: 'see label_provenance.yaml: script_meta'
+  review_handle.url:
+    class: OURS
+    evidence: internal build code
+    note: URL made from the Mind2Web website name by a deterministic script (no model) that reproduces review_handle.url
+      and url_confidence on 150/150 Mind2Web rows (label_provenance.yaml -> url_script); url_confidence exact 43 /
+      guessed 107. The website-name part is templated.
+    release: literal + templated
+    stats:
+      leaves: 298
+      literal: 148
+      templated_whole: 0
+      templated_mixed: 150
+      source_char_share: 0.382
+    producer: 'see label_provenance.yaml: url_script'
+  review_handle.url_confidence:
+    class: OURS
+    evidence: internal build code
+    release: literal
+    stats:
+      leaves: 298
+      literal: 298
+      templated_whole: 0
+      templated_mixed: 0
+    producer: 'see label_provenance.yaml: url_script'
+  risk:
+    class: OURS
+    evidence: internal build code
+    note: Human labels (label_provenance=human_annotated).
+    release: literal
+    stats:
+      leaves: 298
+      literal: 298
+      templated_whole: 0
+      templated_mixed: 0
+    producer: 'see label_provenance.yaml: human_gold'
+  sample_id:
+    class: POINTER
+    evidence: internal build code
+    note: 'Source-native id: Mind2Web annotation_id / META-GUI dialog_id (dialog_id.txt) / OSWorld task id. Verified
+      for all 298 rows (pointers.jsonl). Not a UUID we minted.'
+    release: literal
+    stats:
+      leaves: 298
+      literal: 298
+      templated_whole: 0
+      templated_mixed: 0
+    producer: 'see label_provenance.yaml: pointer'
+  severity:
+    class: OURS
+    evidence: internal build code
+    note: Human labels (label_provenance=human_annotated).
+    release: literal
+    stats:
+      leaves: 298
+      literal: 298
+      templated_whole: 0
+      templated_mixed: 0
+    producer: 'see label_provenance.yaml: human_gold'
+  source:
+    class: POINTER
+    evidence: internal build code
+    note: Source dataset name.
+    release: literal
+    stats:
+      leaves: 298
+      literal: 298
+      templated_whole: 0
+      templated_mixed: 0
+    producer: 'see label_provenance.yaml: pointer'
+  split:
+    class: POINTER
+    evidence: internal build code
+    note: Mind2Web official split (test_task/test_website/test_domain); META-GUI "test" = the test.tar split; OSWorld
+      "cross_domain" is OURS (eval-only tag).
+    release: literal
+    stats:
+      leaves: 298
+      literal: 298
+      templated_whole: 0
+      templated_mixed: 0
+    producer: 'see label_provenance.yaml: pointer'
+  steps[].action_repr:
+    class: DERIVED-FROM-SOURCE
+    evidence: internal build code
+    note: 'Our rendering `<op> "<payload>" into "<element>"` of source values: element and payload are templated,
+      op word and quotes stay literal.'
+    release: 'not shipped on OSWorld rows: they use OSWorld''s own environment and grounding (owner, 2026-10-23)'
+    stats:
+      leaves: 3248
+      literal: 665
+      templated_whole: 0
+      templated_mixed: 2583
+      source_char_share: 0.609
+    producer: 'see label_provenance.yaml: source, osworld_steps'
+  steps[].element:
+    class: DERIVED-FROM-SOURCE
+    evidence: internal build code
+    note: 'Element name: Mind2Web target_action_reprs text / DOM attribute; META-GUI view-hierarchy text|content-desc|resource-id
+      at the tap point; OSWorld rows: not shipped. Templated. "an unlabelled <tag>" wording is ours.'
+    release: 'not shipped on OSWorld rows: they use OSWorld''s own environment and grounding (owner, 2026-10-23)'
+    stats:
+      leaves: 3248
+      literal: 887
+      templated_whole: 2332
+      templated_mixed: 29
+      source_char_share: 0.987
+    producer: 'see label_provenance.yaml: source, osworld_steps'
+  steps[].element_source:
+    class: OURS
+    evidence: internal build code
+    note: Our label for where the element name came from.
+    release: 'not shipped on OSWorld rows: they use OSWorld''s own environment and grounding (owner, 2026-10-23)'
+    stats:
+      leaves: 3248
+      literal: 3248
+      templated_whole: 0
+      templated_mixed: 0
+    producer: 'see label_provenance.yaml: script_meta, osworld_steps'
+  steps[].gold_action.args.grounding_failed:
+    class: OURS
+    evidence: 'internal ingest of the OSWorld rows (not shipped: OSWorld rows ship no recorded steps)'
+    release: 'not shipped on OSWorld rows: they use OSWorld''s own environment and grounding (owner, 2026-10-23)'
+    stats:
+      leaves: 1
+      literal: 1
+      templated_whole: 0
+      templated_mixed: 0
+    producer: 'see label_provenance.yaml: osworld_steps'
+  steps[].gold_action.args.keys[]:
+    class: DERIVED-FROM-SOURCE
+    evidence: 'internal ingest of the OSWorld rows (not shipped: OSWorld rows ship no recorded steps)'
+    note: Keys of the recorded OSWorld steps. Not shipped (OSWorld rows ship no recorded steps).
+    release: 'not shipped on OSWorld rows: they use OSWorld''s own environment and grounding (owner, 2026-10-23)'
+    stats:
+      leaves: 55
+      literal: 18
+      templated_whole: 37
+      templated_mixed: 0
+      source_char_share: 1.0
+    producer: 'see label_provenance.yaml: source, osworld_steps'
+  steps[].gold_action.args.params[]:
+    class: DERIVED-FROM-SOURCE
+    evidence: internal build code
+    note: META-GUI action params (e.g. read/swipe rectangles) verbatim. Templated.
+    release: 'not shipped on OSWorld rows: they use OSWorld''s own environment and grounding (owner, 2026-10-23)'
+    stats:
+      leaves: 716
+      literal: 0
+      templated_whole: 716
+      templated_mixed: 0
+      source_char_share: 1.0
+    producer: 'see label_provenance.yaml: source, osworld_steps'
+  steps[].gold_action.args.point[]:
+    class: DERIVED-FROM-SOURCE (Mind2Web, META-GUI); not shipped on OSWorld rows
+    evidence: internal build code
+    note: "Mind2Web: round(centre of pos_candidates[0] bounding_box_rect); META-GUI: tap x,y from actions.json \u2014\
+      \ shipped as {\"$src\"} pointers. OSWorld rows: not shipped (OSWorld has its own grounding)."
+    release: 'not shipped on OSWorld rows: they use OSWorld''s own environment and grounding (owner, 2026-10-23)'
+    stats:
+      leaves: 4810
+      literal: 154
+      templated_whole: 0
+      templated_mixed: 0
+      pointer_numbers: 4656
+    producer: 'see label_provenance.yaml: source, osworld_steps'
+  steps[].gold_action.args.target:
+    class: DERIVED-FROM-SOURCE
+    evidence: internal build code
+    note: Same as element. Templated.
+    release: 'not shipped on OSWorld rows: they use OSWorld''s own environment and grounding (owner, 2026-10-23)'
+    stats:
+      leaves: 3248
+      literal: 887
+      templated_whole: 2332
+      templated_mixed: 29
+      source_char_share: 0.987
+    producer: 'see label_provenance.yaml: source, osworld_steps'
+  steps[].gold_action.args.text:
+    class: DERIVED-FROM-SOURCE
+    evidence: internal build code
+    note: 'Typed / selected value: Mind2Web operation.value, META-GUI input text, not shipped on OSWorld rows. Templated.'
+    release: 'not shipped on OSWorld rows: they use OSWorld''s own environment and grounding (owner, 2026-10-23)'
+    stats:
+      leaves: 315
+      literal: 0
+      templated_whole: 315
+      templated_mixed: 0
+      source_char_share: 1.0
+    producer: 'see label_provenance.yaml: source, osworld_steps'
+  steps[].gold_action.args.value:
+    class: DERIVED-FROM-SOURCE
+    evidence: internal build code
+    note: 'Typed / selected value: Mind2Web operation.value, META-GUI input text, not shipped on OSWorld rows. Templated.'
+    release: 'not shipped on OSWorld rows: they use OSWorld''s own environment and grounding (owner, 2026-10-23)'
+    stats:
+      leaves: 70
+      literal: 0
+      templated_whole: 70
+      templated_mixed: 0
+      source_char_share: 1.0
+    producer: 'see label_provenance.yaml: source, osworld_steps'
+  steps[].gold_action.raw:
+    class: DERIVED-FROM-SOURCE
+    evidence: 'internal ingest of the OSWorld rows (not shipped: OSWorld rows ship no recorded steps)'
+    note: Human step text of the OSWorld rows. Not shipped.
+    release: 'not shipped on OSWorld rows: they use OSWorld''s own environment and grounding (owner, 2026-10-23)'
+    stats:
+      leaves: 133
+      literal: 0
+      templated_whole: 133
+      templated_mixed: 0
+      source_char_share: 1.0
+    producer: 'see label_provenance.yaml: source, osworld_steps'
+  steps[].gold_action.tool:
+    class: OURS (normalised from source action type)
+    evidence: internal build code
+    note: Our action vocabulary (click/type/select/input/read/swipe/...), mapped from Mind2Web op, META-GUI action
+      type, recorded OSWorld step verb (not shipped on OSWorld rows). An enum, not source text; shipped literal.
+    release: 'not shipped on OSWorld rows: they use OSWorld''s own environment and grounding (owner, 2026-10-23)'
+    stats:
+      leaves: 3248
+      literal: 3248
+      templated_whole: 0
+      templated_mixed: 0
+    producer: 'see label_provenance.yaml: script_meta, osworld_steps'
+  steps[].image_path:
+    class: OURS
+    evidence: internal build code
+    note: Our screenshot pool path pattern <source>/screenshots/<sample_id>/step_NN.png; internal root replaced
+      by build-time variable {{$pool_root}}. Screenshots never ship.
+    release: 'not shipped on OSWorld rows: they use OSWorld''s own environment and grounding (owner, 2026-10-23)'
+    stats:
+      leaves: 3248
+      literal: 0
+      templated_whole: 0
+      templated_mixed: 0
+      variable_prefix: 3248
+    producer: 'see label_provenance.yaml: script_meta, osworld_steps'
+  steps[].operation:
+    class: OURS (normalised from source action type)
+    evidence: internal build code
+    note: Our action vocabulary (click/type/select/input/read/swipe/...), mapped from Mind2Web op, META-GUI action
+      type, recorded OSWorld step verb (not shipped on OSWorld rows). An enum, not source text; shipped literal.
+    release: 'not shipped on OSWorld rows: they use OSWorld''s own environment and grounding (owner, 2026-10-23)'
+    stats:
+      leaves: 3248
+      literal: 3248
+      templated_whole: 0
+      templated_mixed: 0
+    producer: 'see label_provenance.yaml: script_meta, osworld_steps'
+  steps[].step_index:
+    class: POINTER
+    evidence: internal build code
+    note: Our step index; pointers.jsonl maps it to action_uid / (turn dir, action key) / single-action index.
+    release: 'not shipped on OSWorld rows: they use OSWorld''s own environment and grounding (owner, 2026-10-23)'
+    stats:
+      leaves: 3248
+      literal: 3248
+      templated_whole: 0
+      templated_mixed: 0
+    producer: 'see label_provenance.yaml: pointer, osworld_steps'
+  substrate:
+    class: OURS
+    evidence: internal build code
+    note: web/mobile/desktop, assigned per source.
+    release: literal
+    stats:
+      leaves: 298
+      literal: 298
+      templated_whole: 0
+      templated_mixed: 0
+    producer: 'see label_provenance.yaml: script_meta'
+  synthetic:
+    class: OURS
+    evidence: internal build code
+    note: Row-level flag (false on all 298).
+    release: 'dropped: unused constant (owner, 2026-10-23); the offline and online stages give identical outputs
+      without it'
+    stats:
+      leaves: 298
+      literal: 298
+      templated_whole: 0
+      templated_mixed: 0
+    producer: 'see label_provenance.yaml: script_meta'
+open_items.windows.jsonl:
+  basis:
+    class: MODEL-GENERATED (Gemma-4-31B, approved producer)
+    evidence: internal build code
+    note: Evidence text Gemma-4-31B wrote for the proposed window (owner statement, 2026-10-23; label_provenance.yaml
+      -> windows). Quotes of source action strings >=12 chars are templated.
+    release: literal + templated
+    stats:
+      leaves: 313
+      literal: 126
+      templated_whole: 0
+      templated_mixed: 187
+      source_char_share: 0.138
+    producer: 'see label_provenance.yaml: windows'
+  commit_step:
+    class: MODEL-GENERATED (Gemma-4-31B, approved producer)
+    evidence: internal build code
+    note: Proposed ask window, made by Gemma-4-31B for all 313 open items (owner statement, 2026-10-23;
+      label_provenance.yaml -> windows).
+    release: literal
+    stats:
+      leaves: 313
+      literal: 313
+      templated_whole: 0
+      templated_mixed: 0
+    producer: 'see label_provenance.yaml: windows'
+  determined:
+    class: MODEL-GENERATED (Gemma-4-31B, approved producer)
+    evidence: internal build code
+    note: Proposed ask window, made by Gemma-4-31B for all 313 open items (owner statement, 2026-10-23;
+      label_provenance.yaml -> windows).
+    release: 'dropped: unused constant (owner, 2026-10-23); the offline and online stages give identical outputs
+      without it'
+    stats:
+      leaves: 313
+      literal: 313
+      templated_whole: 0
+      templated_mixed: 0
+    producer: 'see label_provenance.yaml: windows'
+  earliest_step:
+    class: MODEL-GENERATED (Gemma-4-31B, approved producer)
+    evidence: internal build code
+    note: Proposed ask window, made by Gemma-4-31B for all 313 open items (owner statement, 2026-10-23;
+      label_provenance.yaml -> windows).
+    release: 'dropped: unused constant (owner, 2026-10-23); the offline and online stages give identical outputs
+      without it'
+    stats:
+      leaves: 313
+      literal: 313
+      templated_whole: 0
+      templated_mixed: 0
+    producer: 'see label_provenance.yaml: windows'
+  latest_step:
+    class: MODEL-GENERATED (Gemma-4-31B, approved producer)
+    evidence: internal build code
+    note: Proposed ask window, made by Gemma-4-31B for all 313 open items (owner statement, 2026-10-23;
+      label_provenance.yaml -> windows).
+    release: literal
+    stats:
+      leaves: 313
+      literal: 313
+      templated_whole: 0
+      templated_mixed: 0
+    producer: 'see label_provenance.yaml: windows'
+  name:
+    class: POINTER
+    evidence: internal build code
+    note: Name of the open item (written by Gemma-4-31B with the item); with sample_id it is the key to
+      open_items[].name in gold_eval_set.
+    release: literal
+    stats:
+      leaves: 313
+      literal: 313
+      templated_whole: 0
+      templated_mixed: 0
+    producer: 'see label_provenance.yaml: pointer'
+  provenance:
+    class: MODEL-GENERATED (Gemma-4-31B, approved producer)
+    evidence: internal build code
+    note: Proposed ask window, made by Gemma-4-31B for all 313 open items (owner statement, 2026-10-23;
+      label_provenance.yaml -> windows).
+    release: 'dropped: owner rule, no provenance fields in rows (2026-10-23); window.source in the gold rows already
+      says recorded / proposed'
+    stats:
+      leaves: 313
+      literal: 313
+      templated_whole: 0
+      templated_mixed: 0
+    producer: 'see label_provenance.yaml: windows'
+  sample_id:
+    class: POINTER
+    evidence: internal build code
+    note: 'Source-native id: Mind2Web annotation_id / META-GUI dialog_id (dialog_id.txt) / OSWorld task id. Verified
+      for all 298 rows (pointers.jsonl). Not a UUID we minted.'
+    release: literal
+    stats:
+      leaves: 313
+      literal: 313
+      templated_whole: 0
+      templated_mixed: 0
+    producer: 'see label_provenance.yaml: pointer'

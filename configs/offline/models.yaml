@@ -1,0 +1,284 @@
+# Copyright (c) Meta Platforms, Inc. and affiliates.
+# All rights reserved.
+#
+# This source code is licensed under the license found in the
+# LICENSE file in the root directory of this source tree.
+
+# Which public weights answer for each model name, pinned to one Hugging Face commit.
+#
+# A *serve* is a running model server with an OpenAI-compatible chat API (for example
+# vLLM). Every model in this evaluation is reached through one, by URL. This file says
+# which weights each serve must load:
+#
+#   hf_id            the Hugging Face model id
+#   revision         the commit hash to load (vllm serve ... --revision <revision>)
+#   served_name      the name the serve must answer to (--served-model-name). For a
+#                    policy this is its catalogue key. For an answerer or a judge it is
+#                    the exact name the published run set recorded, because the answerer
+#                    reads its token budget off that name (see docs/offline.md).
+#   tensor_parallel  GPUs the weights were split over in the recorded runs (null when the
+#                    recorded runs did not say). Throughput only; see docs/offline.md.
+#   max_num_seqs     sequences the serve ran at once, where the recorded runs set it.
+#   extra_serve_args further vLLM arguments a checkpoint needs to load at all.
+#
+# The revisions were read from the Hugging Face hub on 2026-10-23. The recorded runs used
+# local copies of these weights whose commit was not recorded, so a revision here is the
+# current one, not a verified match (docs/offline.md, "Known differences").
+#
+# Serve an entry with vLLM as:
+#   vllm serve <hf_id> --revision <revision> --served-model-name <served_name> \
+#     [--tensor-parallel-size <tensor_parallel>] [--max-num-seqs <max_num_seqs>] [<extra_serve_args>]
+
+policies:
+  a3-qwen3.5-9b:
+    hf_id: McGill-NLP/A3-Qwen3.5-9B
+    revision: 6b1fad2e8b1a1406749647e43c9b5ad948fee27e
+    served_name: a3-qwen3.5-9b
+    tensor_parallel: 1
+  agentcpm-gui:
+    hf_id: openbmb/AgentCPM-GUI
+    revision: 433b33feda9fed1e13b509cfd65d73f0a3fc4dff
+    served_name: agentcpm-gui
+    tensor_parallel: 1
+  cogagent-9b-20241220:
+    hf_id: zai-org/cogagent-9b-20241220
+    revision: 0de2cad8d51f2621a15f9d6ba3eb2944a41f0292
+    served_name: cogagent-9b-20241220
+    tensor_parallel: 1
+    extra_serve_args: ["--hf-overrides", "{\"architectures\":[\"GLM4VForCausalLM\"]}"]
+  deepseek-v4.1-flash:
+    hf_id: deepseek-ai/DeepSeek-V4.1-Flash
+    revision: 314113f8a7dadb388215396ba5fbee2c610a04d6
+    served_name: deepseek-v4.1-flash
+    tensor_parallel: 8
+  deepseek-vl2:
+    hf_id: deepseek-ai/deepseek-vl2
+    revision: f363772d1c47f4239dd844015b4bd53beb87951b
+    served_name: deepseek-vl2
+    tensor_parallel: 2
+  gemma-3-12b-it:
+    hf_id: google/gemma-3-12b-it
+    revision: 96b6f1eccf38110c56df3a15bffe176da04bfd80
+    served_name: gemma-3-12b-it
+    tensor_parallel: 1
+  gemma-3-27b-it:
+    hf_id: google/gemma-3-27b-it
+    revision: 005ad3404e59d6023443cb575daa05336842228a
+    served_name: gemma-3-27b-it
+    tensor_parallel: 2
+  gemma-4-31b-it:
+    # Pinned differently from configs/online/open_policies.tsv (439edf56...). The online pin is
+    # the revision whose files match the copy the online runs loaded. The offline runs' copy
+    # was not recorded, so this is the hub head of 2026-10-23, not a verified match.
+    hf_id: google/gemma-4-31B-it
+    revision: 842da3794eaa0b77d5f08bae87a17459d91ff475
+    served_name: gemma-4-31b-it
+    tensor_parallel: 2
+  glm-4.6v:
+    hf_id: zai-org/GLM-4.6V
+    revision: 4e2d47eb0b41c5280d8294b17cef9e94fdcfff46
+    served_name: glm-4.6v
+    tensor_parallel: 4
+  glm-4.6v-flash:
+    hf_id: zai-org/GLM-4.6V-Flash
+    revision: 411bb4d77144a3f03accbf4b780f5acb8b7cde4e
+    served_name: glm-4.6v-flash
+    tensor_parallel: 1
+  gui-owl-7b:
+    hf_id: mPLUG/GUI-Owl-7B
+    revision: 7c1644c0288da07435a485701d0fea0ac353f38a
+    served_name: gui-owl-7b
+    tensor_parallel: 1
+  internvl3-38b:
+    hf_id: OpenGVLab/InternVL3-38B
+    revision: b99bcba4fe0c51d9e475af25ec000dbfea6284af
+    served_name: internvl3-38b
+    tensor_parallel: 2
+  internvl3-78b:
+    hf_id: OpenGVLab/InternVL3-78B
+    revision: 4a42b163cc0e222e97b10b562eee98da6bf26077
+    served_name: internvl3-78b
+    tensor_parallel: 4
+  internvl3-8b:
+    hf_id: OpenGVLab/InternVL3-8B
+    revision: 853e3a797a661694b1b8ece0cb72dc2b23e3dac9
+    served_name: internvl3-8b
+    tensor_parallel: 1
+  kimi-vl-a3b-instruct:
+    hf_id: moonshotai/Kimi-VL-A3B-Instruct
+    revision: 398eede0903cd983a2bfa0cc634e9ac1d843f375
+    served_name: kimi-vl-a3b-instruct
+    tensor_parallel: 1
+  llama-3.2-11b-vision-instruct:
+    hf_id: meta-llama/Llama-3.2-11B-Vision-Instruct
+    revision: 9eb2daaa8597bf192a8b0e73f848f3a102794df5
+    served_name: llama-3.2-11b-vision-instruct
+    tensor_parallel: 1
+  llama-3.3-70b-instruct:
+    hf_id: meta-llama/Llama-3.3-70B-Instruct
+    revision: 6f6073b423013f6a7d4d9f39144961bfbfbc386b
+    served_name: llama-3.3-70b-instruct
+    tensor_parallel: 4
+  llama-3.3-70b-instruct-awq:
+    hf_id: casperhansen/llama-3.3-70b-instruct-awq
+    revision: 64d255621f40b42adaf6d1f32a47e1d4534c0f14
+    served_name: llama-3.3-70b-instruct-awq
+    tensor_parallel: 1
+  llava-1.5-13b-hf:
+    hf_id: llava-hf/llava-1.5-13b-hf
+    revision: 5dda2880bda009266dda7c4baff660b95ca64540
+    served_name: llava-1.5-13b-hf
+    tensor_parallel: 1
+  magma-8b:
+    hf_id: microsoft/Magma-8B
+    revision: 4159b1dedade8f88b5bbaaae7810299dee5228f5
+    served_name: magma-8b
+    tensor_parallel: 1
+  minimax-m2.5:
+    hf_id: MiniMaxAI/MiniMax-M2.5
+    revision: f710177d938eff80b684d42c5aa84b382612f21f
+    served_name: minimax-m2.5
+    tensor_parallel: 4
+  os-atlas-pro-7b:
+    hf_id: OS-Copilot/OS-Atlas-Pro-7B
+    revision: 6c0135de0627db98533ac4b47ae71fa17cf21c48
+    served_name: os-atlas-pro-7b
+    tensor_parallel: 1
+  phi-4-multimodal-instruct:
+    hf_id: microsoft/Phi-4-multimodal-instruct
+    revision: 93f923e1a7727d1c4f446756212d9d3e8fcc5d81
+    served_name: phi-4-multimodal-instruct
+    tensor_parallel: 1
+    max_num_seqs: 1
+  pixtral-12b:
+    hf_id: mistral-community/pixtral-12b
+    revision: c2756cbbb9422eba9f6c5c439a214b0392dfc998
+    served_name: pixtral-12b
+    tensor_parallel: 1
+  pixtral-large-instruct-2411-hf:
+    hf_id: mistral-community/Pixtral-Large-Instruct-2411
+    revision: 8f5fa10cd7f2ecfcf56149439c123f55dc406d87
+    served_name: pixtral-large-instruct-2411-hf
+    tensor_parallel: 8
+  qwen-agentworld-35b-a3b:
+    hf_id: Qwen/Qwen-AgentWorld-35B-A3B
+    revision: 60d2b0434a53d2e62a7c00a489586815d94ebffb
+    served_name: qwen-agentworld-35b-a3b
+    tensor_parallel: 2
+  qwen2.5-vl-7b-instruct:
+    hf_id: Qwen/Qwen2.5-VL-7B-Instruct
+    revision: cc594898137f460bfe9f0759e9844b3ce807cfb5
+    served_name: qwen2.5-vl-7b-instruct
+    tensor_parallel: 1
+  qwen3-vl-235b-a22b-instruct:
+    hf_id: Qwen/Qwen3-VL-235B-A22B-Instruct
+    revision: 710c13861be6c466e66de3f484069440b8f31389
+    served_name: qwen3-vl-235b-a22b-instruct
+    tensor_parallel: 8
+  qwen3-vl-32b-instruct:
+    hf_id: Qwen/Qwen3-VL-32B-Instruct
+    revision: 0cfaf48183f594c314753d30a4c4974bc75f3ccb
+    served_name: qwen3-vl-32b-instruct
+    tensor_parallel: 2
+  qwen3-vl-4b-instruct:
+    hf_id: Qwen/Qwen3-VL-4B-Instruct
+    revision: ebb281ec70b05090aa6165b016eac8ec08e71b17
+    served_name: qwen3-vl-4b-instruct
+    tensor_parallel: 1
+  qwen3-vl-8b-instruct:
+    hf_id: Qwen/Qwen3-VL-8B-Instruct
+    revision: 0c351dd01ed87e9c1b53cbc748cba10e6187ff3b
+    served_name: qwen3-vl-8b-instruct
+    tensor_parallel: 1
+  qwen3-vl-8b-thinking:
+    hf_id: Qwen/Qwen3-VL-8B-Thinking
+    revision: 92f3c4b4feadd3a016ef468d103bb5f58b2a2c6b
+    served_name: qwen3-vl-8b-thinking
+    tensor_parallel: 1
+  qwen3.5-4b:
+    hf_id: Qwen/Qwen3.5-4B
+    revision: 851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a
+    served_name: qwen3.5-4b
+    tensor_parallel: 1
+  qwen3.5-9b:
+    hf_id: Qwen/Qwen3.5-9B
+    revision: c202236235762e1c871ad0ccb60c8ee5ba337b9a
+    served_name: qwen3.5-9b
+    tensor_parallel: 1
+  qwen3.6-35b-a3b:
+    hf_id: Qwen/Qwen3.6-35B-A3B
+    revision: 995ad96eacd98c81ed38be0c5b274b04031597b0
+    served_name: qwen3.6-35b-a3b
+    tensor_parallel: 2
+  qwen3.8-27b:
+    hf_id: Qwen/Qwen3.8-27B
+    revision: 1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0
+    served_name: qwen3.8-27b
+    tensor_parallel: 2
+  qwen3vl-2b-instruct:
+    hf_id: Qwen/Qwen3-VL-2B-Instruct
+    revision: 89644892e4d85e24eaac8bacfd4f463576704203
+    served_name: qwen3vl-2b-instruct
+    tensor_parallel: 1
+  ui-tars-1.5-7b:
+    hf_id: ByteDance-Seed/UI-TARS-1.5-7B
+    revision: 683d002dd99d8f95104d31e70391a39348857f4e
+    served_name: ui-tars-1.5-7b
+    tensor_parallel: 1
+  ui-tars-72b-dpo:
+    hf_id: ByteDance-Seed/UI-TARS-72B-DPO
+    revision: 43a70a29275e7d1569bb3f3dda5be4a2ff976d5f
+    served_name: ui-tars-72b-dpo
+    tensor_parallel: 4
+  uix-qwen2-mind2web:
+    hf_id: neulab/UIX-Qwen2-Mind2Web
+    revision: cf1654a2df366e87c4ec80009bb958395afe3c35
+    served_name: uix-qwen2-mind2web
+    tensor_parallel: 1
+  qwen3.5-4b-sft:
+    hf_id: null          # not published: serve a checkpoint you fine-tuned yourself
+    revision: null
+    served_name: qwen3.5-4b-sft
+    tensor_parallel: 1
+
+# The simulated user (answerer) and the ask judge of each published run set.
+answerers_and_judges:
+  llama3.2-90b-vision-instruct:   # frontier run set: answerer AND ask judge
+    hf_id: meta-llama/Llama-3.2-90B-Vision-Instruct
+    revision: e305d2a43a4adc6987308fe7d896fb8ec5f1a5d8
+    served_name: llama3.2-90b-vision-instruct
+    tensor_parallel: null         # the recorded run used a hosted OpenAI-compatible API
+  glm_4_6v:                       # open-weight run set: answerer
+    hf_id: zai-org/GLM-4.6V
+    revision: 4e2d47eb0b41c5280d8294b17cef9e94fdcfff46
+    served_name: glm_4_6v
+    tensor_parallel: 4
+  llama32_90b_vision:             # open-weight run set: answerer for the GLM policies only
+    hf_id: meta-llama/Llama-3.2-90B-Vision-Instruct
+    revision: e305d2a43a4adc6987308fe7d896fb8ec5f1a5d8
+    served_name: llama32_90b_vision
+    tensor_parallel: null
+  answerer32b:                    # earlier open-weight run sets: answerer
+    hf_id: Qwen/Qwen3-VL-32B-Instruct
+    revision: 0cfaf48183f594c314753d30a4c4974bc75f3ccb
+    served_name: answerer32b
+    tensor_parallel: 2
+  answerer27b:                    # earlier open-weight run sets: answerer for the Qwen3-VL-32B policy
+    hf_id: google/gemma-3-27b-it
+    revision: 005ad3404e59d6023443cb575daa05336842228a
+    served_name: answerer27b
+    tensor_parallel: 2
+  judge70b:                       # every open-weight run set: ask judge
+    # The run files record only the served name. The weights are a 70B Llama-3.3
+    # instruct model according to the project's own notes; treat this id as inferred.
+    hf_id: meta-llama/Llama-3.3-70B-Instruct
+    revision: 6f6073b423013f6a7d4d9f39144961bfbfbc386b
+    served_name: judge70b
+    tensor_parallel: null
+  judge27b:                       # second ask judge, for the Llama-3.3-70B policies only
+    # The run files record only the served name. Gemma-3-27B is inferred from the name and
+    # from "answerer27b" in the same run set; treat this id as inferred.
+    hf_id: google/gemma-3-27b-it
+    revision: 005ad3404e59d6023443cb575daa05336842228a
+    served_name: judge27b
+    tensor_parallel: 2

@@ -1,0 +1,307 @@
+{
+ "about": "Labels and fields that do not ship (not approved, dropped by the owner, unused constants, or OSWorld trajectory content). Read by build.py, which applies it to every row it writes; the annotation files already carry these removals. Each rule id is named under 'removal' in label_provenance.yaml, which gives the producer, the evidence and the decision. Actions: null = the key stays and holds null; drop_key = the key is not written at all; set = the value is replaced (an edit to our own text); drop_elements = matching list elements are removed (element_where {} matches every element). Rows are selected on the row as it was before any rule ran.",
+ "files": {
+  "gold_eval_set.jsonl": {
+   "rules": [
+    {
+     "id": "eval.initial_judgement",
+     "path": "initial_judgement",
+     "rows": "all",
+     "action": "drop_key"
+    },
+    {
+     "id": "eval.flags.initial_judgement",
+     "path": "flags[]",
+     "rows": "all",
+     "action": "drop_elements",
+     "drop_values": [
+      "The initial judgement disagrees with the row label"
+     ]
+    },
+    {
+     "id": "eval.origin",
+     "path": "open_items[].origin",
+     "rows": "all",
+     "action": "drop_key"
+    },
+    {
+     "id": "eval.origin",
+     "path": "items_from_decision_points[].origin",
+     "rows": "all",
+     "action": "drop_key"
+    },
+    {
+     "id": "eval.osworld.steps",
+     "path": "steps[]",
+     "rows": {
+      "source": [
+       "osworld"
+      ]
+     },
+     "action": "drop_elements",
+     "element_where": {}
+    },
+    {
+     "id": "eval.osworld.n_steps",
+     "path": "n_steps",
+     "rows": {
+      "source": [
+       "osworld"
+      ]
+     },
+     "action": "null"
+    },
+    {
+     "id": "unused.label_provenance",
+     "path": "label_provenance",
+     "rows": "all",
+     "action": "drop_key"
+    },
+    {
+     "id": "unused.unanchored_annotations",
+     "path": "unanchored_annotations",
+     "rows": "all",
+     "action": "drop_key"
+    },
+    {
+     "id": "unused.window_constants",
+     "path": "open_items[].window.determined",
+     "rows": "all",
+     "action": "drop_key"
+    },
+    {
+     "id": "unused.window_constants",
+     "path": "open_items[].window.closed_before_the_run",
+     "rows": "all",
+     "action": "drop_key"
+    },
+    {
+     "id": "unused.window_constants",
+     "path": "open_items[].window.earliest_step",
+     "rows": "all",
+     "action": "drop_key"
+    },
+    {
+     "id": "unused.window_constants",
+     "path": "open_items[].window.opens_at_a_recorded_step",
+     "rows": "all",
+     "action": "drop_key"
+    },
+    {
+     "id": "unused.window_constants",
+     "path": "items_from_decision_points[].window.determined",
+     "rows": "all",
+     "action": "drop_key"
+    }
+   ]
+  },
+  "gold_benchmark_with_targets.jsonl": {
+   "rules": [
+    {
+     "id": "targets.canonical_instruction.think",
+     "path": "canonical_instruction",
+     "rows": {
+      "sample_id": [
+       "12ce19b7-794f-4cec-926a-0be4e2c8dbbe",
+       "3rx61hoi-j63t-mss9-1bzs-l34c5w30ldr3",
+       "8dda0b8c-df30-4298-b27d-60c4249ebc5b",
+       "95af2a4b-d804-41e8-b8bf-9b760f518c34",
+       "9d892257-1700-4c65-b62e-41886ac71621",
+       "9e359fph-qjfn-dlqe-o38b-lyjkxxk4j22w",
+       "dd7f4c90-8f6c-4964-927c-db585aae4edb",
+       "pwoyqre2-eaqn-98f3-xr1c-lnsueq70yart",
+       "xsj15zzb-7zja-8hls-kcsu-xmglyzylabwy"
+      ]
+     },
+     "action": "null"
+    },
+    {
+     "id": "targets.initial_judgements",
+     "path": "gold.initial_judgements",
+     "rows": "all",
+     "action": "drop_key"
+    },
+    {
+     "id": "targets.osworld.steps",
+     "path": "steps[]",
+     "rows": {
+      "source": [
+       "osworld"
+      ]
+     },
+     "action": "drop_elements",
+     "element_where": {}
+    },
+    {
+     "id": "targets.osworld.steps",
+     "path": "gold.steps_json[]",
+     "rows": {
+      "source": [
+       "osworld"
+      ]
+     },
+     "action": "drop_elements",
+     "element_where": {}
+    },
+    {
+     "id": "targets.osworld.n_steps",
+     "path": "n_steps",
+     "rows": {
+      "source": [
+       "osworld"
+      ]
+     },
+     "action": "null"
+    },
+    {
+     "id": "unused.label_provenance",
+     "path": "label_provenance",
+     "rows": "all",
+     "action": "drop_key"
+    },
+    {
+     "id": "unused.synthetic",
+     "path": "synthetic",
+     "rows": "all",
+     "action": "drop_key"
+    }
+   ]
+  },
+  "open_items.windows.jsonl": {
+   "rules": [
+    {
+     "id": "unused.window_constants",
+     "path": "determined",
+     "rows": "all",
+     "action": "drop_key"
+    },
+    {
+     "id": "unused.window_constants",
+     "path": "earliest_step",
+     "rows": "all",
+     "action": "drop_key"
+    },
+    {
+     "id": "windows.provenance",
+     "path": "provenance",
+     "rows": "all",
+     "action": "drop_key"
+    }
+   ]
+  },
+  "ambigui_online_benchmark.jsonl": {
+   "rules": [
+    {
+     "id": "online.panel_said",
+     "path": "panel_said",
+     "rows": "all",
+     "action": "drop_key"
+    },
+    {
+     "id": "online.panel_reasoning",
+     "path": "panel_reasoning",
+     "rows": "all",
+     "action": "drop_key"
+    },
+    {
+     "id": "online.flags.panel",
+     "path": "flags[]",
+     "rows": "all",
+     "action": "drop_elements",
+     "drop_values": [
+      "The human label disagrees with the model panel"
+     ]
+    },
+    {
+     "id": "online.start_url_matches_screenshot",
+     "path": "start_url_matches_screenshot",
+     "rows": "all",
+     "action": "drop_key"
+    },
+    {
+     "id": "online.origin",
+     "path": "open_items[].origin",
+     "rows": "all",
+     "action": "drop_key"
+    },
+    {
+     "id": "online.open_items_origin",
+     "path": "open_items_origin",
+     "rows": "all",
+     "action": "drop_key"
+    },
+    {
+     "id": "unused.label_provenance",
+     "path": "label_provenance",
+     "rows": "all",
+     "action": "drop_key"
+    },
+    {
+     "id": "unused.start_url_probe",
+     "path": "start_url_reachable",
+     "rows": "all",
+     "action": "drop_key"
+    },
+    {
+     "id": "unused.start_url_probe",
+     "path": "start_url_checked_via",
+     "rows": "all",
+     "action": "drop_key"
+    },
+    {
+     "id": "unused.transfer.stops_at",
+     "path": "transfer.stops_at",
+     "rows": "all",
+     "action": "drop_key"
+    },
+    {
+     "id": "online.origin",
+     "path": "items_from_decision_points[].origin",
+     "rows": "all",
+     "action": "drop_key"
+    },
+    {
+     "id": "unused.window_constants",
+     "path": "open_items[].window.determined",
+     "rows": "all",
+     "action": "drop_key"
+    },
+    {
+     "id": "unused.window_constants",
+     "path": "open_items[].window.closed_before_the_run",
+     "rows": "all",
+     "action": "drop_key"
+    },
+    {
+     "id": "unused.window_constants",
+     "path": "open_items[].window.earliest_step",
+     "rows": "all",
+     "action": "drop_key"
+    },
+    {
+     "id": "unused.window_constants",
+     "path": "open_items[].window.opens_at_a_recorded_step",
+     "rows": "all",
+     "action": "drop_key"
+    },
+    {
+     "id": "unused.window_constants",
+     "path": "items_from_decision_points[].window.determined",
+     "rows": "all",
+     "action": "drop_key"
+    },
+    {
+     "id": "online.note.panel_reference",
+     "path": "annotator_note",
+     "rows": {
+      "sample_id": [
+       "1564d78a-9e4d-4337-a7ab-54282a348014"
+      ]
+     },
+     "action": "set",
+     "value": "The task is clear as written."
+    }
+   ]
+  }
+ }
+}

@@ -1,0 +1,13 @@
+# Copyright (c) Meta Platforms, Inc. and affiliates.
+# All rights reserved.
+#
+# This source code is licensed under the license found in the
+# LICENSE file in the root directory of this source tree.
+
+key: minimax-m2.5
+hf_path: MiniMaxAI/MiniMax-M2.5
+vision: false
+max_image_dim: 768
+max_tokens: 2048
+description: |
+  A large text-only model, scored without any screenshot. It is a reasoning model and writes its deliberation before the call, so the larger budget is required.

@@ -1,0 +1,13 @@
+# Copyright (c) Meta Platforms, Inc. and affiliates.
+# All rights reserved.
+#
+# This source code is licensed under the license found in the
+# LICENSE file in the root directory of this source tree.
+
+key: qwen3.6-35b-a3b
+hf_path: Qwen/Qwen3.6-35B-A3B
+vision: true
+max_image_dim: 768
+max_tokens: 2048
+description: |
+  A mixture-of-experts Qwen that reasons before the call. The larger budget is what keeps a thoughtful answer from being recorded as a formatting failure.

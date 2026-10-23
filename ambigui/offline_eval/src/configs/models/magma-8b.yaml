@@ -1,0 +1,13 @@
+# Copyright (c) Meta Platforms, Inc. and affiliates.
+# All rights reserved.
+#
+# This source code is licensed under the license found in the
+# LICENSE file in the root directory of this source tree.
+
+key: magma-8b
+hf_path: microsoft/Magma-8B
+vision: true
+max_image_dim: 768
+max_tokens: 512
+description: |
+  A multimodal agent model covering both UI and physical action, included to test whether agent pretraining outside the browser transfers. Answers directly rather than reasoning first.

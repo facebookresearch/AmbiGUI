@@ -1,0 +1,31 @@
+# Copyright (c) Meta Platforms, Inc. and affiliates.
+# All rights reserved.
+#
+# This source code is licensed under the license found in the
+# LICENSE file in the root directory of this source tree.
+
+# Frontier policies, answered AND judged by Llama-3.2-90B-Vision-Instruct.
+#
+# One run set = one simulated user (answerer) and one ask judge, fixed for every policy
+# in it. Never mix its numbers with another run set's (docs/offline.md).
+#
+# The recorded run reached the answerer and the judge through a hosted OpenAI-compatible
+# API under the served name below, text only, temperature 0, 1500 output tokens. Set the
+# base URL and key in the environment; keys are never written into this file.
+run_set: frontier_llama90
+benchmark: ${AMBIGUI_BENCHMARK}
+image_root: ${AMBIGUI_IMAGE_ROOT}
+out_root: ${AMBIGUI_OUT_ROOT:-runs}/frontier_llama90
+seed: 0
+
+run:
+  serve_image_limit: 2
+
+answerer:
+  endpoint: ${AMBIGUI_ANSWERER_BASE_URL}  # key: AMBIGUI_ANSWERER_API_KEY
+  served_model: llama3.2-90b-vision-instruct
+
+judge:
+  endpoint: ${AMBIGUI_JUDGE_BASE_URL}     # key: AMBIGUI_JUDGE_API_KEY
+  served_model: llama3.2-90b-vision-instruct
+  registry_key: llama3.2-90b-vision-instruct   # 1500 tokens, as recorded

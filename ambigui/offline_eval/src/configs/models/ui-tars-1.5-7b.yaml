@@ -1,0 +1,13 @@
+# Copyright (c) Meta Platforms, Inc. and affiliates.
+# All rights reserved.
+#
+# This source code is licensed under the license found in the
+# LICENSE file in the root directory of this source tree.
+
+key: ui-tars-1.5-7b
+hf_path: ByteDance-Seed/UI-TARS-1.5-7B
+vision: true
+max_image_dim: 768
+max_tokens: 2048
+description: |
+  A GUI agent that is trained to write a thought before each action, so its reply contains deliberation by design and a call-sized budget would truncate every answer it gives.

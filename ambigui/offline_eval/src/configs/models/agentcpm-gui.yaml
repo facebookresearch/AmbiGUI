@@ -1,0 +1,13 @@
+# Copyright (c) Meta Platforms, Inc. and affiliates.
+# All rights reserved.
+#
+# This source code is licensed under the license found in the
+# LICENSE file in the root directory of this source tree.
+
+key: agentcpm-gui
+hf_path: openbmb/AgentCPM-GUI
+vision: true
+max_image_dim: 768
+max_tokens: 512
+description: |
+  A GUI agent trained on phone screens, which is the half of this benchmark that names no element, so it is the specialist most likely to score on Meta-GUI. Emits a bare call.

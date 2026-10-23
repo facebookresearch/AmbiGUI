@@ -1,0 +1,13 @@
+# Copyright (c) Meta Platforms, Inc. and affiliates.
+# All rights reserved.
+#
+# This source code is licensed under the license found in the
+# LICENSE file in the root directory of this source tree.
+
+key: llava-1.5-13b-hf
+hf_path: llava-hf/llava-1.5-13b-hf
+vision: true
+max_image_dim: 768
+max_tokens: 512
+description: |
+  An older vision-language model that predates agent tuning entirely, included as the floor the newer checkpoints should clear. It answers briefly.

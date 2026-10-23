@@ -1,0 +1,15 @@
+# Copyright (c) Meta Platforms, Inc. and affiliates.
+# All rights reserved.
+#
+# This source code is licensed under the license found in the
+# LICENSE file in the root directory of this source tree.
+
+key: gemma-4-31b-it
+hf_path: google/gemma-4-31B-it
+vision: true
+max_image_dim: 768
+max_tokens: 512
+description: |
+  Answers with the tool call directly, writing no deliberation first, so the budget only
+  has to cover the call itself, and 512 leaves ample room for a verbose one. The pinned
+  Hugging Face revision is in configs/offline/models.yaml.

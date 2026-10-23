@@ -1,0 +1,86 @@
+# Copyright (c) Meta Platforms, Inc. and affiliates.
+# All rights reserved.
+#
+# This source code is licensed under the license found in the
+# LICENSE file in the root directory of this source tree.
+
+# Open-weight policies, answered by GLM-4.6V and judged by "judge70b".
+#
+# One run set = one simulated user (answerer) and one ask judge, fixed for every policy
+# in it. Numbers from different run sets must never be mixed: the answerer writes the
+# words the policy reads, so it changes every ask measurement (docs/offline.md).
+#
+# ${NAME} is read from the environment; ${NAME:-default} falls back to the default.
+run_set: open_weight_glm46v
+benchmark: ${AMBIGUI_BENCHMARK}          # the gold_eval_set.jsonl you rebuilt
+image_root: ${AMBIGUI_IMAGE_ROOT}        # the screenshot folder its image_path values are relative to
+out_root: ${AMBIGUI_OUT_ROOT:-runs}/open_weight_glm46v
+seed: 0
+
+run:                                     # run_ask_protocol settings, as the recorded run set used them
+  serve_image_limit: 2
+
+# The policy's output-token budget (max_tokens) of every recorded pass in this run set,
+# read from that pass's run.json (64 passes with a report: 512 x26, 2048 x8, 4096 x11,
+# 8192 x19). For 30 of them it differs from the catalogue entry, so the launcher passes
+# the value listed here as --max-tokens, and run.json records it. A pass not listed here
+# uses the catalogue budget. The two muse-glimmer-30b passes (2048 screens-off, 8192
+# screens-on) are not listed: it is an internal model with no catalogue entry, so they
+# cannot be reproduced. qwen3-vl-8b-thinking has no recorded screens-off pass.
+policy_max_tokens:
+  a3-qwen3.5-9b: {screens-on: 8192, screens-off: 8192}
+  gemma-3-12b-it: {screens-on: 512, screens-off: 512}
+  gemma-3-27b-it: {screens-on: 512, screens-off: 512}
+  gemma-4-31b-it: {screens-on: 512, screens-off: 512}
+  glm-4.6v: {screens-on: 2048, screens-off: 8192}
+  glm-4.6v-flash: {screens-on: 2048, screens-off: 8192}
+  gui-owl-7b: {screens-on: 512, screens-off: 512}
+  internvl3-38b: {screens-on: 512, screens-off: 512}
+  internvl3-78b: {screens-on: 4096, screens-off: 4096}
+  internvl3-8b: {screens-on: 512, screens-off: 512}
+  kimi-vl-a3b-instruct: {screens-on: 4096, screens-off: 4096}
+  llama-3.2-11b-vision-instruct: {screens-on: 4096, screens-off: 512}
+  llama-3.3-70b-instruct: {screens-off: 2048}
+  llama-3.3-70b-instruct-awq: {screens-off: 2048}
+  llava-1.5-13b-hf: {screens-on: 512, screens-off: 2048}
+  minimax-m2.5: {screens-off: 8192}
+  os-atlas-pro-7b: {screens-on: 4096, screens-off: 4096}
+  phi-4-multimodal-instruct: {screens-on: 512, screens-off: 512}
+  pixtral-12b: {screens-on: 512, screens-off: 512}
+  qwen2.5-vl-7b-instruct: {screens-on: 512, screens-off: 512}
+  qwen3-vl-235b-a22b-instruct: {screens-on: 4096, screens-off: 4096}
+  qwen3-vl-32b-instruct: {screens-on: 4096, screens-off: 4096}
+  qwen3-vl-4b-instruct: {screens-on: 512, screens-off: 512}
+  qwen3-vl-8b-instruct: {screens-on: 512, screens-off: 512}
+  qwen3-vl-8b-thinking: {screens-on: 8192}
+  qwen3.5-4b: {screens-on: 8192, screens-off: 8192}
+  qwen3.5-4b-sft: {screens-on: 8192, screens-off: 8192}
+  qwen3.5-9b: {screens-on: 8192, screens-off: 8192}
+  qwen3.6-35b-a3b: {screens-on: 8192, screens-off: 8192}
+  qwen3.8-27b: {screens-on: 2048, screens-off: 8192}
+  qwen3vl-2b-instruct: {screens-on: 512, screens-off: 512}
+  ui-tars-1.5-7b: {screens-on: 2048, screens-off: 8192}
+  ui-tars-72b-dpo: {screens-on: 8192, screens-off: 8192}
+
+answerer:
+  endpoint: ${AMBIGUI_ANSWERER_BASE_URL:-http://localhost:8001/v1}
+  served_model: glm_4_6v
+  # The recorded run set could not let a model answer for itself, so the two GLM
+  # policies (glm-4.6v, glm-4.6v-flash) were answered by Llama-3.2-90B-Vision instead.
+  per_policy:
+    glm-4.6v: {endpoint: "${AMBIGUI_ALT_ANSWERER_BASE_URL:-http://localhost:8003/v1}", served_model: llama32_90b_vision}
+    glm-4.6v-flash: {endpoint: "${AMBIGUI_ALT_ANSWERER_BASE_URL:-http://localhost:8003/v1}", served_model: llama32_90b_vision}
+
+judge:
+  endpoint: ${AMBIGUI_JUDGE_BASE_URL:-http://localhost:8002/v1}
+  served_model: judge70b
+  # The catalogue entry that sets the judge's token budget. The recorded run files do not
+  # say which entry was used; llama-3.3-70b-instruct (2048 tokens) matches the judge's
+  # weights.
+  registry_key: llama-3.3-70b-instruct
+  # A model cannot judge itself, so the two Llama-3.3-70B policies get a second judge.
+  # The files available for this run set do not record which one; the earlier run sets
+  # used "judge27b" (see open_weight_qwen3vl32b.yaml), assumed here.
+  per_policy:
+    llama-3.3-70b-instruct: {endpoint: "${AMBIGUI_ALT_JUDGE_BASE_URL:-http://localhost:8004/v1}", served_model: judge27b, registry_key: gemma-3-27b-it}
+    llama-3.3-70b-instruct-awq: {endpoint: "${AMBIGUI_ALT_JUDGE_BASE_URL:-http://localhost:8004/v1}", served_model: judge27b, registry_key: gemma-3-27b-it}

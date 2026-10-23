@@ -1,0 +1,50 @@
+# Copyright (c) Meta Platforms, Inc. and affiliates.
+# All rights reserved.
+#
+# This source code is licensed under the license found in the
+# LICENSE file in the root directory of this source tree.
+
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  checks:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install check tools
+        run: python -m pip install pyyaml==6.0.2
+      - name: Byte-compile all Python code
+        run: python -m compileall -q ambigui benchmark
+      - name: Check shell scripts
+        run: |
+          for f in $(git ls-files '*.sh'); do bash -n "$f"; done
+      - name: Parse configuration and manifest files
+        run: |
+          python - <<'PY'
+          import json, pathlib, subprocess, tomllib, yaml
+          files = subprocess.run(["git", "ls-files"], capture_output=True, text=True, check=True).stdout.split()
+          for f in files:
+              p = pathlib.Path(f)
+              if p.suffix in (".yaml", ".yml"):
+                  yaml.safe_load(p.read_text(encoding="utf-8"))
+              elif p.suffix == ".json":
+                  json.loads(p.read_text(encoding="utf-8"))
+              elif p.suffix == ".jsonl":
+                  for line in p.read_text(encoding="utf-8").splitlines():
+                      if line.strip():
+                          json.loads(line)
+              elif p.suffix == ".toml":
+                  tomllib.loads(p.read_text(encoding="utf-8"))
+          print("all configuration files parse")
+          PY

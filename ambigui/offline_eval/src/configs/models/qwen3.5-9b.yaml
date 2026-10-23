@@ -1,0 +1,13 @@
+# Copyright (c) Meta Platforms, Inc. and affiliates.
+# All rights reserved.
+#
+# This source code is licensed under the license found in the
+# LICENSE file in the root directory of this source tree.
+
+key: qwen3.5-9b
+hf_path: Qwen/Qwen3.5-9B
+vision: true
+max_image_dim: 768
+max_tokens: 2048
+description: |
+  A mid-size Qwen3.5 model that reasons before the call, so it needs the larger budget.

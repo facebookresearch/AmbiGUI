@@ -1,0 +1,13 @@
+# Copyright (c) Meta Platforms, Inc. and affiliates.
+# All rights reserved.
+#
+# This source code is licensed under the license found in the
+# LICENSE file in the root directory of this source tree.
+
+key: cogagent-9b-20241220
+hf_path: zai-org/cogagent-9b-20241220
+vision: true
+max_image_dim: 768
+max_tokens: 512
+description: |
+  A GUI agent built on the GLM backbone and trained on screen recordings, included as a non-Qwen GUI specialist. Answers with the action directly.

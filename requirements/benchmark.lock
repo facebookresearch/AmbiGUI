@@ -1,0 +1,10 @@
+# Copyright (c) Meta Platforms, Inc. and affiliates.
+# All rights reserved.
+#
+# This source code is licensed under the license found in the
+# LICENSE file in the root directory of this source tree.
+
+# Exact package versions used to rebuild the benchmark files with benchmark/build.py (Python 3.12, Linux x86_64).
+# Install with:  pip install -r requirements/benchmark.lock
+# Generated with pip freeze from a clean Python 3.12 virtual environment holding only the [benchmark] extra.
+pyarrow==26.0.0

@@ -1,0 +1,21 @@
+# Copyright (c) Meta Platforms, Inc. and affiliates.
+# All rights reserved.
+#
+# This source code is licensed under the license found in the
+# LICENSE file in the root directory of this source tree.
+
+key: qwen3.5-4b-sft
+hf_path: <your-fine-tuned-checkpoint-dir>
+vision: true
+max_image_dim: 768
+max_tokens: 2048
+description: |
+  qwen3.5-4b after supervised fine-tuning, listed apart from its base because a
+  fine-tuned model and the model it started from are two different things being measured.
+  Every setting it does not change is inherited deliberately: the budget because the
+  architecture still reasons before it answers, and the vision setting because the two
+  are compared against each other under the same screen condition. The budget tracks the
+  base model's for the same reason: two budgets would differ by the budget.
+  hf_path is a placeholder for a local directory holding a merged fine-tuned checkpoint.
+  These weights are not published; to use this entry, serve a checkpoint you fine-tuned
+  yourself. The recorded runs recorded a different local directory name in run.json.

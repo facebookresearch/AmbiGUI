@@ -1,0 +1,57 @@
+{
+  "served_model": "qwen3.8-27b-base-online",
+  "model": "Qwen/Qwen3.8-27B",
+  "model_revision": "1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0",
+  "policy_tp": 1,
+  "answerer_model": "llama3.2-90b-vision-instruct",
+  "judge_model": "qwen3-vl-235b-a22b-instruct",
+  "seed": 20261022,
+  "demo_sources": [
+    {
+      "path": "harvest1_q38_27b_combo_lr1e-5_A/harvest/0.tgz",
+      "harvest_run": "harvest1_q38_27b_combo_lr1e-5_A",
+      "harvest_model": "Qwen/Qwen3.8-27B",
+      "harvest_arm": "combo",
+      "chunk": 0,
+      "harvest_adapter_run": "hp1_q38_27b_combo_lr1e-5"
+    },
+    {
+      "path": "harvest1_q38_27b_combo_lr1e-5_B/harvest/0.tgz",
+      "harvest_run": "harvest1_q38_27b_combo_lr1e-5_B",
+      "harvest_model": "Qwen/Qwen3.8-27B",
+      "harvest_arm": "combo",
+      "chunk": 0,
+      "harvest_adapter_run": "hp1_q38_27b_combo_lr1e-5"
+    },
+    {
+      "path": "harvest1_q38_27b_ask_partial_lr3e-5_A/harvest/0.tgz",
+      "harvest_run": "harvest1_q38_27b_ask_partial_lr3e-5_A",
+      "harvest_model": "Qwen/Qwen3.8-27B",
+      "harvest_arm": "combo",
+      "chunk": 0,
+      "harvest_adapter_run": "hp1_q38_27b_ask_partial_lr3e-5"
+    },
+    {
+      "path": "harvest1_q38_27b_ask_partial_lr3e-5_B/harvest/0.tgz",
+      "harvest_run": "harvest1_q38_27b_ask_partial_lr3e-5_B",
+      "harvest_model": "Qwen/Qwen3.8-27B",
+      "harvest_arm": "combo",
+      "chunk": 0,
+      "harvest_adapter_run": "hp1_q38_27b_ask_partial_lr3e-5"
+    }
+  ],
+  "require_completed_clear_demos": true,
+  "exclude_secret_request_demos": true,
+  "preserve_original_named_argument_demos": true,
+  "processor_files_sha256": {
+    "chat_template.jinja": "c3cf9e34abf4f9e36c2d72165aa9c132d3e2a725b6c2586aaa3a8af9d7a81041",
+    "config.json": "191e0af232104ed8b65258cf3fb2b842e288008baca7633c11b82a1ac7203aab",
+    "generation_config.json": "e70c136c1b78ddc1fb0905bac8e733a4dc448d4f852a5dd75143fffc70be550e",
+    "preprocessor_config.json": "27225450ac9c6529872ee1924fcb0962ff5634834f817040f444118116f4e516",
+    "tokenizer_config.json": "b11349aafa7cdc6a320767cf7ceb29ed82f7eda5d65e8e0819e76f0ce947bf27",
+    "video_preprocessor_config.json": "7768af27c1fafa9cc9011c1dc20067e03f8915e03b63504550e11d5066986d13",
+    "tokenizer.json": "0997f410c57a1f4e53b09e4be8f4a172d90edd9564368fb0847030937229b9f3",
+    "vocab.json": "ce99b4cb2983d118806ce0a8b777a35b093e2000a503ebde25853284c9dfa003",
+    "merges.txt": "a9d356d7bdf1ef4949e3e748e95b8e10ad9d4e2e838eddc38a0a7b6b94d1db8d"
+  }
+}

@@ -1,0 +1,13 @@
+# Copyright (c) Meta Platforms, Inc. and affiliates.
+# All rights reserved.
+#
+# This source code is licensed under the license found in the
+# LICENSE file in the root directory of this source tree.
+
+key: uix-qwen2-mind2web
+hf_path: neulab/UIX-Qwen2-Mind2Web
+vision: true
+max_image_dim: 768
+max_tokens: 512
+description: |
+  Trained on Mind2Web itself, so it is the in-domain ceiling for the web half and the one model whose training distribution matches the recordings. Answers directly, no deliberation.

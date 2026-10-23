@@ -1,0 +1,102 @@
+# Copyright (c) Meta Platforms, Inc. and affiliates.
+# All rights reserved.
+#
+# This source code is licensed under the license found in the
+# LICENSE file in the root directory of this source tree.
+
+[build-system]
+# setuptools 77 or newer reads the SPDX licence expression below (PEP 639).
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ambigui"
+version = "0.1.0"
+description = "AmbiGUI: does a GUI agent ask a clarifying question when the task is ambiguous, and act when it is clear?"
+readme = "README.md"
+# Creative Commons Attribution-NonCommercial 4.0 International. Full text: LICENSE.
+# Third-party code and dependencies keep their own licences: THIRD_PARTY_NOTICES.md.
+license = "CC-BY-NC-4.0"
+license-files = ["LICENSE", "THIRD_PARTY_NOTICES.md"]
+# Every lock file under requirements/ was resolved and verified on Python 3.12.
+requires-python = ">=3.12,<3.13"
+# No core dependencies: each part of the release has its own extra.
+# The extras pin different versions of some shared packages (for example openai, pillow,
+# huggingface-hub), so install one extra per environment. Exact versions: requirements/<part>.lock.
+dependencies = []
+
+[project.optional-dependencies]
+# Offline evaluation: inference over the recorded benchmark steps, the ask judge, and the
+# metrics. The exact versions used to verify this release are in requirements/offline.lock.
+# The models themselves are served separately (for example with vLLM); see docs/offline.md.
+offline = [
+    "requests>=2.32",
+    "PyYAML>=6.0",
+    "pillow>=10.0",
+    "openai>=1.40",
+]
+# Online evaluation (ambigui/online_eval): live browser rollouts, simulated user, judges.
+# Exact versions of every transitive package are in requirements/online.lock.
+# The browser stack is pinned to the versions of the paper runs
+# (BrowserGym 0.14.3, Playwright 1.44.0 with its Chromium 125).
+online = [
+    "browsergym-core==0.14.3",
+    "playwright==1.44.0",
+    "greenlet==3.0.3",
+    "pyee==11.1.0",
+    "openai==3.35.1",
+    "requests==2.34.2",
+    "pillow==13.0.0",
+    "numpy==2.5.4",
+    "huggingface_hub==2.2.0",
+]
+# Rebuilding the benchmark files (benchmark/build.py) from the source datasets. build.py imports only
+# pyarrow (to read the Mind2Web parquet files) besides the standard library.
+# Exact versions: requirements/benchmark.lock.
+benchmark = [
+    "pyarrow==26.0.0",
+]
+# Serving open-weights models (policy, simulated user, judge) with vLLM on GPUs.
+# Kept apart from [online]: the evaluation itself only talks to OpenAI-compatible URLs.
+online-serve = [
+    "vllm==0.23.0",
+]
+# Frozen-weight in-context learning baseline (ambigui/icl). Exact versions of every transitive
+# package: requirements/icl.lock. Same browser stack as [online]. transformers, tokenizers and
+# jinja2 are the versions of the reported ICL run; its headroom guard renders the chat template and
+# counts tokens with them. huggingface-hub is the version transformers 5.14.1 accepts.
+icl = [
+    "browsergym-core==0.14.3",
+    "playwright==1.44.0",
+    "greenlet==3.0.3",
+    "pyee==11.1.0",
+    "gymnasium==1.4.0",
+    "openai==3.35.1",
+    "requests==2.34.2",
+    "pillow==13.0.0",
+    "huggingface-hub==1.25.1",
+    "transformers==5.14.1",
+    "tokenizers==0.22.2",
+    "jinja2==3.1.6",
+]
+# Serving the frozen ICL policy with vLLM on a GPU: vLLM 0.23.0, the version of the reported runs.
+icl-serve = [
+    "vllm==0.23.0",
+]
+
+[tool.setuptools.packages.find]
+include = ["ambigui*"]
+
+[tool.setuptools.package-data]
+# The audited evaluation code under ambigui/offline_eval/src is shipped as it is, with its
+# model catalogue and the simulated user's prompts. The launcher puts that folder on
+# sys.path itself.
+"ambigui.offline_eval" = ["src/**/*.py", "src/**/*.yaml", "src/**/*.md"]
+# The ICL part ships its own copy of the online-evaluation harness (harness/ and src/, imported as
+# top-level packages; ambigui/icl/__init__.py puts src/ on sys.path), the simulated user's rubric,
+# and the pinned source list of its headroom guard.
+"ambigui.icl" = ["src/**/*.py", "src/**/*.md", "harness/*.py", "harness/*.sh", "headroom/*.json"]
+# The online part: its harness (run_online.sh, the policy server script and the Python entry points),
+# the ask prompts (harness/data/prompts/), the evaluation code under src/ (imported as top-level
+# packages) and the simulated user's rubric.
+"ambigui.online_eval" = ["src/**/*.py", "src/**/*.md", "harness/*.py", "harness/*.sh", "harness/data/prompts/*"]

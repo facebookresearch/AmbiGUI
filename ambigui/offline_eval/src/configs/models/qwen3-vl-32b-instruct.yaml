@@ -1,0 +1,13 @@
+# Copyright (c) Meta Platforms, Inc. and affiliates.
+# All rights reserved.
+#
+# This source code is licensed under the license found in the
+# LICENSE file in the root directory of this source tree.
+
+key: qwen3-vl-32b-instruct
+hf_path: Qwen/Qwen3-VL-32B-Instruct
+vision: true
+max_image_dim: 768
+max_tokens: 512
+description: |
+  The largest single-node Qwen3-VL instruct model, which answers with the call directly. Its row shows what scale alone buys without a reasoning budget.

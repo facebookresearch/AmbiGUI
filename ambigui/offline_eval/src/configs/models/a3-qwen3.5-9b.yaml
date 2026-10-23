@@ -1,0 +1,16 @@
+# Copyright (c) Meta Platforms, Inc. and affiliates.
+# All rights reserved.
+#
+# This source code is licensed under the license found in the
+# LICENSE file in the root directory of this source tree.
+
+key: a3-qwen3.5-9b
+hf_path: McGill-NLP/A3-Qwen3.5-9B
+vision: true
+max_image_dim: 768
+max_tokens: 2048
+description: |
+  Same architecture family as qwen3.5-4b, so it writes its deliberation before the call
+  and the budget has to cover both. Sized for the call alone, the reply stops inside the
+  reasoning, carries no call, and the step records as unparseable. The pinned Hugging Face
+  revision is in configs/offline/models.yaml.

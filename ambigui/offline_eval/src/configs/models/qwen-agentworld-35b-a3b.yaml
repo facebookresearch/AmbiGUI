@@ -1,0 +1,15 @@
+# Copyright (c) Meta Platforms, Inc. and affiliates.
+# All rights reserved.
+#
+# This source code is licensed under the license found in the
+# LICENSE file in the root directory of this source tree.
+
+key: qwen-agentworld-35b-a3b
+hf_path: Qwen/Qwen-AgentWorld-35B-A3B
+vision: false
+max_image_dim: 768
+max_tokens: 2048
+description: |
+  An agent-specialised mixture-of-experts Qwen that plans before acting, so the budget has to cover the plan as well as the call that follows it.
+  Text-only: the checkpoint holds no vision weights, so it runs with --screens off only
+  (the recorded runs have a screens-off pass only).

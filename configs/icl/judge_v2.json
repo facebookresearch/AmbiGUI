@@ -1,0 +1,39 @@
+{
+  "intent_contract": "curated_open_items_only",
+  "native_contract": {
+    "describer_max_tokens": 600,
+    "frame_encoder": "jpeg_width1000_quality80",
+    "frame_selector": "21e7f03_native_select_frames",
+    "history": "full_untrimmed",
+    "judge_lookup_max_tokens": 1200,
+    "judge_trace_max_tokens": 600,
+    "max_questions": 3,
+    "profile": "21e7f03_lookup_trace"
+  },
+  "original_judge": {
+    "describer": {
+      "backend_identity": "YOUR_SERVING_BACKEND_IDENTITY (e.g. vllm-0.23.0 BF16 on your host)",
+      "endpoint": "http://YOUR_DESCRIBER_HOST/v1",
+      "model": "qwen3-vl-235b-a22b-instruct",
+      "reasoning": "off",
+      "request_extra": {
+        "chat_template_kwargs": {
+          "enable_thinking": false
+        }
+      }
+    },
+    "judge": {
+      "backend_identity": "YOUR_SERVING_BACKEND_IDENTITY (e.g. vllm-0.23.0 BF16 on your host)",
+      "endpoint": "http://YOUR_JUDGE_HOST/v1",
+      "model": "qwen3-vl-235b-a22b-instruct",
+      "reasoning": "off",
+      "request_extra": {
+        "chat_template_kwargs": {
+          "enable_thinking": false
+        }
+      }
+    },
+    "kind": "lookup"
+  },
+  "version": "judge_v2_with_intent/2.0.3"
+}

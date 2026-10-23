@@ -1,0 +1,13 @@
+# Copyright (c) Meta Platforms, Inc. and affiliates.
+# All rights reserved.
+#
+# This source code is licensed under the license found in the
+# LICENSE file in the root directory of this source tree.
+
+key: qwen2.5-vl-7b-instruct
+hf_path: Qwen/Qwen2.5-VL-7B-Instruct
+vision: true
+max_image_dim: 768
+max_tokens: 512
+description: |
+  The previous Qwen vision generation, kept so the gain from Qwen3-VL at the same size can be read off two rows rather than asserted. Emits the call without reasoning first.

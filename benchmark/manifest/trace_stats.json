@@ -1,0 +1,1679 @@
+{
+ "fields": {
+  "ambigui_online_benchmark.jsonl": {
+   "ambiguity": {
+    "leaves": 84,
+    "literal": 84
+   },
+   "ambiguity_type": {
+    "leaves": 84,
+    "literal": 84
+   },
+   "annotator_note": {
+    "leaves": 84,
+    "literal": 84
+   },
+   "domain": {
+    "chars_from_source": 215,
+    "chars_total": 215,
+    "leaves": 84,
+    "literal": 45,
+    "whole": 39
+   },
+   "flags[]": {
+    "leaves": 76,
+    "literal": 76
+   },
+   "has_action_ground_truth": {
+    "leaves": 84,
+    "literal": 84
+   },
+   "instruction": {
+    "chars_from_source": 5813,
+    "chars_total": 6262,
+    "leaves": 84,
+    "mixed": 37,
+    "whole": 47
+   },
+   "instruction_recorded": {
+    "chars_from_source": 5031,
+    "chars_total": 5031,
+    "leaves": 84,
+    "whole": 84
+   },
+   "instruction_source": {
+    "leaves": 84,
+    "literal": 84
+   },
+   "items_from_decision_points[].answer": {
+    "chars_from_source": 1038,
+    "chars_total": 1673,
+    "leaves": 148,
+    "literal": 90,
+    "mixed": 29,
+    "whole": 29
+   },
+   "items_from_decision_points[].detail.Ask or guess": {
+    "leaves": 148,
+    "literal": 148
+   },
+   "items_from_decision_points[].detail.Clarifying question": {
+    "chars_from_source": 1300,
+    "chars_total": 2536,
+    "leaves": 76,
+    "literal": 28,
+    "mixed": 31,
+    "whole": 17
+   },
+   "items_from_decision_points[].detail.How it was resolved": {
+    "leaves": 148,
+    "literal": 148
+   },
+   "items_from_decision_points[].detail.Options open": {
+    "chars_from_source": 1823,
+    "chars_total": 5524,
+    "leaves": 148,
+    "literal": 80,
+    "mixed": 68
+   },
+   "items_from_decision_points[].detail.What the agent did": {
+    "chars_from_source": 727,
+    "chars_total": 5830,
+    "leaves": 49,
+    "literal": 15,
+    "mixed": 33,
+    "whole": 1
+   },
+   "items_from_decision_points[].detail.Why that assumption": {
+    "chars_from_source": 1776,
+    "chars_total": 11071,
+    "leaves": 148,
+    "literal": 75,
+    "mixed": 73
+   },
+   "items_from_decision_points[].name": {
+    "leaves": 148,
+    "literal": 148
+   },
+   "items_from_decision_points[].question": {
+    "chars_from_source": 1171,
+    "chars_total": 3795,
+    "leaves": 148,
+    "literal": 87,
+    "mixed": 61
+   },
+   "items_from_decision_points[].window.basis": {
+    "leaves": 148,
+    "literal": 148
+   },
+   "items_from_decision_points[].window.closed_before_the_run": {
+    "leaves": 148,
+    "literal": 148
+   },
+   "items_from_decision_points[].window.earliest_step": {
+    "leaves": 148,
+    "literal": 148
+   },
+   "items_from_decision_points[].window.latest_step": {
+    "leaves": 148,
+    "literal": 148
+   },
+   "items_from_decision_points[].window.never_committed": {
+    "leaves": 148,
+    "literal": 148
+   },
+   "items_from_decision_points[].window.opens_at_a_recorded_step": {
+    "leaves": 148,
+    "literal": 148
+   },
+   "items_from_decision_points[].window.source": {
+    "leaves": 148,
+    "literal": 148
+   },
+   "max_steps": {
+    "leaves": 84,
+    "literal": 84
+   },
+   "open_items[].answer": {
+    "chars_from_source": 884,
+    "chars_total": 927,
+    "leaves": 53,
+    "literal": 26,
+    "mixed": 3,
+    "whole": 24
+   },
+   "open_items[].name": {
+    "leaves": 53,
+    "literal": 53
+   },
+   "open_items[].question": {
+    "chars_from_source": 659,
+    "chars_total": 1309,
+    "leaves": 53,
+    "literal": 22,
+    "mixed": 13,
+    "whole": 18
+   },
+   "open_items[].window.basis": {
+    "chars_from_source": 611,
+    "chars_total": 5798,
+    "leaves": 49,
+    "literal": 16,
+    "mixed": 33
+   },
+   "open_items[].window.latest_step": {
+    "leaves": 49,
+    "literal": 49
+   },
+   "open_items[].window.never_committed": {
+    "leaves": 49,
+    "literal": 49
+   },
+   "open_items[].window.source": {
+    "leaves": 49,
+    "literal": 49
+   },
+   "recorded_substrate": {
+    "chars_from_source": 12,
+    "chars_total": 12,
+    "leaves": 84,
+    "literal": 81,
+    "whole": 3
+   },
+   "risk": {
+    "leaves": 84,
+    "literal": 84
+   },
+   "sample_id": {
+    "leaves": 84,
+    "literal": 84
+   },
+   "severity": {
+    "leaves": 84,
+    "literal": 84
+   },
+   "source": {
+    "leaves": 84,
+    "literal": 84
+   },
+   "split": {
+    "leaves": 84,
+    "literal": 84
+   },
+   "start_url": {
+    "chars_from_source": 758,
+    "chars_total": 1765,
+    "leaves": 84,
+    "mixed": 84
+   },
+   "steps[].action_repr": {
+    "chars_from_source": 10833,
+    "chars_total": 10833,
+    "leaves": 310,
+    "whole": 310
+   },
+   "steps[].gold_action.args.point[]": {
+    "from_source": 606,
+    "leaves": 606
+   },
+   "steps[].gold_action.args.target": {
+    "chars_from_source": 4472,
+    "chars_total": 4472,
+    "leaves": 310,
+    "literal": 17,
+    "whole": 293
+   },
+   "steps[].gold_action.args.text": {
+    "chars_from_source": 451,
+    "chars_total": 451,
+    "leaves": 42,
+    "whole": 42
+   },
+   "steps[].gold_action.args.value": {
+    "chars_from_source": 109,
+    "chars_total": 109,
+    "leaves": 11,
+    "whole": 11
+   },
+   "steps[].gold_action.tool": {
+    "leaves": 310,
+    "literal": 310
+   },
+   "steps[].image_path": {
+    "leaves": 310,
+    "literal": 310
+   },
+   "steps[].operation": {
+    "chars_from_source": 16618,
+    "chars_total": 16618,
+    "leaves": 310,
+    "whole": 310
+   },
+   "steps[].point[]": {
+    "from_source": 606,
+    "leaves": 606
+   },
+   "steps[].step_index": {
+    "leaves": 310,
+    "literal": 310
+   },
+   "substrate": {
+    "leaves": 84,
+    "literal": 84
+   },
+   "transfer": {
+    "leaves": 45,
+    "literal": 45
+   },
+   "transfer.judged_site": {
+    "chars_from_source": 154,
+    "chars_total": 154,
+    "leaves": 39,
+    "literal": 25,
+    "whole": 14
+   },
+   "transfer.verdict": {
+    "leaves": 39,
+    "literal": 39
+   },
+   "turns[].classification": {
+    "leaves": 440,
+    "literal": 440
+   },
+   "turns[].role": {
+    "leaves": 440,
+    "literal": 440
+   },
+   "turns[].speaker": {
+    "leaves": 440,
+    "literal": 440
+   },
+   "turns[].text": {
+    "chars_from_source": 18782,
+    "chars_total": 18782,
+    "leaves": 440,
+    "whole": 440
+   },
+   "turns[].turn": {
+    "leaves": 440,
+    "literal": 440
+   },
+   "turns[].visible_from_step": {
+    "leaves": 440,
+    "literal": 440
+   }
+  },
+  "gold_benchmark_with_targets.jsonl": {
+   "ambiguity": {
+    "leaves": 298,
+    "literal": 298
+   },
+   "ambiguity_type": {
+    "leaves": 298,
+    "literal": 298
+   },
+   "ambiguity_types_all[]": {
+    "leaves": 295,
+    "literal": 295
+   },
+   "benchmark": {
+    "leaves": 298,
+    "literal": 298
+   },
+   "canonical_instruction": {
+    "chars_from_source": 7566,
+    "chars_total": 9532,
+    "leaves": 115,
+    "literal": 10,
+    "mixed": 87,
+    "whole": 18
+   },
+   "canonical_instruction_raw": {
+    "chars_from_source": 11849,
+    "chars_total": 11956,
+    "leaves": 115,
+    "mixed": 64,
+    "whole": 51
+   },
+   "canonical_turn_indices[]": {
+    "leaves": 247,
+    "literal": 247
+   },
+   "domain": {
+    "chars_from_source": 2196,
+    "chars_total": 2196,
+    "leaves": 298,
+    "whole": 298
+   },
+   "gold.assumptions[].id": {
+    "leaves": 165,
+    "literal": 165
+   },
+   "gold.assumptions[].observed": {
+    "chars_from_source": 2575,
+    "chars_total": 20549,
+    "leaves": 165,
+    "literal": 54,
+    "mixed": 110,
+    "whole": 1
+   },
+   "gold.assumptions[].step": {
+    "leaves": 165,
+    "literal": 165
+   },
+   "gold.compounding_roots[].basis": {
+    "chars_from_source": 3586,
+    "chars_total": 17509,
+    "leaves": 196,
+    "literal": 78,
+    "mixed": 118
+   },
+   "gold.compounding_roots[].decision_step": {
+    "leaves": 196,
+    "literal": 196
+   },
+   "gold.compounding_roots[].discovery_answer": {
+    "leaves": 196,
+    "literal": 196
+   },
+   "gold.compounding_roots[].earliest_step": {
+    "leaves": 196,
+    "literal": 196
+   },
+   "gold.compounding_roots[].id": {
+    "leaves": 196,
+    "literal": 196
+   },
+   "gold.compounding_roots[].locked_option": {
+    "chars_from_source": 1609,
+    "chars_total": 3272,
+    "leaves": 196,
+    "literal": 114,
+    "mixed": 61,
+    "whole": 21
+   },
+   "gold.compounding_roots[].other_options_cost": {
+    "chars_from_source": 927,
+    "chars_total": 8027,
+    "leaves": 196,
+    "literal": 146,
+    "mixed": 49,
+    "whole": 1
+   },
+   "gold.compounding_roots[].reasoning": {
+    "chars_from_source": 774,
+    "chars_total": 8858,
+    "leaves": 196,
+    "literal": 154,
+    "mixed": 42
+   },
+   "gold.cross_modal_gaps[].affordance": {
+    "chars_from_source": 258,
+    "chars_total": 887,
+    "leaves": 19,
+    "literal": 10,
+    "mixed": 9
+   },
+   "gold.cross_modal_gaps[].explanation": {
+    "chars_from_source": 103,
+    "chars_total": 853,
+    "leaves": 19,
+    "literal": 12,
+    "mixed": 7
+   },
+   "gold.cross_modal_gaps[].id": {
+    "leaves": 19,
+    "literal": 19
+   },
+   "gold.cross_modal_gaps[].instruction_required": {
+    "chars_from_source": 224,
+    "chars_total": 819,
+    "leaves": 19,
+    "literal": 9,
+    "mixed": 10
+   },
+   "gold.cross_modal_gaps[].proceeded_past_gap": {
+    "leaves": 19,
+    "literal": 19
+   },
+   "gold.cross_modal_gaps[].screen_exposed": {
+    "chars_from_source": 216,
+    "chars_total": 1315,
+    "leaves": 19,
+    "literal": 10,
+    "mixed": 9
+   },
+   "gold.cross_modal_gaps[].step": {
+    "leaves": 19,
+    "literal": 19
+   },
+   "gold.decisions[].ask_before_step": {
+    "leaves": 375,
+    "literal": 375
+   },
+   "gold.decisions[].ask_or_guess": {
+    "leaves": 375,
+    "literal": 375
+   },
+   "gold.decisions[].best_assumption": {
+    "chars_from_source": 2574,
+    "chars_total": 4054,
+    "leaves": 375,
+    "literal": 234,
+    "mixed": 70,
+    "whole": 71
+   },
+   "gold.decisions[].best_assumption_reason": {
+    "chars_from_source": 4645,
+    "chars_total": 29043,
+    "leaves": 375,
+    "literal": 184,
+    "mixed": 191
+   },
+   "gold.decisions[].clarification_question": {
+    "chars_from_source": 2323,
+    "chars_total": 5044,
+    "leaves": 375,
+    "literal": 280,
+    "mixed": 62,
+    "whole": 33
+   },
+   "gold.decisions[].classification": {
+    "leaves": 375,
+    "literal": 375
+   },
+   "gold.decisions[].discovery_answer": {
+    "leaves": 375,
+    "literal": 375
+   },
+   "gold.decisions[].id": {
+    "leaves": 375,
+    "literal": 375
+   },
+   "gold.decisions[].is_random_guess": {
+    "leaves": 375,
+    "literal": 375
+   },
+   "gold.decisions[].options[]": {
+    "chars_from_source": 4663,
+    "chars_total": 8377,
+    "leaves": 1046,
+    "literal": 766,
+    "mixed": 160,
+    "whole": 120
+   },
+   "gold.decisions[].question": {
+    "chars_from_source": 3274,
+    "chars_total": 10782,
+    "leaves": 375,
+    "literal": 193,
+    "mixed": 181,
+    "whole": 1
+   },
+   "gold.decisions[].shared_steps": {
+    "chars_from_source": 3398,
+    "chars_total": 14252,
+    "leaves": 375,
+    "literal": 246,
+    "mixed": 129
+   },
+   "gold.decisions[].step": {
+    "leaves": 375,
+    "literal": 375
+   },
+   "gold.dialogue_json[].i": {
+    "leaves": 956,
+    "literal": 956
+   },
+   "gold.dialogue_json[].role": {
+    "leaves": 956,
+    "literal": 956
+   },
+   "gold.dialogue_json[].speaker": {
+    "leaves": 956,
+    "literal": 956
+   },
+   "gold.dialogue_json[].text": {
+    "chars_from_source": 37664,
+    "chars_total": 37664,
+    "leaves": 956,
+    "whole": 956
+   },
+   "gold.notes.edge_cases": {
+    "chars_from_source": 652,
+    "chars_total": 5871,
+    "leaves": 298,
+    "literal": 275,
+    "mixed": 23
+   },
+   "gold.notes.fatigue": {
+    "chars_from_source": 39,
+    "chars_total": 135,
+    "leaves": 298,
+    "literal": 297,
+    "mixed": 1
+   },
+   "gold.notes.process_uncertainty": {
+    "chars_from_source": 210,
+    "chars_total": 2797,
+    "leaves": 298,
+    "literal": 286,
+    "mixed": 12
+   },
+   "gold.step_discovery[].answer": {
+    "leaves": 3248,
+    "literal": 3248
+   },
+   "gold.step_discovery[].creates_assumption": {
+    "leaves": 3248,
+    "literal": 3248
+   },
+   "gold.step_discovery[].creates_cross_modal": {
+    "leaves": 3248,
+    "literal": 3248
+   },
+   "gold.step_discovery[].creates_decision": {
+    "leaves": 3248,
+    "literal": 3248
+   },
+   "gold.step_discovery[].step": {
+    "leaves": 3248,
+    "literal": 3248
+   },
+   "gold.step_tracking[].affected_options": {
+    "chars_from_source": 3646,
+    "chars_total": 17165,
+    "leaves": 375,
+    "literal": 231,
+    "mixed": 143,
+    "whole": 1
+   },
+   "gold.step_tracking[].discovery_answer": {
+    "leaves": 375,
+    "literal": 375
+   },
+   "gold.step_tracking[].evidence_and_reason": {
+    "chars_from_source": 8076,
+    "chars_total": 53875,
+    "leaves": 375,
+    "literal": 134,
+    "mixed": 241
+   },
+   "gold.step_tracking[].id": {
+    "leaves": 375,
+    "literal": 375
+   },
+   "gold.step_tracking[].information_source": {
+    "leaves": 375,
+    "literal": 375
+   },
+   "gold.step_tracking[].step": {
+    "leaves": 375,
+    "literal": 375
+   },
+   "gold.steps_json[].action": {
+    "chars_from_source": 16943,
+    "chars_total": 26328,
+    "leaves": 3115,
+    "literal": 1966,
+    "mixed": 1149
+   },
+   "gold.steps_json[].i": {
+    "leaves": 3115,
+    "literal": 3115
+   },
+   "gold.steps_json[].img": {
+    "leaves": 3115,
+    "variable_prefix": 3115
+   },
+   "gold.steps_json[].turn": {
+    "leaves": 2083,
+    "literal": 2083
+   },
+   "gold.terminal_review.completion_strategy": {
+    "chars_from_source": 5632,
+    "chars_total": 49827,
+    "leaves": 298,
+    "literal": 109,
+    "mixed": 189
+   },
+   "gold.terminal_review.decisions_supported": {
+    "chars_from_source": 6314,
+    "chars_total": 40533,
+    "leaves": 298,
+    "literal": 92,
+    "mixed": 201,
+    "whole": 5
+   },
+   "gold.terminal_review.options_unresolved": {
+    "chars_from_source": 3485,
+    "chars_total": 35707,
+    "leaves": 298,
+    "literal": 158,
+    "mixed": 140
+   },
+   "gold.terminal_review.step": {
+    "leaves": 298,
+    "literal": 298
+   },
+   "gold.trajectory_familiarity": {
+    "leaves": 298,
+    "literal": 298
+   },
+   "gold.turn_classifications[].classification": {
+    "leaves": 478,
+    "literal": 478
+   },
+   "gold.turn_classifications[].speaker": {
+    "leaves": 478,
+    "literal": 478
+   },
+   "gold.turn_classifications[].text": {
+    "chars_from_source": 16957,
+    "chars_total": 16957,
+    "leaves": 478,
+    "whole": 478
+   },
+   "gold.turn_classifications[].turn": {
+    "leaves": 478,
+    "literal": 478
+   },
+   "gold.type_mode": {
+    "leaves": 298,
+    "literal": 298
+   },
+   "instruction": {
+    "chars_from_source": 20305,
+    "chars_total": 20305,
+    "leaves": 298,
+    "whole": 298
+   },
+   "n_steps": {
+    "leaves": 298,
+    "literal": 298
+   },
+   "review_handle.label": {
+    "chars_from_source": 3417,
+    "chars_total": 5791,
+    "leaves": 298,
+    "mixed": 298
+   },
+   "review_handle.raw_website": {
+    "chars_from_source": 1241,
+    "chars_total": 1241,
+    "leaves": 298,
+    "literal": 148,
+    "whole": 150
+   },
+   "review_handle.substrate": {
+    "leaves": 298,
+    "literal": 298
+   },
+   "review_handle.url": {
+    "chars_from_source": 1351,
+    "chars_total": 3541,
+    "leaves": 298,
+    "literal": 148,
+    "mixed": 150
+   },
+   "review_handle.url_confidence": {
+    "leaves": 298,
+    "literal": 298
+   },
+   "risk": {
+    "leaves": 298,
+    "literal": 298
+   },
+   "sample_id": {
+    "leaves": 298,
+    "literal": 298
+   },
+   "severity": {
+    "leaves": 298,
+    "literal": 298
+   },
+   "source": {
+    "leaves": 298,
+    "literal": 298
+   },
+   "split": {
+    "leaves": 298,
+    "literal": 298
+   },
+   "steps[].action_repr": {
+    "chars_from_source": 33537,
+    "chars_total": 54261,
+    "leaves": 3115,
+    "literal": 665,
+    "mixed": 2450
+   },
+   "steps[].element": {
+    "chars_from_source": 28511,
+    "chars_total": 28912,
+    "leaves": 3115,
+    "literal": 836,
+    "mixed": 29,
+    "whole": 2250
+   },
+   "steps[].element_source": {
+    "leaves": 3115,
+    "literal": 3115
+   },
+   "steps[].gold_action.args.params[]": {
+    "chars_from_source": 8481,
+    "chars_total": 8481,
+    "leaves": 716,
+    "whole": 716
+   },
+   "steps[].gold_action.args.point[]": {
+    "from_source": 4656,
+    "leaves": 4656
+   },
+   "steps[].gold_action.args.target": {
+    "chars_from_source": 28511,
+    "chars_total": 28912,
+    "leaves": 3115,
+    "literal": 836,
+    "mixed": 29,
+    "whole": 2250
+   },
+   "steps[].gold_action.args.text": {
+    "chars_from_source": 3676,
+    "chars_total": 3676,
+    "leaves": 291,
+    "whole": 291
+   },
+   "steps[].gold_action.args.value": {
+    "chars_from_source": 541,
+    "chars_total": 541,
+    "leaves": 70,
+    "whole": 70
+   },
+   "steps[].gold_action.tool": {
+    "leaves": 3115,
+    "literal": 3115
+   },
+   "steps[].image_path": {
+    "leaves": 3115,
+    "variable_prefix": 3115
+   },
+   "steps[].operation": {
+    "leaves": 3115,
+    "literal": 3115
+   },
+   "steps[].step_index": {
+    "leaves": 3115,
+    "literal": 3115
+   },
+   "substrate": {
+    "leaves": 298,
+    "literal": 298
+   }
+  },
+  "gold_eval_set.jsonl": {
+   "all_types": {
+    "leaves": 298,
+    "literal": 298
+   },
+   "ambiguity": {
+    "leaves": 298,
+    "literal": 298
+   },
+   "ambiguity_type": {
+    "leaves": 298,
+    "literal": 298
+   },
+   "annotator_notes.Looking back at the end.Completion strategy": {
+    "chars_from_source": 5632,
+    "chars_total": 49827,
+    "leaves": 298,
+    "literal": 109,
+    "mixed": 189
+   },
+   "annotator_notes.Looking back at the end.Decisions supported": {
+    "chars_from_source": 6314,
+    "chars_total": 40533,
+    "leaves": 298,
+    "literal": 92,
+    "mixed": 201,
+    "whole": 5
+   },
+   "annotator_notes.Looking back at the end.Options unresolved": {
+    "chars_from_source": 3485,
+    "chars_total": 35707,
+    "leaves": 298,
+    "literal": 158,
+    "mixed": 140
+   },
+   "annotator_notes.Looking back at the end.Step": {
+    "leaves": 298,
+    "literal": 298
+   },
+   "annotator_notes.While annotating.Edge cases": {
+    "chars_from_source": 652,
+    "chars_total": 5871,
+    "leaves": 83,
+    "literal": 60,
+    "mixed": 23
+   },
+   "annotator_notes.While annotating.Fatigue": {
+    "chars_from_source": 39,
+    "chars_total": 135,
+    "leaves": 41,
+    "literal": 40,
+    "mixed": 1
+   },
+   "annotator_notes.While annotating.Process uncertainty": {
+    "chars_from_source": 210,
+    "chars_total": 2797,
+    "leaves": 70,
+    "literal": 58,
+    "mixed": 12
+   },
+   "ask_by": {
+    "leaves": 136,
+    "literal": 136
+   },
+   "ask_by.earliest_recorded_ask_before_step": {
+    "leaves": 162,
+    "literal": 162
+   },
+   "ask_by.first_commitment.id": {
+    "leaves": 162,
+    "literal": 162
+   },
+   "ask_by.first_commitment.kind": {
+    "leaves": 162,
+    "literal": 162
+   },
+   "ask_by.first_commitment.step": {
+    "leaves": 162,
+    "literal": 162
+   },
+   "ask_by.no_recorded_deadline_is_earlier": {
+    "leaves": 162,
+    "literal": 162
+   },
+   "ask_by.step": {
+    "leaves": 162,
+    "literal": 162
+   },
+   "decisions[].Ask or guess": {
+    "leaves": 375,
+    "literal": 375
+   },
+   "decisions[].Best assumption": {
+    "chars_from_source": 2574,
+    "chars_total": 4054,
+    "leaves": 375,
+    "literal": 234,
+    "mixed": 70,
+    "whole": 71
+   },
+   "decisions[].Clarifying question": {
+    "chars_from_source": 2323,
+    "chars_total": 5044,
+    "leaves": 168,
+    "literal": 73,
+    "mixed": 62,
+    "whole": 33
+   },
+   "decisions[].Cost of the others": {
+    "chars_from_source": 927,
+    "chars_total": 8027,
+    "leaves": 196,
+    "literal": 146,
+    "mixed": 49,
+    "whole": 1
+   },
+   "decisions[].Evidence on screen": {
+    "chars_from_source": 3586,
+    "chars_total": 17509,
+    "leaves": 196,
+    "literal": 78,
+    "mixed": 118
+   },
+   "decisions[].How it was resolved": {
+    "leaves": 375,
+    "literal": 375
+   },
+   "decisions[].Option locked in": {
+    "chars_from_source": 1609,
+    "chars_total": 3272,
+    "leaves": 196,
+    "literal": 114,
+    "mixed": 61,
+    "whole": 21
+   },
+   "decisions[].Options open": {
+    "chars_from_source": 4489,
+    "chars_total": 13462,
+    "leaves": 375,
+    "literal": 216,
+    "mixed": 158,
+    "whole": 1
+   },
+   "decisions[].Random guess": {
+    "leaves": 375,
+    "literal": 375
+   },
+   "decisions[].Steps it spans (as written)": {
+    "chars_from_source": 3398,
+    "chars_total": 14252,
+    "leaves": 375,
+    "literal": 246,
+    "mixed": 129
+   },
+   "decisions[].Why that assumption": {
+    "chars_from_source": 4645,
+    "chars_total": 29043,
+    "leaves": 375,
+    "literal": 184,
+    "mixed": 191
+   },
+   "decisions[].Why that is the risk": {
+    "chars_from_source": 774,
+    "chars_total": 8858,
+    "leaves": 196,
+    "literal": 154,
+    "mixed": 42
+   },
+   "decisions[].ask_by_is_after_the_commit": {
+    "leaves": 375,
+    "literal": 375
+   },
+   "decisions[].classification": {
+    "leaves": 375,
+    "literal": 375
+   },
+   "decisions[].commits_at_step": {
+    "leaves": 375,
+    "literal": 375
+   },
+   "decisions[].derived_ask_by_step": {
+    "leaves": 375,
+    "literal": 375
+   },
+   "decisions[].earliest_step": {
+    "leaves": 375,
+    "literal": 375
+   },
+   "decisions[].id": {
+    "leaves": 375,
+    "literal": 375
+   },
+   "decisions[].interval_runs_backwards": {
+    "leaves": 375,
+    "literal": 375
+   },
+   "decisions[].question": {
+    "chars_from_source": 3274,
+    "chars_total": 10782,
+    "leaves": 375,
+    "literal": 193,
+    "mixed": 181,
+    "whole": 1
+   },
+   "decisions[].recorded_ask_before_step": {
+    "leaves": 375,
+    "literal": 375
+   },
+   "domain": {
+    "chars_from_source": 2196,
+    "chars_total": 2196,
+    "leaves": 298,
+    "whole": 298
+   },
+   "flags[]": {
+    "leaves": 85,
+    "literal": 85
+   },
+   "instruction": {
+    "chars_from_source": 20305,
+    "chars_total": 20305,
+    "leaves": 298,
+    "whole": 298
+   },
+   "items_from_decision_points[].answer": {
+    "chars_from_source": 2198,
+    "chars_total": 3658,
+    "leaves": 362,
+    "literal": 232,
+    "mixed": 66,
+    "whole": 64
+   },
+   "items_from_decision_points[].detail.Ask or guess": {
+    "leaves": 362,
+    "literal": 362
+   },
+   "items_from_decision_points[].detail.Clarifying question": {
+    "chars_from_source": 2323,
+    "chars_total": 5044,
+    "leaves": 167,
+    "literal": 72,
+    "mixed": 62,
+    "whole": 33
+   },
+   "items_from_decision_points[].detail.How it was resolved": {
+    "leaves": 362,
+    "literal": 362
+   },
+   "items_from_decision_points[].detail.Options open": {
+    "chars_from_source": 4103,
+    "chars_total": 12550,
+    "leaves": 362,
+    "literal": 213,
+    "mixed": 148,
+    "whole": 1
+   },
+   "items_from_decision_points[].detail.What the agent did": {
+    "chars_from_source": 2575,
+    "chars_total": 20549,
+    "leaves": 165,
+    "literal": 54,
+    "mixed": 110,
+    "whole": 1
+   },
+   "items_from_decision_points[].detail.Why that assumption": {
+    "chars_from_source": 4584,
+    "chars_total": 28802,
+    "leaves": 362,
+    "literal": 174,
+    "mixed": 188
+   },
+   "items_from_decision_points[].name": {
+    "leaves": 362,
+    "literal": 362
+   },
+   "items_from_decision_points[].question": {
+    "chars_from_source": 3274,
+    "chars_total": 10782,
+    "leaves": 362,
+    "literal": 180,
+    "mixed": 181,
+    "whole": 1
+   },
+   "items_from_decision_points[].window.basis": {
+    "leaves": 362,
+    "literal": 362
+   },
+   "items_from_decision_points[].window.closed_before_the_run": {
+    "leaves": 362,
+    "literal": 362
+   },
+   "items_from_decision_points[].window.earliest_step": {
+    "leaves": 362,
+    "literal": 362
+   },
+   "items_from_decision_points[].window.latest_step": {
+    "leaves": 362,
+    "literal": 362
+   },
+   "items_from_decision_points[].window.never_committed": {
+    "leaves": 362,
+    "literal": 362
+   },
+   "items_from_decision_points[].window.opens_at_a_recorded_step": {
+    "leaves": 362,
+    "literal": 362
+   },
+   "items_from_decision_points[].window.source": {
+    "leaves": 362,
+    "literal": 362
+   },
+   "n_steps": {
+    "leaves": 298,
+    "literal": 298
+   },
+   "open_items[].answer": {
+    "chars_from_source": 1858,
+    "chars_total": 2042,
+    "leaves": 313,
+    "literal": 222,
+    "mixed": 7,
+    "whole": 84
+   },
+   "open_items[].name": {
+    "leaves": 313,
+    "literal": 313
+   },
+   "open_items[].question": {
+    "chars_from_source": 1853,
+    "chars_total": 4671,
+    "leaves": 313,
+    "literal": 218,
+    "mixed": 63,
+    "whole": 32
+   },
+   "open_items[].window.basis": {
+    "chars_from_source": 3344,
+    "chars_total": 24669,
+    "leaves": 313,
+    "literal": 148,
+    "mixed": 165
+   },
+   "open_items[].window.latest_step": {
+    "leaves": 313,
+    "literal": 313
+   },
+   "open_items[].window.never_committed": {
+    "leaves": 313,
+    "literal": 313
+   },
+   "open_items[].window.source": {
+    "leaves": 313,
+    "literal": 313
+   },
+   "risk": {
+    "leaves": 298,
+    "literal": 298
+   },
+   "sample_id": {
+    "leaves": 298,
+    "literal": 298
+   },
+   "severity": {
+    "leaves": 298,
+    "literal": 298
+   },
+   "site": {
+    "chars_from_source": 3417,
+    "chars_total": 5791,
+    "leaves": 298,
+    "mixed": 298
+   },
+   "source": {
+    "leaves": 298,
+    "literal": 298
+   },
+   "split": {
+    "leaves": 298,
+    "literal": 298
+   },
+   "steps[].action": {
+    "chars_from_source": 33537,
+    "chars_total": 54261,
+    "leaves": 3115,
+    "literal": 665,
+    "mixed": 2450
+   },
+   "steps[].annotations[].affected_options": {
+    "chars_from_source": 3613,
+    "chars_total": 16936,
+    "leaves": 363,
+    "literal": 220,
+    "mixed": 142,
+    "whole": 1
+   },
+   "steps[].annotations[].affordance": {
+    "chars_from_source": 258,
+    "chars_total": 887,
+    "leaves": 19,
+    "literal": 10,
+    "mixed": 9
+   },
+   "steps[].annotations[].anchored_on": {
+    "leaves": 4209,
+    "literal": 4209
+   },
+   "steps[].annotations[].answer": {
+    "leaves": 3115,
+    "literal": 3115
+   },
+   "steps[].annotations[].ask_before_step": {
+    "leaves": 363,
+    "literal": 363
+   },
+   "steps[].annotations[].ask_or_guess": {
+    "leaves": 363,
+    "literal": 363
+   },
+   "steps[].annotations[].basis": {
+    "chars_from_source": 3572,
+    "chars_total": 17237,
+    "leaves": 190,
+    "literal": 73,
+    "mixed": 117
+   },
+   "steps[].annotations[].best_assumption": {
+    "chars_from_source": 2516,
+    "chars_total": 3948,
+    "leaves": 363,
+    "literal": 226,
+    "mixed": 68,
+    "whole": 69
+   },
+   "steps[].annotations[].best_assumption_reason": {
+    "chars_from_source": 4449,
+    "chars_total": 27876,
+    "leaves": 363,
+    "literal": 178,
+    "mixed": 185
+   },
+   "steps[].annotations[].clarification_question": {
+    "chars_from_source": 2277,
+    "chars_total": 4840,
+    "leaves": 363,
+    "literal": 270,
+    "mixed": 60,
+    "whole": 33
+   },
+   "steps[].annotations[].classification": {
+    "leaves": 363,
+    "literal": 363
+   },
+   "steps[].annotations[].creates_assumption": {
+    "leaves": 3115,
+    "literal": 3115
+   },
+   "steps[].annotations[].creates_cross_modal": {
+    "leaves": 3115,
+    "literal": 3115
+   },
+   "steps[].annotations[].creates_decision": {
+    "leaves": 3115,
+    "literal": 3115
+   },
+   "steps[].annotations[].decision_step": {
+    "leaves": 190,
+    "literal": 190
+   },
+   "steps[].annotations[].discovery_answer": {
+    "leaves": 916,
+    "literal": 916
+   },
+   "steps[].annotations[].earliest_step": {
+    "leaves": 190,
+    "literal": 190
+   },
+   "steps[].annotations[].evidence_and_reason": {
+    "chars_from_source": 7940,
+    "chars_total": 52824,
+    "leaves": 363,
+    "literal": 127,
+    "mixed": 236
+   },
+   "steps[].annotations[].explanation": {
+    "chars_from_source": 103,
+    "chars_total": 853,
+    "leaves": 19,
+    "literal": 12,
+    "mixed": 7
+   },
+   "steps[].annotations[].id": {
+    "leaves": 1094,
+    "literal": 1094
+   },
+   "steps[].annotations[].information_source": {
+    "leaves": 363,
+    "literal": 363
+   },
+   "steps[].annotations[].instruction_required": {
+    "chars_from_source": 224,
+    "chars_total": 819,
+    "leaves": 19,
+    "literal": 9,
+    "mixed": 10
+   },
+   "steps[].annotations[].is_random_guess": {
+    "leaves": 363,
+    "literal": 363
+   },
+   "steps[].annotations[].kind": {
+    "leaves": 4209,
+    "literal": 4209
+   },
+   "steps[].annotations[].locked_option": {
+    "chars_from_source": 1595,
+    "chars_total": 3218,
+    "leaves": 190,
+    "literal": 109,
+    "mixed": 60,
+    "whole": 21
+   },
+   "steps[].annotations[].observed": {
+    "chars_from_source": 2506,
+    "chars_total": 20255,
+    "leaves": 159,
+    "literal": 49,
+    "mixed": 109,
+    "whole": 1
+   },
+   "steps[].annotations[].options": {
+    "chars_from_source": 4421,
+    "chars_total": 13178,
+    "leaves": 363,
+    "literal": 207,
+    "mixed": 155,
+    "whole": 1
+   },
+   "steps[].annotations[].other_options_cost": {
+    "chars_from_source": 908,
+    "chars_total": 7789,
+    "leaves": 190,
+    "literal": 141,
+    "mixed": 48,
+    "whole": 1
+   },
+   "steps[].annotations[].proceeded_past_gap": {
+    "leaves": 19,
+    "literal": 19
+   },
+   "steps[].annotations[].question": {
+    "chars_from_source": 3123,
+    "chars_total": 10186,
+    "leaves": 363,
+    "literal": 188,
+    "mixed": 174,
+    "whole": 1
+   },
+   "steps[].annotations[].reasoning": {
+    "chars_from_source": 762,
+    "chars_total": 8722,
+    "leaves": 190,
+    "literal": 149,
+    "mixed": 41
+   },
+   "steps[].annotations[].screen_exposed": {
+    "chars_from_source": 216,
+    "chars_total": 1315,
+    "leaves": 19,
+    "literal": 10,
+    "mixed": 9
+   },
+   "steps[].annotations[].shared_steps": {
+    "chars_from_source": 3385,
+    "chars_total": 14189,
+    "leaves": 363,
+    "literal": 235,
+    "mixed": 128
+   },
+   "steps[].annotations[].step": {
+    "leaves": 4019,
+    "literal": 4019
+   },
+   "steps[].element_source": {
+    "leaves": 3115,
+    "literal": 3115
+   },
+   "steps[].image_path": {
+    "leaves": 3115,
+    "literal": 3115
+   },
+   "steps[].step_index": {
+    "leaves": 3115,
+    "literal": 3115
+   },
+   "steps[].turn_index": {
+    "leaves": 3115,
+    "literal": 3115
+   },
+   "substrate": {
+    "leaves": 298,
+    "literal": 298
+   },
+   "turns[].classification": {
+    "leaves": 956,
+    "literal": 956
+   },
+   "turns[].role": {
+    "leaves": 956,
+    "literal": 956
+   },
+   "turns[].speaker": {
+    "leaves": 956,
+    "literal": 956
+   },
+   "turns[].text": {
+    "chars_from_source": 37664,
+    "chars_total": 37664,
+    "leaves": 956,
+    "whole": 956
+   },
+   "turns[].turn": {
+    "leaves": 956,
+    "literal": 956
+   },
+   "turns[].visible_from_step": {
+    "leaves": 956,
+    "literal": 956
+   }
+  },
+  "open_items.windows.jsonl": {
+   "basis": {
+    "chars_from_source": 3530,
+    "chars_total": 26476,
+    "leaves": 313,
+    "literal": 136,
+    "mixed": 177
+   },
+   "commit_step": {
+    "leaves": 313,
+    "literal": 313
+   },
+   "latest_step": {
+    "leaves": 313,
+    "literal": 313
+   },
+   "name": {
+    "leaves": 313,
+    "literal": 313
+   },
+   "sample_id": {
+    "leaves": 313,
+    "literal": 313
+   }
+  }
+ },
+ "gold_sha256": {
+  "ambigui_online_benchmark.jsonl": "92e72136d307dea8b04b6e52343132a5621003b9bc49cd05072e756872d2e1a6",
+  "gold_benchmark_with_targets.jsonl": "5702b780a4f366822f835ea4f91f6800bfedc17ca9030c83db94ac691d5ac3ec",
+  "gold_eval_set.jsonl": "70a193c0258fbb105afdcb8dc26feed9bcedaecb6002518e005db0ddfd20f72a",
+  "open_items.windows.jsonl": "eced77265200bb35d2162ccb3c93f2bbd99adc88e14df5cde805cd724ff3df7e"
+ },
+ "osworld_instruction_updated": [
+  "a5bbbcd5-b398-4c91-83d4-55e1e31bbb81"
+ ],
+ "removed_by_rule": {
+  "eval.flags.initial_judgement": 36,
+  "eval.initial_judgement": 298,
+  "eval.origin": 675,
+  "eval.osworld.n_steps": 33,
+  "eval.osworld.steps": 133,
+  "online.flags.panel": 1,
+  "online.note.panel_reference": 1,
+  "online.open_items_origin": 84,
+  "online.origin": 197,
+  "online.panel_reasoning": 84,
+  "online.panel_said": 84,
+  "online.start_url_matches_screenshot": 84,
+  "targets.canonical_instruction.think": 9,
+  "targets.initial_judgements": 298,
+  "targets.osworld.n_steps": 33,
+  "targets.osworld.steps": 266,
+  "unused.label_provenance": 680,
+  "unused.start_url_probe": 168,
+  "unused.synthetic": 298,
+  "unused.transfer.stops_at": 39,
+  "unused.unanchored_annotations": 298,
+  "unused.window_constants": 2584,
+  "windows.provenance": 313
+ },
+ "residue": {
+  "ambigui_online_benchmark.jsonl": {
+   "instruction": {
+    " Also giveand, whetheror going, and. Then tell and, and whether.": 1,
+    " Also, for:,there,,there": 1,
+    " Alsowhether, ,whetherthere,whether,whichsnowsSpain.": 1,
+    ",": 1,
+    ", and ": 1,
+    ",,? Also check,, ,": 1,
+    ",too or  coming?": 1,
+    "Book": 11,
+    "Book Hometown Creamery.": 1,
+    "Book San Francisco.": 1,
+    "Book an": 1,
+    "Book.": 1,
+    "BookSan Francisco.": 1,
+    "Bookgo": 1,
+    "Check,also tellforecast for": 1,
+    "Tell.": 1,
+    "What": 1,
+    "What's": 1,
+    "What's? Tell me if'swhether.": 1,
+    "and Also tell me's,'s, and sun sets": 1,
+    "conditions in .": 1,
+    "want": 2,
+    "want \u2014 pickoption.": 1
+   },
+   "start_url": {
+    "https://": 16,
+    "https://.": 10,
+    "https://.com": 21,
+    "https://www.": 10,
+    "https://www..": 5,
+    "https://www..com": 22
+   },
+   "steps[].gold_action.args.target": {
+    "SELECT": 1,
+    "Select": 1
+   },
+   "turns[].speaker": {
+    "system": 220,
+    "user": 220
+   }
+  },
+  "gold_benchmark_with_targets.jsonl": {
+   "canonical_instruction_raw": {
+    " . ": 1,
+    ".  ": 1
+   },
+   "gold.dialogue_json[].speaker": {
+    "system": 478,
+    "user": 478
+   },
+   "gold.steps_json[].action": {
+    "back": 5,
+    "clear": 5,
+    "click": 1372,
+    "click \"": 2,
+    "click \"\"": 760,
+    "click\"": 14,
+    "enter": 38,
+    "input": 4,
+    "input \"\"": 161,
+    "input\"": 1,
+    "read": 400,
+    "select into \"\"": 70,
+    "swipe": 158,
+    "type": 11,
+    "type \"\"": 114
+   },
+   "gold.turn_classifications[].speaker": {
+    "user": 478
+   },
+   "review_handle.label": {
+    " /": 8,
+    " / ": 126,
+    "/": 4,
+    "/ ": 12,
+    "META-GUI app:": 80,
+    "META-GUI app: ": 35,
+    "OSWorld app:": 7,
+    "OSWorld app: ": 26
+   },
+   "review_handle.url": {
+    "https://.": 5,
+    "https://.com": 1,
+    "https://www.": 21,
+    "https://www..": 29,
+    "https://www..com": 83,
+    "https://www..gov": 1,
+    "https://www.com/": 10
+   },
+   "steps[].action_repr": {
+    "back": 5,
+    "clear": 5,
+    "click": 78,
+    "click \"": 2,
+    "click \"\"": 1891,
+    "click \"an unlabelled \"": 24,
+    "click \"an unlabelled a\"": 1,
+    "click \"an unlabelled i\"": 3,
+    "click \"an unlabelled\"": 5,
+    "click <>": 130,
+    "click\"": 14,
+    "enter": 38,
+    "input": 4,
+    "input \"\"": 161,
+    "input\"": 1,
+    "read": 400,
+    "select from \"\"": 56,
+    "select\"\"": 14,
+    "swipe": 158,
+    "type into \"\"": 119,
+    "type into <>": 6
+   },
+   "steps[].element": {
+    "Clear": 1,
+    "SELECT": 1,
+    "Select": 3,
+    "an unlabelled": 5,
+    "an unlabelled ": 24,
+    "an unlabelled a": 1,
+    "an unlabelled i": 3
+   },
+   "steps[].gold_action.args.target": {
+    "Clear": 1,
+    "SELECT": 1,
+    "Select": 3,
+    "an unlabelled": 5,
+    "an unlabelled ": 24,
+    "an unlabelled a": 1,
+    "an unlabelled i": 3
+   }
+  },
+  "gold_eval_set.jsonl": {
+   "site": {
+    " /": 8,
+    " / ": 126,
+    "/": 4,
+    "/ ": 12,
+    "META-GUI app:": 80,
+    "META-GUI app: ": 35,
+    "OSWorld app:": 7,
+    "OSWorld app: ": 26
+   },
+   "steps[].action": {
+    "back": 5,
+    "clear": 5,
+    "click": 78,
+    "click \"": 2,
+    "click \"\"": 1891,
+    "click \"an unlabelled \"": 24,
+    "click \"an unlabelled a\"": 1,
+    "click \"an unlabelled i\"": 3,
+    "click \"an unlabelled\"": 5,
+    "click <>": 130,
+    "click\"": 14,
+    "enter": 38,
+    "input": 4,
+    "input \"\"": 161,
+    "input\"": 1,
+    "read": 400,
+    "select from \"\"": 56,
+    "select\"\"": 14,
+    "swipe": 158,
+    "type into \"\"": 119,
+    "type into <>": 6
+   },
+   "turns[].speaker": {
+    "system": 478,
+    "user": 478
+   }
+  },
+  "open_items.windows.jsonl": {}
+ },
+ "step_problems": {},
+ "untraced": {}
+}

@@ -1,0 +1,13 @@
+# Copyright (c) Meta Platforms, Inc. and affiliates.
+# All rights reserved.
+#
+# This source code is licensed under the license found in the
+# LICENSE file in the root directory of this source tree.
+
+key: glm-4.6v
+hf_path: zai-org/GLM-4.6V
+vision: true
+max_image_dim: 768
+max_tokens: 2048
+description: |
+  The full GLM vision model, which writes a reasoning block before its answer. It needs a large server (tensor_parallel 4 in configs/offline/models.yaml); any further serve flags are your server's own settings and are not set by this code.

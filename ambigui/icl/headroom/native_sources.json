@@ -1,0 +1,35 @@
+{
+ "description": "installed package source files whose definitions the headroom guard executes; sha256 = the bytes the reported ICL4 run pinned (identical to the PyPI vllm 0.23.0 x86_64 wheel and transformers 5.14.1)",
+ "files": [
+  {
+   "path": "transformers/models/qwen2_vl/image_processing_qwen2_vl.py",
+   "sha256": "f19497685281402691f0049a0ab5be8085f92fb5c37adfcc680e4ccd17863a77",
+   "bytes": 10732,
+   "package": "transformers 5.14.1"
+  },
+  {
+   "path": "vllm/model_executor/models/qwen3_vl.py",
+   "sha256": "2935e09be47a893f09176cddb1beb6ed2e73666459de2bfbb08aca50b3e08969",
+   "bytes": 111366,
+   "package": "vllm 0.23.0"
+  },
+  {
+   "path": "vllm/renderers/hf.py",
+   "sha256": "ba93ab02f4041eb0258fc7df908ad0a373058a153db0e24be862b4efd569660e",
+   "bytes": 44381,
+   "package": "vllm 0.23.0"
+  },
+  {
+   "path": "vllm/entrypoints/openai/engine/protocol.py",
+   "sha256": "2ca4ccb38beaff09bf3b31e8990ca036bd008b9e5caacbc20889b8f4d7dc2529",
+   "bytes": 11178,
+   "package": "vllm 0.23.0"
+  },
+  {
+   "path": "vllm/entrypoints/openai/chat_completion/protocol.py",
+   "sha256": "c4bfefd3ae9898b77fbe075fe1719d33b4d4f57a14ab75aff818b05b64d8c9ac",
+   "bytes": 41080,
+   "package": "vllm 0.23.0"
+  }
+ ]
+}

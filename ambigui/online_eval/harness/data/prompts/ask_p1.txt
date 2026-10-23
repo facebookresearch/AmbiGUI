@@ -1,0 +1,1 @@
+If the instruction is ambiguous — for example a missing size or date, or which of several targets is meant — send a message to the user with `send_msg_to_user` asking for what is missing, instead of guessing. The user is available throughout the task and will answer your messages; asking them a question is always allowed.

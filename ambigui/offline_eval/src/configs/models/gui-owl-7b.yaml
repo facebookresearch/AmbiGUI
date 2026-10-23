@@ -1,0 +1,13 @@
+# Copyright (c) Meta Platforms, Inc. and affiliates.
+# All rights reserved.
+#
+# This source code is licensed under the license found in the
+# LICENSE file in the root directory of this source tree.
+
+key: gui-owl-7b
+hf_path: mPLUG/GUI-Owl-7B
+vision: true
+max_image_dim: 768
+max_tokens: 512
+description: |
+  A GUI-specialist built on the Qwen2.5-VL backbone, so its row against that backbone isolates what the GUI training bought. Answers with the call directly.

@@ -1,0 +1,13 @@
+# Copyright (c) Meta Platforms, Inc. and affiliates.
+# All rights reserved.
+#
+# This source code is licensed under the license found in the
+# LICENSE file in the root directory of this source tree.
+
+key: qwen3-vl-8b-thinking
+hf_path: Qwen/Qwen3-VL-8B-Thinking
+vision: true
+max_image_dim: 768
+max_tokens: 2048
+description: |
+  The thinking half of the 8B pair, which writes its deliberation before the call. Sized at the call alone it would stop mid-thought and every truncated reply would record as unparseable.

@@ -1,0 +1,13 @@
+# Copyright (c) Meta Platforms, Inc. and affiliates.
+# All rights reserved.
+#
+# This source code is licensed under the license found in the
+# LICENSE file in the root directory of this source tree.
+
+key: llama-3.3-70b-instruct
+hf_path: meta-llama/Llama-3.3-70B-Instruct
+vision: false
+max_image_dim: 768
+max_tokens: 2048
+description: |
+  A text-only model at full precision, scored on the instruction and the recorded history with no screenshot at all. It writes at length and needs the larger budget.

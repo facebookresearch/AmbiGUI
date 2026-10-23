@@ -1,0 +1,13 @@
+# Copyright (c) Meta Platforms, Inc. and affiliates.
+# All rights reserved.
+#
+# This source code is licensed under the license found in the
+# LICENSE file in the root directory of this source tree.
+
+key: internvl3-78b
+hf_path: OpenGVLab/InternVL3-78B
+vision: true
+max_image_dim: 768
+max_tokens: 512
+description: |
+  The largest InternVL, completing the size curve for that family. It answers with the call rather than reasoning toward it, so the call-sized budget holds.

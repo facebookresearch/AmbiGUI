@@ -1,0 +1,18 @@
+# Copyright (c) Meta Platforms, Inc. and affiliates.
+# All rights reserved.
+#
+# This source code is licensed under the license found in the
+# LICENSE file in the root directory of this source tree.
+
+key: llama3.2-90b-vision-instruct
+hf_path: meta-llama/Llama-3.2-90B-Vision-Instruct
+vision: true
+max_image_dim: 768
+max_tokens: 1500
+description: |
+  Not scored as a policy. This entry exists so the ask judge of the frontier run set can be
+  posed with the settings that run set recorded: the same weights served as both the
+  simulated user and the ask judge, under this served model name, with a 1500-token
+  budget. The run-set file names this entry as the judge's registry_key, and judge_asks
+  requires that key (--judge-registry-key); it never picks an entry on its own. As a
+  judge it is always posed text-only, whatever vision says here.

@@ -1,0 +1,13 @@
+# Copyright (c) Meta Platforms, Inc. and affiliates.
+# All rights reserved.
+#
+# This source code is licensed under the license found in the
+# LICENSE file in the root directory of this source tree.
+
+key: deepseek-v4.1-flash
+hf_path: deepseek-ai/DeepSeek-V4.1-Flash
+vision: true
+max_image_dim: 768
+max_tokens: 2048
+description: |
+  A large DeepSeek model that reasons before answering, so it needs room for the deliberation as well as for the call it finally emits.

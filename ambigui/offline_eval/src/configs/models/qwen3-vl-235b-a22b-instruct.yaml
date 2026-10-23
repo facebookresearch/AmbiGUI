@@ -1,0 +1,13 @@
+# Copyright (c) Meta Platforms, Inc. and affiliates.
+# All rights reserved.
+#
+# This source code is licensed under the license found in the
+# LICENSE file in the root directory of this source tree.
+
+key: qwen3-vl-235b-a22b-instruct
+hf_path: Qwen/Qwen3-VL-235B-A22B-Instruct
+vision: true
+max_image_dim: 768
+max_tokens: 512
+description: |
+  The largest Qwen vision model in the comparison, instruct-tuned so it answers with the call immediately. Its row is the scale ceiling for the whole matrix.

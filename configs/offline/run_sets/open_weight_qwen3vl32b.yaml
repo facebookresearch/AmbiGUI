@@ -1,0 +1,77 @@
+# Copyright (c) Meta Platforms, Inc. and affiliates.
+# All rights reserved.
+#
+# This source code is licensed under the license found in the
+# LICENSE file in the root directory of this source tree.
+
+# Earlier open-weight run sets ("pre" and "post"), answered by Qwen3-VL-32B-Instruct
+# under the served name "answerer32b" and judged by "judge70b".
+#
+# Kept so those recorded numbers can be traced to a configuration. They are a different
+# run set from open_weight_glm46v and must never be mixed with it (docs/offline.md).
+run_set: open_weight_qwen3vl32b
+benchmark: ${AMBIGUI_BENCHMARK}
+image_root: ${AMBIGUI_IMAGE_ROOT}
+out_root: ${AMBIGUI_OUT_ROOT:-runs}/open_weight_qwen3vl32b
+seed: 0
+
+run:
+  serve_image_limit: 2
+
+# The policy's output-token budget (max_tokens) of every recorded pass in the "pre" and
+# "post" sets, read from each pass's run.json (64 "pre" passes, 26 "post" passes; the two
+# sets used the same budget wherever both have a pass). Every value equals the catalogue
+# entry; it is listed so the recorded budget is explicit, and the launcher passes it as
+# --max-tokens. gui-owl-7b screens-on and ui-tars-72b-dpo screens-off have a run.json but
+# no report. muse-glimmer-30b is internal (no catalogue entry) and is not listed.
+policy_max_tokens:
+  a3-qwen3.5-9b: {screens-on: 2048, screens-off: 2048}
+  deepseek-vl2: {screens-on: 512, screens-off: 512}
+  gemma-3-12b-it: {screens-on: 512, screens-off: 512}
+  gemma-3-27b-it: {screens-on: 512, screens-off: 512}
+  gemma-4-31b-it: {screens-on: 512, screens-off: 512}
+  glm-4.6v: {screens-on: 2048, screens-off: 2048}
+  glm-4.6v-flash: {screens-on: 2048, screens-off: 2048}
+  gui-owl-7b: {screens-on: 512, screens-off: 512}
+  internvl3-38b: {screens-on: 512, screens-off: 512}
+  internvl3-78b: {screens-on: 512, screens-off: 512}
+  internvl3-8b: {screens-on: 512, screens-off: 512}
+  kimi-vl-a3b-instruct: {screens-on: 512, screens-off: 512}
+  llama-3.3-70b-instruct: {screens-off: 2048}
+  llama-3.3-70b-instruct-awq: {screens-off: 2048}
+  llava-1.5-13b-hf: {screens-on: 512, screens-off: 512}
+  minimax-m2.5: {screens-off: 2048}
+  os-atlas-pro-7b: {screens-on: 512, screens-off: 512}
+  phi-4-multimodal-instruct: {screens-on: 512, screens-off: 512}
+  pixtral-12b: {screens-on: 512, screens-off: 512}
+  qwen-agentworld-35b-a3b: {screens-off: 2048}
+  qwen2.5-vl-7b-instruct: {screens-on: 512, screens-off: 512}
+  qwen3-vl-235b-a22b-instruct: {screens-on: 512, screens-off: 512}
+  qwen3-vl-32b-instruct: {screens-on: 512, screens-off: 512}
+  qwen3-vl-4b-instruct: {screens-on: 512, screens-off: 512}
+  qwen3-vl-8b-instruct: {screens-on: 512, screens-off: 512}
+  qwen3-vl-8b-thinking: {screens-on: 2048, screens-off: 2048}
+  qwen3.5-4b: {screens-on: 2048, screens-off: 2048}
+  qwen3.5-4b-sft: {screens-on: 2048, screens-off: 2048}
+  qwen3.5-9b: {screens-on: 2048, screens-off: 2048}
+  qwen3.6-35b-a3b: {screens-on: 2048, screens-off: 2048}
+  qwen3.8-27b: {screens-on: 2048, screens-off: 2048}
+  qwen3vl-2b-instruct: {screens-on: 512, screens-off: 512}
+  ui-tars-1.5-7b: {screens-on: 2048, screens-off: 2048}
+  ui-tars-72b-dpo: {screens-on: 2048, screens-off: 2048}
+
+answerer:
+  endpoint: ${AMBIGUI_ANSWERER_BASE_URL:-http://localhost:8001/v1}
+  served_model: answerer32b
+  # A model cannot answer for itself: the Qwen3-VL-32B policy was answered by Gemma-3-27B.
+  per_policy:
+    qwen3-vl-32b-instruct: {endpoint: "${AMBIGUI_ALT_ANSWERER_BASE_URL:-http://localhost:8003/v1}", served_model: answerer27b}
+
+judge:
+  endpoint: ${AMBIGUI_JUDGE_BASE_URL:-http://localhost:8002/v1}
+  served_model: judge70b
+  registry_key: llama-3.3-70b-instruct   # not recorded in the run files; see open_weight_glm46v.yaml
+  # A model cannot judge itself: the two Llama-3.3-70B policies were judged by "judge27b".
+  per_policy:
+    llama-3.3-70b-instruct: {endpoint: "${AMBIGUI_ALT_JUDGE_BASE_URL:-http://localhost:8004/v1}", served_model: judge27b, registry_key: gemma-3-27b-it}
+    llama-3.3-70b-instruct-awq: {endpoint: "${AMBIGUI_ALT_JUDGE_BASE_URL:-http://localhost:8004/v1}", served_model: judge27b, registry_key: gemma-3-27b-it}

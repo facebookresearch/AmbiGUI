@@ -1,0 +1,23 @@
+# Copyright (c) Meta Platforms, Inc. and affiliates.
+# All rights reserved.
+#
+# This source code is licensed under the license found in the
+# LICENSE file in the root directory of this source tree.
+
+key: gpt-6-1-sol
+hf_path: hosted API model gpt-6-1-sol (no public weights)
+vision: true
+max_image_dim: null
+max_tokens: null
+description: |
+  A frontier policy of the main offline run set (frontier_llama90.yaml), reached through
+  its provider API under this recorded name. The recorded calls sent no output-token
+  limit, so the provider default applied (its value was not recorded); null means this
+  code also sends none.
+  The recorded run sent every screenshot at its original size, as its original PNG file
+  (the few files larger than 3.8 MB were re-encoded as JPEG by the provider adapter; this
+  code always re-encodes the frame itself, as PNG or JPEG by file name). One frame per
+  step. The recorded calls set no temperature and no seed, so the provider defaults
+  applied; this code always sends temperature 0 and the run's seed. The recorded run
+  reached the provider through an adapter that is not part of this release, so a re-run is
+  a new measurement, not a replay.

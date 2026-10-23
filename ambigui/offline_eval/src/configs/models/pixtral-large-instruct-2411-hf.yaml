@@ -1,0 +1,13 @@
+# Copyright (c) Meta Platforms, Inc. and affiliates.
+# All rights reserved.
+#
+# This source code is licensed under the license found in the
+# LICENSE file in the root directory of this source tree.
+
+key: pixtral-large-instruct-2411-hf
+hf_path: mistral-community/Pixtral-Large-Instruct-2411
+vision: true
+max_image_dim: 768
+max_tokens: 512
+description: |
+  The large Mistral vision model, the scale point for that family. It answers with the call directly rather than reasoning toward it first.

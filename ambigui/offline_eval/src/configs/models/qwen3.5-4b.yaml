@@ -1,0 +1,21 @@
+# Copyright (c) Meta Platforms, Inc. and affiliates.
+# All rights reserved.
+#
+# This source code is licensed under the license found in the
+# LICENSE file in the root directory of this source tree.
+
+key: qwen3.5-4b
+hf_path: Qwen/Qwen3.5-4B
+vision: true
+max_image_dim: 768
+max_tokens: 2048
+description: |
+  Reasons before it answers, so the budget has to cover the reasoning and the answer.
+  2048 does cover it: over a 51-step run the replies that named an action ran to 2,726
+  characters at the longest, about a third of the budget. The replies that named none
+  ran to 39,628 characters and ended only because the budget did. Raising the budget to
+  8192 did not recover them. The parse rate fell from 0.6275 to 0.5882 over the same 51
+  steps. The GLM-answerer run set nevertheless ran both of its passes at 8192; that run
+  set's file (configs/offline/run_sets/open_weight_glm46v.yaml) sets it per pass.
+  The weights carry a vision tower, and the recorded run sets ran it with and without
+  screenshots.

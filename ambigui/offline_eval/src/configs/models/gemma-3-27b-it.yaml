@@ -1,0 +1,13 @@
+# Copyright (c) Meta Platforms, Inc. and affiliates.
+# All rights reserved.
+#
+# This source code is licensed under the license found in the
+# LICENSE file in the root directory of this source tree.
+
+key: gemma-3-27b-it
+hf_path: google/gemma-3-27b-it
+vision: true
+max_image_dim: 768
+max_tokens: 512
+description: |
+  The larger Gemma 3 vision model, paired with the 12B to show the size effect within one family. It answers with the call rather than reasoning toward it.

@@ -1,0 +1,10 @@
+# Copyright (c) Meta Platforms, Inc. and affiliates.
+# All rights reserved.
+#
+# This source code is licensed under the license found in the
+# LICENSE file in the root directory of this source tree.
+
+ecf60a7c82144f66d2bf3c208efddbc00ea7811e1def1a0389987d7ff785e1ae  gold_eval_set.jsonl
+bfcabac1ff3cbf1726be1c6dde2dd56215e934c35fc9b41bfe2f1f1828c87479  gold_benchmark_with_targets.jsonl
+0571c63e8c4cde7cb45debee4af5403838ea7d13acccc9fc8859798e87f8d2ad  open_items.windows.jsonl
+8ef29ffec7b987203265943a1fe117bc6a2159ca23d68155a4917f97a0da6437  ambigui_online_benchmark.jsonl
